@@ -1,5 +1,7 @@
 // Dashboard JavaScript
+console.log('Dashboard.js loaded');
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Dashboard');
     // Initialize stats
     let studyStats = JSON.parse(localStorage.getItem('studyStats')) || {
         streak: 0,
@@ -205,6 +207,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
     const playerStatus = document.getElementById('player-status');
+    const testChangeBtn = document.getElementById('test-change');
+
+    console.log('Sound elements found:', {
+        playPauseBtn: !!playPauseBtn,
+        volumeSlider: !!volumeSlider,
+        soundSelect: !!soundSelect,
+        playerStatus: !!playerStatus,
+        testChangeBtn: !!testChangeBtn
+    });
 
     // Initialize YouTube Player
     function onYouTubeIframeAPIReady() {
@@ -241,15 +252,127 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function onPlayerReady(event) {
+        console.log('YouTube player is ready!');
         // Player is ready
         updateVolume();
         playPauseBtn.disabled = false;
         volumeSlider.disabled = false;
         playerStatus.textContent = 'Ready to play';
         playerStatus.style.color = 'var(--success-color)';
+
+        // Load the initial video
+        console.log('Loading initial video...');
+        player.loadVideoById('jfKfPfyJRdk');
+
+        // Set up event listeners now that player is ready
+        setupEventListeners();
+    }
+
+    function setupEventListeners() {
+        soundSelect.addEventListener('change', function() {
+            console.log('Dropdown changed! Selected value:', this.value);
+            const videoId = this.value;
+            const selectedOption = this.options[this.selectedIndex];
+            const videoTitle = selectedOption.text;
+
+            console.log('Changing to video:', videoId, videoTitle);
+
+            if (player && typeof player.loadVideoById === 'function') {
+                try {
+                    // Show loading state
+                    playPauseBtn.textContent = 'Loading...';
+                    playPauseBtn.disabled = true;
+                    playerStatus.textContent = `Loading ${videoTitle}...`;
+                    playerStatus.style.color = 'var(--accent-color)';
+
+                    // Stop current video first
+                    player.stopVideo();
+
+                    // Load new video
+                    player.loadVideoById({
+                        videoId: videoId,
+                        startSeconds: 0
+                    });
+
+                    console.log('Video load initiated for:', videoId);
+
+                    // Set a timeout to check if video loaded successfully
+                    setTimeout(() => {
+                        try {
+                            const state = player.getPlayerState();
+                            console.log('Player state after load:', state);
+                            if (state === YT.PlayerState.UNSTARTED) {
+                                // Video failed to load, try to play it
+                                console.log('Attempting to play video...');
+                                player.playVideo();
+                            } else {
+                                // Video loaded successfully
+                                playPauseBtn.disabled = false;
+                                playPauseBtn.textContent = 'Pause'; // Assume it auto-played
+                            }
+                        } catch (e) {
+                            console.warn('Error checking player state:', e);
+                        }
+                    }, 2000);
+
+                } catch (error) {
+                    console.warn('Failed to load video via API:', videoTitle, error);
+                    // Fallback: try iframe src method
+                    console.log('Trying iframe fallback...');
+                    fallbackLoadVideo(videoId, videoTitle);
+                }
+            } else {
+                console.warn('Player not ready or loadVideoById not available, using fallback');
+                fallbackLoadVideo(videoId, videoTitle);
+            }
+        });
+
+        function fallbackLoadVideo(videoId, videoTitle) {
+            try {
+                const iframe = document.getElementById('youtube-player');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=0&modestbranding=1&rel=0`;
+                playerStatus.textContent = `Loaded ${videoTitle} (fallback)`;
+                playerStatus.style.color = 'var(--success-color)';
+                playPauseBtn.disabled = false;
+                playPauseBtn.textContent = 'Play';
+                console.log('Fallback video load successful for:', videoId);
+            } catch (error) {
+                console.warn('Fallback video load failed:', error);
+                playerStatus.textContent = `Failed to load ${videoTitle}`;
+                playerStatus.style.color = 'var(--danger-color)';
+            }
+        }
+
+        playPauseBtn.addEventListener('click', function() {
+            if (player && !playPauseBtn.disabled) {
+                try {
+                    const state = player.getPlayerState();
+                    console.log('Play/pause clicked, current state:', state);
+                    if (state === YT.PlayerState.PLAYING) {
+                        player.pauseVideo();
+                    } else {
+                        player.playVideo();
+                    }
+                } catch (error) {
+                    console.warn('Player control error:', error);
+                }
+            }
+        });
+
+        volumeSlider.addEventListener('input', updateVolume);
+
+        // Test button for debugging
+        if (testChangeBtn) {
+            testChangeBtn.addEventListener('click', function() {
+                console.log('Test button clicked - changing to Jazz via API');
+                soundSelect.value = 'lTRiuFIWV54'; // Smooth Jazz
+                soundSelect.dispatchEvent(new Event('change'));
+            });
+        }
     }
 
     function onPlayerStateChange(event) {
+        console.log('Player state changed to:', event.data);
         if (event.data == YT.PlayerState.PLAYING) {
             playPauseBtn.textContent = 'Pause';
             playerStatus.textContent = 'Playing';
@@ -261,6 +384,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (event.data == YT.PlayerState.BUFFERING) {
             playerStatus.textContent = 'Loading...';
             playerStatus.style.color = 'var(--accent-color)';
+        } else if (event.data == YT.PlayerState.UNSTARTED) {
+            playerStatus.textContent = 'Ready to play';
+            playerStatus.style.color = 'var(--text-color)';
         }
     }
 
@@ -291,61 +417,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    soundSelect.addEventListener('change', function() {
-        const videoId = this.value;
-        const selectedOption = this.options[this.selectedIndex];
-        const videoTitle = selectedOption.text;
-
-        if (player && player.loadVideoById) {
-            try {
-                // Show loading state
-                playPauseBtn.textContent = 'Loading...';
-                playPauseBtn.disabled = true;
-                playerStatus.textContent = `Loading ${videoTitle}...`;
-                playerStatus.style.color = 'var(--accent-color)';
-
-                player.loadVideoById({
-                    videoId: videoId,
-                    startSeconds: 0
-                });
-
-                // Set a timeout to check if video loaded successfully
-                setTimeout(() => {
-                    if (player.getPlayerState() === YT.PlayerState.UNSTARTED) {
-                        // Video failed to load, try to play it
-                        player.playVideo();
-                    }
-                }, 2000);
-
-            } catch (error) {
-                console.warn('Failed to load video:', videoTitle, error);
-                playPauseBtn.textContent = 'Error';
-                playPauseBtn.disabled = true;
-                playerStatus.textContent = `Failed to load ${videoTitle}`;
-                playerStatus.style.color = 'var(--danger-color)';
-
-                // Show user-friendly error message
-                alert(`Unable to load "${videoTitle}". Trying next option...`);
-            }
-        }
-    });
-
-    playPauseBtn.addEventListener('click', function() {
-        if (player && !playPauseBtn.disabled) {
-            try {
-                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
-            } catch (error) {
-                console.warn('Player control error:', error);
-            }
-        }
-    });
-
-    volumeSlider.addEventListener('input', updateVolume);
-
     function updateVolume() {
         if (player && player.setVolume && !volumeSlider.disabled) {
             try {
@@ -358,8 +429,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize player when API is ready
     if (typeof YT !== 'undefined' && YT.Player) {
+        console.log('YouTube API already loaded, initializing player...');
         onYouTubeIframeAPIReady();
     } else {
+        console.log('YouTube API not loaded yet, waiting...');
         window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
         // Fallback timeout in case API doesn't load
         setTimeout(() => {
