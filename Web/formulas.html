@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Interactive Formula Sheet</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/formulas.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Student Tools Hub Logo" class="logo">
+        <h1>Interactive Formula Sheet</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Focus Dashboard</a>
+            <a href="formulas.html">Formula Sheet</a>
+        </nav>
+        <button id="theme-toggle">🌙</button>
+    </header>
+    <main>
+        <aside id="sidebar">
+            <h3>Categories</h3>
+            <ul id="category-list"></ul>
+        </aside>
+        <section id="content">
+            <div id="search-filter">
+                <input type="text" id="search" placeholder="Search formulas...">
+                <select id="filter">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <div id="formula-cards"></div>
+        </section>
+    </main>
+    <script src="js/common.js"></script>
+    <script src="js/formulas.js"></script>
+</body>
+</html>
