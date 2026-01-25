@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playPauseBtn = document.getElementById('play-pause');
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
+    const playerStatus = document.getElementById('player-status');
 
     // Initialize YouTube Player
     function onYouTubeIframeAPIReady() {
@@ -211,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
             player = new YT.Player('youtube-player', {
                 height: '200',
                 width: '300',
-                videoId: 'SlPhMPnQ58k',
+                videoId: 'jfKfPfyJRdk',
                 playerVars: {
                     'autoplay': 0,
                     'controls': 0,
@@ -234,6 +235,8 @@ document.addEventListener('DOMContentLoaded', function() {
             playPauseBtn.disabled = true;
             volumeSlider.disabled = true;
             playPauseBtn.textContent = 'Unavailable';
+            playerStatus.textContent = 'Player unavailable';
+            playerStatus.style.color = 'var(--danger-color)';
         }
     }
 
@@ -242,13 +245,22 @@ document.addEventListener('DOMContentLoaded', function() {
         updateVolume();
         playPauseBtn.disabled = false;
         volumeSlider.disabled = false;
+        playerStatus.textContent = 'Ready to play';
+        playerStatus.style.color = 'var(--success-color)';
     }
 
     function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
             playPauseBtn.textContent = 'Pause';
+            playerStatus.textContent = 'Playing';
+            playerStatus.style.color = 'var(--success-color)';
         } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
             playPauseBtn.textContent = 'Play';
+            playerStatus.textContent = 'Paused';
+            playerStatus.style.color = 'var(--text-color)';
+        } else if (event.data == YT.PlayerState.BUFFERING) {
+            playerStatus.textContent = 'Loading...';
+            playerStatus.style.color = 'var(--accent-color)';
         }
     }
 
@@ -256,20 +268,64 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('YouTube Player Error:', event.data);
         playPauseBtn.textContent = 'Error';
         playPauseBtn.disabled = true;
+
+        // Update status
+        playerStatus.textContent = 'Video unavailable';
+        playerStatus.style.color = 'var(--danger-color)';
+
+        // Try to automatically load the next available video
+        const currentIndex = soundSelect.selectedIndex;
+        const nextIndex = (currentIndex + 1) % soundSelect.options.length;
+
+        if (nextIndex !== currentIndex) {
+            console.log('Trying next video option...');
+            playerStatus.textContent = 'Trying next option...';
+            setTimeout(() => {
+                soundSelect.selectedIndex = nextIndex;
+                soundSelect.dispatchEvent(new Event('change'));
+            }, 2000);
+        } else {
+            // All options exhausted
+            playerStatus.textContent = 'All videos unavailable';
+            alert('All study music options appear to be unavailable. Please check your internet connection.');
+        }
     }
 
     soundSelect.addEventListener('change', function() {
         const videoId = this.value;
+        const selectedOption = this.options[this.selectedIndex];
+        const videoTitle = selectedOption.text;
+
         if (player && player.loadVideoById) {
             try {
-                player.loadVideoById(videoId);
-                player.pauseVideo();
-                playPauseBtn.textContent = 'Play';
-                playPauseBtn.disabled = false;
+                // Show loading state
+                playPauseBtn.textContent = 'Loading...';
+                playPauseBtn.disabled = true;
+                playerStatus.textContent = `Loading ${videoTitle}...`;
+                playerStatus.style.color = 'var(--accent-color)';
+
+                player.loadVideoById({
+                    videoId: videoId,
+                    startSeconds: 0
+                });
+
+                // Set a timeout to check if video loaded successfully
+                setTimeout(() => {
+                    if (player.getPlayerState() === YT.PlayerState.UNSTARTED) {
+                        // Video failed to load, try to play it
+                        player.playVideo();
+                    }
+                }, 2000);
+
             } catch (error) {
-                console.warn('Failed to load video:', videoId, error);
+                console.warn('Failed to load video:', videoTitle, error);
                 playPauseBtn.textContent = 'Error';
                 playPauseBtn.disabled = true;
+                playerStatus.textContent = `Failed to load ${videoTitle}`;
+                playerStatus.style.color = 'var(--danger-color)';
+
+                // Show user-friendly error message
+                alert(`Unable to load "${videoTitle}". Trying next option...`);
             }
         }
     });
@@ -312,6 +368,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 playPauseBtn.disabled = true;
                 volumeSlider.disabled = true;
                 playPauseBtn.textContent = 'Unavailable';
+                playerStatus.textContent = 'API unavailable';
+                playerStatus.style.color = 'var(--danger-color)';
             }
         }, 10000);
     }

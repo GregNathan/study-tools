@@ -347,10 +347,8 @@
         font-size: 0.8rem;
     }
 
-    /* YouTube player mobile adjustments */
-    #youtube-player {
-        width: 100%;
-        max-width: 250px;
-        height: 150px;
+    #player-status {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
     }
 }
