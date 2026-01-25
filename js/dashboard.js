@@ -199,35 +199,122 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadTodos();
 
-    // Ambient Sounds - Simple play/pause for iframe (limited control)
+    // Ambient Sounds - YouTube IFrame Player API
+    let player;
     const playPauseBtn = document.getElementById('play-pause');
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
-    const youtubePlayer = document.getElementById('youtube-player');
-    let isPlaying = false;
+
+    // Initialize YouTube Player
+    function onYouTubeIframeAPIReady() {
+        try {
+            player = new YT.Player('youtube-player', {
+                height: '200',
+                width: '300',
+                videoId: 'SlPhMPnQ58k',
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'enablejsapi': 1,
+                    'loop': 1,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
+                }
+            });
+        } catch (error) {
+            console.warn('YouTube Player failed to initialize:', error);
+            // Fallback: disable controls
+            playPauseBtn.disabled = true;
+            volumeSlider.disabled = true;
+            playPauseBtn.textContent = 'Unavailable';
+        }
+    }
+
+    function onPlayerReady(event) {
+        // Player is ready
+        updateVolume();
+        playPauseBtn.disabled = false;
+        volumeSlider.disabled = false;
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            playPauseBtn.textContent = 'Pause';
+        } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+            playPauseBtn.textContent = 'Play';
+        }
+    }
+
+    function onPlayerError(event) {
+        console.warn('YouTube Player Error:', event.data);
+        playPauseBtn.textContent = 'Error';
+        playPauseBtn.disabled = true;
+    }
 
     soundSelect.addEventListener('change', function() {
         const videoId = this.value;
-        youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
-        isPlaying = false;
-        playPauseBtn.textContent = 'Play';
+        if (player && player.loadVideoById) {
+            try {
+                player.loadVideoById(videoId);
+                player.pauseVideo();
+                playPauseBtn.textContent = 'Play';
+                playPauseBtn.disabled = false;
+            } catch (error) {
+                console.warn('Failed to load video:', videoId, error);
+                playPauseBtn.textContent = 'Error';
+                playPauseBtn.disabled = true;
+            }
+        }
     });
 
     playPauseBtn.addEventListener('click', function() {
-        // Note: Controlling YouTube iframe requires YouTube API, simplified here
-        if (isPlaying) {
-            // Pause - in reality, need API
-            playPauseBtn.textContent = 'Play';
-        } else {
-            // Play
-            playPauseBtn.textContent = 'Pause';
+        if (player && !playPauseBtn.disabled) {
+            try {
+                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    player.pauseVideo();
+                } else {
+                    player.playVideo();
+                }
+            } catch (error) {
+                console.warn('Player control error:', error);
+            }
         }
-        isPlaying = !isPlaying;
     });
 
-    volumeSlider.addEventListener('input', function() {
-        // Volume control for iframe is limited, placeholder
-    });
+    volumeSlider.addEventListener('input', updateVolume);
+
+    function updateVolume() {
+        if (player && player.setVolume && !volumeSlider.disabled) {
+            try {
+                player.setVolume(volumeSlider.value);
+            } catch (error) {
+                console.warn('Volume control error:', error);
+            }
+        }
+    }
+
+    // Initialize player when API is ready
+    if (typeof YT !== 'undefined' && YT.Player) {
+        onYouTubeIframeAPIReady();
+    } else {
+        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+        // Fallback timeout in case API doesn't load
+        setTimeout(() => {
+            if (!player) {
+                console.warn('YouTube API failed to load, disabling player controls');
+                playPauseBtn.disabled = true;
+                volumeSlider.disabled = true;
+                playPauseBtn.textContent = 'Unavailable';
+            }
+        }, 10000);
+    }
 
     // Achievements
     const achievements = [
