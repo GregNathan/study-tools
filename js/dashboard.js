@@ -136,12 +136,28 @@ document.addEventListener('DOMContentLoaded', function() {
             li.innerHTML = `
                 <span>${todo.text}</span>
                 <div>
-                    <button onclick="toggleTodo(${index})">${todo.completed ? 'Undo' : 'Complete'}</button>
-                    <button onclick="deleteTodo(${index})">Delete</button>
+                    <button class="todo-toggle-btn" data-index="${index}">${todo.completed ? 'Undo' : 'Complete'}</button>
+                    <button class="todo-delete-btn" data-index="${index}">Delete</button>
                 </div>
             `;
             todoList.appendChild(li);
         });
+
+        // Add event listeners for todo buttons
+        document.querySelectorAll('.todo-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                toggleTodo(index);
+            });
+        });
+
+        document.querySelectorAll('.todo-delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                deleteTodo(index);
+            });
+        });
+
         updateTodoProgress(todos.length, completed);
     }
 
