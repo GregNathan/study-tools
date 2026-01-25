@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
     increaseBtn.addEventListener('click', () => adjustTime(5));
     decreaseBtn.addEventListener('click', () => adjustTime(-5));
 
+    // Initialize timer display
+    updateDisplay();
+
     // Request notification permission
     if ('Notification' in window && Notification.permission === 'default') {
         Notification.requestPermission();
@@ -201,29 +204,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadTodos();
 
-    // Ambient Sounds - YouTube IFrame Player API
+    // YouTube IFrame Player API
     let player;
     const playPauseBtn = document.getElementById('play-pause');
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
     const playerStatus = document.getElementById('player-status');
-    const testChangeBtn = document.getElementById('test-change');
 
     console.log('Sound elements found:', {
         playPauseBtn: !!playPauseBtn,
         volumeSlider: !!volumeSlider,
         soundSelect: !!soundSelect,
-        playerStatus: !!playerStatus,
-        testChangeBtn: !!testChangeBtn
+        playerStatus: !!playerStatus
     });
 
     // Initialize YouTube Player
     function onYouTubeIframeAPIReady() {
+        console.log('YouTube API ready, creating player...');
         try {
             player = new YT.Player('youtube-player', {
                 height: '200',
                 width: '300',
-                videoId: 'jfKfPfyJRdk',
+                videoId: 'jfKfPfyJRdk', // Use default video ID
                 playerVars: {
                     'autoplay': 0,
                     'controls': 0,
@@ -232,7 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'loop': 1,
                     'modestbranding': 1,
                     'rel': 0,
-                    'showinfo': 0
+                    'showinfo': 0,
+                    'playlist': 'jfKfPfyJRdk'
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -241,34 +244,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         } catch (error) {
-            console.warn('YouTube Player failed to initialize:', error);
-            // Fallback: disable controls
+            console.error('Failed to create YouTube player:', error);
+            playerStatus.textContent = 'Player creation failed';
+            playerStatus.style.color = 'var(--danger-color)';
             playPauseBtn.disabled = true;
             volumeSlider.disabled = true;
-            playPauseBtn.textContent = 'Unavailable';
-            playerStatus.textContent = 'Player unavailable';
-            playerStatus.style.color = 'var(--danger-color)';
         }
     }
 
     function onPlayerReady(event) {
         console.log('YouTube player is ready!');
-        // Player is ready
-        updateVolume();
-        playPauseBtn.disabled = false;
-        volumeSlider.disabled = false;
-        playerStatus.textContent = 'Ready to play';
-        playerStatus.style.color = 'var(--success-color)';
+        try {
+            updateVolume();
+            playPauseBtn.disabled = false;
+            volumeSlider.disabled = false;
+            playerStatus.textContent = 'Ready to play';
+            playerStatus.style.color = 'var(--success-color)';
 
-        // Load the initial video
-        console.log('Loading initial video...');
-        player.loadVideoById('jfKfPfyJRdk');
-
-        // Set up event listeners now that player is ready
-        setupEventListeners();
+            // Set up event listeners after player is ready
+            setupPlayerEventListeners();
+        } catch (error) {
+            console.error('Error in onPlayerReady:', error);
+            playerStatus.textContent = 'Player initialization error';
+            playerStatus.style.color = 'var(--danger-color)';
+        }
     }
 
-    function setupEventListeners() {
+    function setupPlayerEventListeners() {
         soundSelect.addEventListener('change', function() {
             console.log('Dropdown changed! Selected value:', this.value);
             const videoId = this.value;
@@ -285,10 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     playerStatus.textContent = `Loading ${videoTitle}...`;
                     playerStatus.style.color = 'var(--accent-color)';
 
-                    // Stop current video first
+                    // Stop current video and load new one
                     player.stopVideo();
-
-                    // Load new video
                     player.loadVideoById({
                         videoId: videoId,
                         startSeconds: 0
@@ -301,36 +301,50 @@ document.addEventListener('DOMContentLoaded', function() {
                         try {
                             const state = player.getPlayerState();
                             console.log('Player state after load:', state);
-                            if (state === YT.PlayerState.UNSTARTED) {
-                                // Video failed to load, try to play it
-                                console.log('Attempting to play video...');
-                                player.playVideo();
+                            if (state === YT.PlayerState.UNSTARTED || state === -1) {
+                                // Video failed to load, try to cue it instead
+                                console.log('Video failed to load, trying cueVideoById...');
+                                player.cueVideoById(videoId);
+                                setTimeout(() => {
+                                    const newState = player.getPlayerState();
+                                    if (newState === YT.PlayerState.UNSTARTED || newState === -1) {
+                                        console.warn('Video still not loaded, trying fallback');
+                                        fallbackLoadVideo(videoId, videoTitle);
+                                    } else {
+                                        playPauseBtn.disabled = false;
+                                        playPauseBtn.textContent = 'Play';
+                                        playerStatus.textContent = `Loaded ${videoTitle}`;
+                                        playerStatus.style.color = 'var(--success-color)';
+                                    }
+                                }, 2000);
                             } else {
                                 // Video loaded successfully
                                 playPauseBtn.disabled = false;
-                                playPauseBtn.textContent = 'Pause'; // Assume it auto-played
+                                playPauseBtn.textContent = 'Play';
+                                playerStatus.textContent = `Loaded ${videoTitle}`;
+                                playerStatus.style.color = 'var(--success-color)';
                             }
                         } catch (e) {
                             console.warn('Error checking player state:', e);
+                            fallbackLoadVideo(videoId, videoTitle);
                         }
-                    }, 2000);
+                    }, 3000);
 
                 } catch (error) {
                     console.warn('Failed to load video via API:', videoTitle, error);
-                    // Fallback: try iframe src method
-                    console.log('Trying iframe fallback...');
                     fallbackLoadVideo(videoId, videoTitle);
                 }
             } else {
-                console.warn('Player not ready or loadVideoById not available, using fallback');
+                console.warn('Player not ready, using fallback');
                 fallbackLoadVideo(videoId, videoTitle);
             }
         });
 
         function fallbackLoadVideo(videoId, videoTitle) {
             try {
+                console.log('Using iframe fallback for:', videoId);
                 const iframe = document.getElementById('youtube-player');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=0&modestbranding=1&rel=0`;
+                iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=0&modestbranding=1&rel=0&autoplay=0&loop=1&playlist=${videoId}`;
                 playerStatus.textContent = `Loaded ${videoTitle} (fallback)`;
                 playerStatus.style.color = 'var(--success-color)';
                 playPauseBtn.disabled = false;
@@ -340,6 +354,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.warn('Fallback video load failed:', error);
                 playerStatus.textContent = `Failed to load ${videoTitle}`;
                 playerStatus.style.color = 'var(--danger-color)';
+                playPauseBtn.disabled = true;
+
+                // Try next video option
+                const currentIndex = soundSelect.selectedIndex;
+                const nextIndex = (currentIndex + 1) % soundSelect.options.length;
+                if (nextIndex !== currentIndex) {
+                    setTimeout(() => {
+                        soundSelect.selectedIndex = nextIndex;
+                        soundSelect.dispatchEvent(new Event('change'));
+                    }, 2000);
+                }
             }
         }
 
@@ -350,11 +375,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('Play/pause clicked, current state:', state);
                     if (state === YT.PlayerState.PLAYING) {
                         player.pauseVideo();
+                        playPauseBtn.textContent = 'Play';
+                        playerStatus.textContent = 'Paused';
+                        playerStatus.style.color = 'var(--text-color)';
                     } else {
                         player.playVideo();
+                        playPauseBtn.textContent = 'Pause';
+                        playerStatus.textContent = 'Playing';
+                        playerStatus.style.color = 'var(--success-color)';
                     }
                 } catch (error) {
                     console.warn('Player control error:', error);
+                    playerStatus.textContent = 'Control error';
+                    playerStatus.style.color = 'var(--danger-color)';
                 }
             }
         });
@@ -362,9 +395,10 @@ document.addEventListener('DOMContentLoaded', function() {
         volumeSlider.addEventListener('input', updateVolume);
 
         // Test button for debugging
+        const testChangeBtn = document.getElementById('test-change');
         if (testChangeBtn) {
             testChangeBtn.addEventListener('click', function() {
-                console.log('Test button clicked - changing to Jazz via API');
+                console.log('Test button clicked - changing to Jazz');
                 soundSelect.value = 'lTRiuFIWV54'; // Smooth Jazz
                 soundSelect.dispatchEvent(new Event('change'));
             });
@@ -373,31 +407,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function onPlayerStateChange(event) {
         console.log('Player state changed to:', event.data);
-        if (event.data == YT.PlayerState.PLAYING) {
+        const state = event.data;
+        if (state === YT.PlayerState.PLAYING) {
             playPauseBtn.textContent = 'Pause';
             playerStatus.textContent = 'Playing';
             playerStatus.style.color = 'var(--success-color)';
-        } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+        } else if (state === YT.PlayerState.PAUSED) {
             playPauseBtn.textContent = 'Play';
             playerStatus.textContent = 'Paused';
             playerStatus.style.color = 'var(--text-color)';
-        } else if (event.data == YT.PlayerState.BUFFERING) {
+        } else if (state === YT.PlayerState.ENDED) {
+            playPauseBtn.textContent = 'Play';
+            playerStatus.textContent = 'Ended';
+            playerStatus.style.color = 'var(--text-color)';
+        } else if (state === YT.PlayerState.BUFFERING) {
             playerStatus.textContent = 'Loading...';
             playerStatus.style.color = 'var(--accent-color)';
-        } else if (event.data == YT.PlayerState.UNSTARTED) {
+        } else if (state === YT.PlayerState.UNSTARTED) {
             playerStatus.textContent = 'Ready to play';
             playerStatus.style.color = 'var(--text-color)';
         }
     }
 
     function onPlayerError(event) {
-        console.warn('YouTube Player Error:', event.data);
-        playPauseBtn.textContent = 'Error';
-        playPauseBtn.disabled = true;
+        console.error('YouTube Player Error:', event.data);
+        const errorCode = event.data;
+        let errorMessage = 'Video unavailable';
 
-        // Update status
-        playerStatus.textContent = 'Video unavailable';
+        switch(errorCode) {
+            case 2:
+                errorMessage = 'Invalid video ID';
+                break;
+            case 5:
+                errorMessage = 'HTML5 player error';
+                break;
+            case 100:
+                errorMessage = 'Video not found';
+                break;
+            case 101:
+            case 150:
+                errorMessage = 'Video embedding disabled';
+                break;
+        }
+
+        playerStatus.textContent = errorMessage;
         playerStatus.style.color = 'var(--danger-color)';
+        playPauseBtn.disabled = true;
 
         // Try to automatically load the next available video
         const currentIndex = soundSelect.selectedIndex;
@@ -411,7 +466,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 soundSelect.dispatchEvent(new Event('change'));
             }, 2000);
         } else {
-            // All options exhausted
             playerStatus.textContent = 'All videos unavailable';
             alert('All study music options appear to be unavailable. Please check your internet connection.');
         }
@@ -421,6 +475,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (player && player.setVolume && !volumeSlider.disabled) {
             try {
                 player.setVolume(volumeSlider.value);
+                console.log('Volume set to:', volumeSlider.value);
             } catch (error) {
                 console.warn('Volume control error:', error);
             }
