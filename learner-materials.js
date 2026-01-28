@@ -7,81 +7,86 @@ const materialsData = {
         'Basic Calculus': {
             icon: '📐',
             files: [
-                { name: 'Calculus Fundamentals', type: 'pdf', url: '#', size: '2.4 MB' },
-                { name: 'Derivatives and Integrals', type: 'pdf', url: '#', size: '3.1 MB' },
-                { name: 'Limits and Continuity', type: 'pdf', url: '#', size: '1.8 MB' }
+                { name: 'Lesson 1', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-1.pdf', size: '2.4 MB' },
+                { name: 'Lesson 2', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-2.pdf', size: '3.1 MB' },
+                { name: 'Lesson 3', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-3.pdf', size: '1.8 MB' },
+                { name: 'Lesson 4', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-4.pdf', size: '1.8 MB' },
+                { name: 'Lesson 5', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-5.pdf', size: '1.8 MB' },
+                { name: 'Lesson 6', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-6.pdf', size: '1.8 MB' },
+                { name: 'Lesson 7', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-7.pdf', size: '1.8 MB' },
+                { name: 'Lesson 8', type: 'pdf', url: '/Basic Calculus/Basic Calculus-Q3-Module-8.pdf', size: '1.8 MB' },
             ]
         },
         'Disaster Readiness and Risk Reduction': {
             icon: '🚨',
             files: [
-                { name: 'Disaster Management Framework', type: 'pdf', url: '#', size: '2.7 MB' },
-                { name: 'Risk Assessment Guide', type: 'pdf', url: '#', size: '2.2 MB' },
-                { name: 'Emergency Response Procedures', type: 'pdf', url: '#', size: '1.9 MB' }
+                { name: 'Disaster Management Framework', type: 'pdf', url: '/Disaster Readiness and Risk Reduction/Disaster Management Framework.pdf', size: '2.7 MB' },
+                { name: 'Risk Assessment Guide', type: 'pdf', url: '/Disaster Readiness and Risk Reduction/Risk Assessment Guide.pdf', size: '2.2 MB' },
+                { name: 'Emergency Response Procedures', type: 'pdf', url: '/Disaster Readiness and Risk Reduction/Emergency Response Procedures.pdf', size: '1.9 MB' }
             ]
         },
         'Empowerment Technologies': {
             icon: '💻',
             files: [
-                { name: 'Digital Literacy Handbook', type: 'pdf', url: '#', size: '3.5 MB' },
-                { name: 'Technology and Society', type: 'pdf', url: '#', size: '2.8 MB' },
-                { name: 'Digital Safety Guide', type: 'pdf', url: '#', size: '2.0 MB' }
+                { name: 'Digital Literacy Handbook', type: 'pdf', url: '/Empowerment Technologies/Digital Literacy Handbook.pdf', size: '3.5 MB' },
+                { name: 'Technology and Society', type: 'pdf', url: '/Empowerment Technologies/Technology and Society.pdf', size: '2.8 MB' },
+                { name: 'Digital Safety Guide', type: 'pdf', url: '/Empowerment Technologies/Digital Safety Guide.pdf', size: '2.0 MB' }
             ]
         },
         'Gen Physics 2': {
             icon: '⚛️',
             files: [
-                { name: 'Electricity and Magnetism', type: 'pdf', url: '#', size: '4.2 MB' },
-                { name: 'Optics and Waves', type: 'pdf', url: '#', size: '3.8 MB' },
-                { name: 'Modern Physics Introduction', type: 'pdf', url: '#', size: '3.0 MB' }
+                { name: 'Electricity and Magnetism', type: 'pdf', url: '/Gen Physics 2/Electricity and Magnetism.pdf', size: '4.2 MB' },
+                { name: 'Optics and Waves', type: 'pdf', url: '/Gen Physics 2/Optics and Waves.pdf', size: '3.8 MB' },
+                { name: 'Modern Physics Introduction', type: 'pdf', url: '/Gen Physics 2/Modern Physics Introduction.pdf', size: '3.0 MB' }
             ]
         },
         'General Biology 2': {
             icon: '🧬',
             files: [
-                { name: 'Cell Biology and Genetics', type: 'pdf', url: '#', size: '3.6 MB' },
-                { name: 'Evolution and Ecology', type: 'pdf', url: '#', size: '3.2 MB' },
-                { name: 'Molecular Biology', type: 'pdf', url: '#', size: '2.9 MB' }
+                { name: 'Cell Biology and Genetics', type: 'pdf', url: '/General Biology 2/Cell Biology and Genetics.pdf', size: '3.6 MB' },
+                { name: 'Evolution and Ecology', type: 'pdf', url: '/General Biology 2/Evolution and Ecology.pdf', size: '3.2 MB' },
+                { name: 'Molecular Biology', type: 'pdf', url: '/General Biology 2/Molecular Biology.pdf', size: '2.9 MB' }
             ]
         },
         'Pagbasa at Pagsusuri ng Ibat-Ibang Teksto Tungo sa Pananaliksik': {
             icon: '📖',
             files: [
-                { name: 'Text Analysis Methods', type: 'pdf', url: '#', size: '2.3 MB' },
-                { name: 'Research Writing Guide', type: 'pdf', url: '#', size: '2.5 MB' },
-                { name: 'Critical Reading Skills', type: 'pdf', url: '#', size: '2.1 MB' }
+                { name: 'Text Analysis Methods', type: 'pdf', url: '/Pagbasa at Pagsusuri ng Ibat-Ibang Teksto Tungo sa Pananaliksik/Text Analysis Methods.pdf', size: '2.3 MB' },
+                { name: 'Research Writing Guide', type: 'pdf', url: '/Pagbasa at Pagsusuri ng Ibat-Ibang Teksto Tungo sa Pananaliksik/Research Writing Guide.pdf', size: '2.5 MB' },
+                { name: 'Critical Reading Skills', type: 'pdf', url: '/Pagbasa at Pagsusuri ng Ibat-Ibang Teksto Tungo sa Pananaliksik/Critical Reading Skills.pdf', size: '2.1 MB' }
             ]
         },
         'Physical Education and Health': {
             icon: '🏃',
             files: [
-                { name: 'Fitness and Wellness', type: 'pdf', url: '#', size: '2.6 MB' },
-                { name: 'Health and Nutrition', type: 'pdf', url: '#', size: '2.4 MB' },
-                { name: 'Sports and Exercise Science', type: 'pdf', url: '#', size: '2.8 MB' }
+                { name: 'Fitness and Wellness', type: 'pdf', url: '/Physical Education and Health/Fitness and Wellness.pdf', size: '2.6 MB' },
+                { name: 'Health and Nutrition', type: 'pdf', url: '/Physical Education and Health/Health and Nutrition.pdf', size: '2.4 MB' },
+                { name: 'Sports and Exercise Science', type: 'pdf', url: '/Physical Education and Health/Sports and Exercise Science.pdf', size: '2.8 MB' }
             ]
         },
         'Reading and Writing': {
             icon: '✍️',
             files: [
-                { name: 'Writing Essentials', type: 'pdf', url: '#', size: '2.2 MB' },
-                { name: 'Comprehension Strategies', type: 'pdf', url: '#', size: '2.0 MB' },
-                { name: 'Grammar and Composition', type: 'pdf', url: '#', size: '2.7 MB' }
+                { name: 'Writing Essentials', type: 'pdf', url: '/Reading and Writing/Writing Essentials.pdf', size: '2.2 MB' },
+                { name: 'Comprehension Strategies', type: 'pdf', url: '/Reading and Writing/Comprehension Strategies.pdf', size: '2.0 MB' },
+                { name: 'Grammar and Composition', type: 'pdf', url: '/Reading and Writing/Grammar and Composition.pdf', size: '2.7 MB' }
             ]
         },
         'Statics and Probability': {
             icon: '📊',
             files: [
-                { name: 'Statistical Methods', type: 'pdf', url: '#', size: '3.1 MB' },
-                { name: 'Probability Theory', type: 'pdf', url: '#', size: '3.4 MB' },
-                { name: 'Data Analysis Guide', type: 'pdf', url: '#', size: '2.8 MB' }
+                { name: 'Statistical Methods', type: 'pdf', url: '/Statics and Probability/Statistical Methods.pdf', size: '3.1 MB' },
+                { name: 'Probability Theory', type: 'pdf', url: '/Statics and Probability/Probability Theory.pdf', size: '3.4 MB' },
+                { name: 'Data Analysis Guide', type: 'pdf', url: '/Statics and Probability/Data Analysis Guide.pdf', size: '2.8 MB' }
             ]
         },
         'Understanding Culture, Society and Politics': {
             icon: '🌍',
             files: [
-                { name: 'Sociology Fundamentals', type: 'pdf', url: '#', size: '2.9 MB' },
-                { name: 'Political Systems Guide', type: 'pdf', url: '#', size: '3.0 MB' },
-                { name: 'Cultural Diversity', type: 'pdf', url: '#', size: '2.5 MB' }
+                { name: 'Sociology Fundamentals', type: 'pdf', url: '/Understanding Culture, Society and Politics/Sociology Fundamentals.pdf', size: '2.9 MB' },
+                { name: 'Political Systems Guide', type: 'pdf', url: '/Understanding Culture, Society and Politics/Political Systems Guide.pdf', size: '3.0 MB' },
+                { name: 'Cultural Diversity', type: 'pdf', url: '/Understanding Culture, Society and Politics/Cultural Diversity.pdf', size: '2.5 MB' }
             ]
         }
     }
