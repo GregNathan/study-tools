@@ -204,252 +204,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadTodos();
 
-    // YouTube IFrame Player API - IMPROVED VERSION
-    let player;
+    // YouTube Video Player - Simplified & Reliable
     const playPauseBtn = document.getElementById('play-pause');
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
     const playerStatus = document.getElementById('player-status');
+    const youtubePlayer = document.getElementById('youtube-player');
 
-    console.log('Sound elements found:', {
-        playPauseBtn: !!playPauseBtn,
-        volumeSlider: !!volumeSlider,
-        soundSelect: !!soundSelect,
-        playerStatus: !!playerStatus
+    console.log('Sound player elements loaded');
+
+    // Simple iframe-based player
+    function loadVideo(videoId, videoTitle) {
+        try {
+            youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=1&autoplay=0`;
+            playerStatus.textContent = `${videoTitle} ready`;
+            playerStatus.style.color = 'var(--success-color)';
+            playPauseBtn.disabled = false;
+            console.log('Video loaded:', videoId, videoTitle);
+        } catch (error) {
+            console.error('Failed to load video:', error);
+            playerStatus.textContent = 'Load failed';
+            playerStatus.style.color = 'var(--danger-color)';
+        }
+    }
+
+    // Sound selector change event
+    soundSelect.addEventListener('change', function() {
+        const videoId = this.value;
+        const videoTitle = this.options[this.selectedIndex].text;
+        loadVideo(videoId, videoTitle);
     });
 
-    function fallbackLoadVideo(videoId, videoTitle) {
-        try {
-            console.log('Using iframe fallback for:', videoId);
-            const iframe = document.getElementById('youtube-player');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=0&modestbranding=1&rel=0&autoplay=0&loop=1&playlist=${videoId}`;
-            playerStatus.textContent = `${videoTitle}`;
-            playerStatus.style.color = 'var(--success-color)';
-            playPauseBtn.disabled = false;
-            playPauseBtn.textContent = 'Play';
-            console.log('Fallback video load successful for:', videoId);
-        } catch (error) {
-            console.warn('Fallback video load failed:', error);
-            playerStatus.textContent = `Failed to load`;
-            playerStatus.style.color = 'var(--danger-color)';
-            playPauseBtn.disabled = true;
-        }
-    }
+    // Load default video on startup
+    loadVideo('jfKfPfyJRdk', 'Lo-Fi Hip Hop');
 
-    function updateVolume() {
-        if (player && typeof player.setVolume === 'function') {
-            try {
-                player.setVolume(volumeSlider.value);
-                console.log('Volume set to:', volumeSlider.value);
-            } catch (error) {
-                console.warn('Volume control error:', error);
-            }
-        }
-    }
+    // Play/Pause handler
+    playPauseBtn.addEventListener('click', function() {
+        playerStatus.textContent = 'Use YouTube controls';
+        playerStatus.style.color = 'var(--text-color)';
+    });
 
-    function onPlayerStateChange(event) {
-        console.log('Player state changed to:', event.data);
-        const state = event.data;
-        if (state === YT.PlayerState.PLAYING) {
-            playPauseBtn.textContent = 'Pause';
-            playerStatus.textContent = 'Playing';
-            playerStatus.style.color = 'var(--success-color)';
-        } else if (state === YT.PlayerState.PAUSED) {
-            playPauseBtn.textContent = 'Play';
-            playerStatus.textContent = 'Paused';
-            playerStatus.style.color = 'var(--text-color)';
-        } else if (state === YT.PlayerState.ENDED) {
-            playPauseBtn.textContent = 'Play';
-            playerStatus.textContent = 'Ended';
-            playerStatus.style.color = 'var(--text-color)';
-        } else if (state === YT.PlayerState.BUFFERING) {
-            playerStatus.textContent = 'Loading...';
-            playerStatus.style.color = 'var(--accent-color)';
-        } else if (state === YT.PlayerState.UNSTARTED) {
-            playerStatus.textContent = 'Ready to play';
-            playerStatus.style.color = 'var(--text-color)';
-        }
-    }
+    // Volume slider (informational only with iframe)
+    volumeSlider.addEventListener('input', function() {
+        console.log('Volume level:', this.value);
+        playerStatus.textContent = `Volume: ${this.value}%`;
+        playerStatus.style.color = 'var(--text-color)';
+    });
 
-    function onPlayerError(event) {
-        console.error('YouTube Player Error:', event.data);
-        const errorCode = event.data;
-        let errorMessage = 'Video unavailable';
-
-        switch(errorCode) {
-            case 2:
-                errorMessage = 'Invalid video ID';
-                break;
-            case 5:
-                errorMessage = 'HTML5 player error';
-                break;
-            case 100:
-                errorMessage = 'Video not found';
-                break;
-            case 101:
-            case 150:
-                errorMessage = 'Video embedding disabled';
-                break;
-        }
-
-        playerStatus.textContent = errorMessage;
-        playerStatus.style.color = 'var(--danger-color)';
-        playPauseBtn.disabled = true;
-    }
-
-    function onPlayerReady(event) {
-        console.log('YouTube player is ready!');
-        try {
-            updateVolume();
-            playPauseBtn.disabled = false;
-            volumeSlider.disabled = false;
-            playerStatus.textContent = 'Ready to play';
-            playerStatus.style.color = 'var(--success-color)';
-
-            // Set up event listeners after player is ready
-            setupPlayerEventListeners();
-        } catch (error) {
-            console.error('Error in onPlayerReady:', error);
-            playerStatus.textContent = 'Player initialization error';
-            playerStatus.style.color = 'var(--danger-color)';
-        }
-    }
-
-    function setupPlayerEventListeners() {
-        // Volume slider
-        volumeSlider.addEventListener('input', updateVolume);
-
-        // Sound selector
-        soundSelect.addEventListener('change', function() {
-            const videoId = this.value;
-            const selectedOption = this.options[this.selectedIndex];
-            const videoTitle = selectedOption.text;
-
-            console.log('Sound changed to:', videoId, videoTitle);
-
-            if (player && typeof player.loadVideoById === 'function') {
-                try {
-                    playPauseBtn.textContent = 'Loading...';
-                    playPauseBtn.disabled = true;
-                    playerStatus.textContent = `Loading...`;
-                    playerStatus.style.color = 'var(--accent-color)';
-
-                    player.loadVideoById({
-                        videoId: videoId,
-                        startSeconds: 0
-                    });
-
-                    console.log('Loading via API:', videoId);
-                } catch (error) {
-                    console.warn('API load failed, using fallback:', error);
-                    fallbackLoadVideo(videoId, videoTitle);
-                }
-            } else {
-                console.warn('Player not ready, using fallback');
-                fallbackLoadVideo(videoId, videoTitle);
-            }
+    // Test button
+    const testChangeBtn = document.getElementById('test-change');
+    if (testChangeBtn) {
+        testChangeBtn.addEventListener('click', function() {
+            soundSelect.value = 'lTRiuFIWV54';
+            soundSelect.dispatchEvent(new Event('change'));
         });
-
-        // Play/Pause button
-        playPauseBtn.addEventListener('click', function() {
-            if (player && !playPauseBtn.disabled) {
-                try {
-                    const state = player.getPlayerState();
-                    console.log('Play/pause clicked, current state:', state);
-                    if (state === YT.PlayerState.PLAYING) {
-                        player.pauseVideo();
-                        playPauseBtn.textContent = 'Play';
-                        playerStatus.textContent = 'Paused';
-                        playerStatus.style.color = 'var(--text-color)';
-                    } else {
-                        player.playVideo();
-                        playPauseBtn.textContent = 'Pause';
-                        playerStatus.textContent = 'Playing';
-                        playerStatus.style.color = 'var(--success-color)';
-                    }
-                } catch (error) {
-                    console.warn('Player control error:', error);
-                    playerStatus.textContent = 'Control error';
-                    playerStatus.style.color = 'var(--danger-color)';
-                }
-            }
-        });
-
-        // Test button for debugging
-        const testChangeBtn = document.getElementById('test-change');
-        if (testChangeBtn) {
-            testChangeBtn.addEventListener('click', function() {
-                console.log('Test button clicked');
-                soundSelect.value = 'lTRiuFIWV54';
-                soundSelect.dispatchEvent(new Event('change'));
-            });
-        }
     }
-
-    // Initialize YouTube Player when API is ready
-    window.onYouTubeIframeAPIReady = function() {
-        console.log('YouTube API ready, creating player...');
-        try {
-            player = new YT.Player('youtube-player', {
-                height: '200',
-                width: '300',
-                videoId: 'jfKfPfyJRdk',
-                playerVars: {
-                    'autoplay': 0,
-                    'controls': 0,
-                    'disablekb': 1,
-                    'enablejsapi': 1,
-                    'loop': 1,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'playlist': 'jfKfPfyJRdk'
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange,
-                    'onError': onPlayerError
-                }
-            });
-            console.log('YouTube player created successfully');
-        } catch (error) {
-            console.error('Failed to create YouTube player:', error);
-            playerStatus.textContent = 'Player creation failed';
-            playerStatus.style.color = 'var(--danger-color)';
-            playPauseBtn.disabled = true;
-            volumeSlider.disabled = true;
-        }
-    };
-
-    // Fallback timeout in case API doesn't load
-    setTimeout(() => {
-        if (!player) {
-            console.warn('YouTube API failed to load, switching to fallback mode');
-            playerStatus.textContent = 'Using basic player';
-            playerStatus.style.color = 'var(--accent-color)';
-            
-            // Set up fallback mode with iframe only
-            soundSelect.addEventListener('change', function() {
-                const videoId = this.value;
-                const selectedOption = this.options[this.selectedIndex];
-                const videoTitle = selectedOption.text;
-                fallbackLoadVideo(videoId, videoTitle);
-            });
-
-            playPauseBtn.addEventListener('click', function() {
-                const iframe = document.getElementById('youtube-player');
-                if (iframe.style.display !== 'none') {
-                    // Can't directly control iframe, so just notify user
-                    alert('Use YouTube player controls to play/pause');
-                }
-            });
-
-            volumeSlider.addEventListener('input', function() {
-                // Can't control volume in fallback, just show slider
-                console.log('Volume slider (fallback):', this.value);
-            });
-        }
-    }, 8000);
 
     // Achievements
     const achievements = [
