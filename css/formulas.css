@@ -9,7 +9,7 @@ aside {
     background-color: var(--card-bg);
     border-right: 2px solid var(--border-color);
     border-radius: 15px 0 0 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.1);
 }
 
 #category-list {
@@ -73,11 +73,11 @@ aside {
     border-radius: 15px;
     padding: 1.5rem;
     transition: all 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.1);
 }
 
 .formula-card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
     transform: translateY(-5px);
     border-color: var(--accent-color);
 }
@@ -111,18 +111,20 @@ aside {
 .formula-card button {
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--success-color);
+    background: linear-gradient(135deg, #00d9ff, #0099ff);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
 }
 
 .formula-card button:hover {
-    background-color: var(--danger-color);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #00ffff, #00ccff);
+    box-shadow: 0 6px 18px rgba(0, 217, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

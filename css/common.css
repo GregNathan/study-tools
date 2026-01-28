@@ -29,27 +29,27 @@
 
 /* Common Styles */
 :root {
-    --bg-color: #f0f8f0; /* More visible light green */
-    --text-color: #2e2e2e;
-    --header-bg: #ffffff;
-    --card-bg: #ffffff;
-    --border-color: #c8e6c9;
-    --accent-color: #ff9800; /* Orange */
-    --secondary-color: #2196f3; /* Blue */
-    --success-color: #4caf50; /* Green */
-    --danger-color: #f44336; /* Red */
+    --bg-color: #0f1419; /* Dark navy background */
+    --text-color: #ffffff;
+    --header-bg: #1a1f2e;
+    --card-bg: #1a1f2e;
+    --border-color: #2d3748;
+    --accent-color: #00d9ff; /* Cyan/Turquoise */
+    --secondary-color: #1e90ff; /* Bright blue */
+    --success-color: #00ff88; /* Bright green */
+    --danger-color: #ff3366; /* Pink/Red */
 }
 
 [data-theme="dark"] {
-    --bg-color: #1b5e20; /* Dark green */
+    --bg-color: #0f1419; /* Dark navy background */
     --text-color: #ffffff;
-    --header-bg: #2e2e2e;
-    --card-bg: #424242;
-    --border-color: #4caf50;
-    --accent-color: #ffb74d; /* Light orange */
-    --secondary-color: #64b5f6; /* Light blue */
-    --success-color: #81c784; /* Light green */
-    --danger-color: #ef5350; /* Light red */
+    --header-bg: #1a1f2e;
+    --card-bg: #1a1f2e;
+    --border-color: #2d3748;
+    --accent-color: #00d9ff; /* Cyan/Turquoise */
+    --secondary-color: #1e90ff; /* Bright blue */
+    --success-color: #00ff88; /* Bright green */
+    --danger-color: #ff3366; /* Pink/Red */
 }
 
 /* Enhanced Tooltips */
@@ -222,17 +222,20 @@ nav a:hover {
 #theme-toggle {
     margin-top: 0;
     padding: 0.5rem 1rem;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #00d9ff, #0099ff);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
 }
 
 #theme-toggle:hover {
-    background-color: var(--danger-color);
+    background: linear-gradient(135deg, #00ffff, #00ccff);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 main {
@@ -252,23 +255,25 @@ h1, h2, h3 {
 
 button {
     padding: 0.75rem 1.5rem;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #00d9ff, #0099ff);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s;
     font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
 }
 
 button:hover {
-    background-color: var(--danger-color);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #00ffff, #00ccff);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: translateY(0);
 }
 
 .tool-card {
@@ -282,13 +287,14 @@ button:active {
     text-decoration: none;
     color: var(--text-color);
     transition: all 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 217, 255, 0.1);
 }
 
 .tool-card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
     border-color: var(--accent-color);
     transform: translateY(-5px);
+    background-color: rgba(0, 217, 255, 0.05);
 }
 
 #fun-section {
@@ -326,11 +332,12 @@ button:active {
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+    background: linear-gradient(135deg, #1a1f2e, #0f1419);
+    border: 2px solid rgba(0, 217, 255, 0.3);
     color: white;
     border-radius: 20px;
     margin-bottom: 3rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.15);
 }
 
 .hero h1 {
