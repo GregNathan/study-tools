@@ -204,69 +204,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadTodos();
 
-    // YouTube Video Player - Simplified & Reliable
+    // Spotify Music Player
     const playPauseBtn = document.getElementById('play-pause');
     const volumeSlider = document.getElementById('volume');
     const soundSelect = document.getElementById('sound-select');
     const playerStatus = document.getElementById('player-status');
-    const youtubePlayer = document.getElementById('youtube-player');
+    const spotifyPlayer = document.getElementById('spotify-player');
 
-    console.log('Sound player elements loaded');
+    console.log('Spotify player elements loaded');
 
-    // Simple iframe-based player with error handling
-    function loadVideo(videoId, videoTitle) {
+    // Load Spotify playlist
+    function loadPlaylist(playlistId, playlistTitle) {
         try {
-            // Add parameters to ensure embeddable videos work properly
-            youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=1&autoplay=0&fs=1`;
-            playerStatus.textContent = `Loading: ${videoTitle}...`;
-            playerStatus.style.color = 'var(--accent-color)';
+            spotifyPlayer.src = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator`;
+            playerStatus.textContent = `Now showing: ${playlistTitle}`;
+            playerStatus.style.color = 'var(--success-color)';
             playPauseBtn.disabled = false;
-            console.log('Video load initiated:', videoId, videoTitle);
-            
-            // Update status after a brief delay
-            setTimeout(() => {
-                playerStatus.textContent = `${videoTitle} loaded`;
-                playerStatus.style.color = 'var(--success-color)';
-            }, 1500);
+            console.log('Playlist loaded:', playlistId, playlistTitle);
         } catch (error) {
-            console.error('Failed to load video:', error);
-            playerStatus.textContent = 'Load failed - try another video';
+            console.error('Failed to load playlist:', error);
+            playerStatus.textContent = 'Playlist load failed';
             playerStatus.style.color = 'var(--danger-color)';
         }
     }
 
     // Sound selector change event
     soundSelect.addEventListener('change', function() {
-        const videoId = this.value;
-        const videoTitle = this.options[this.selectedIndex].text;
-        loadVideo(videoId, videoTitle);
+        const playlistId = this.value;
+        const playlistTitle = this.options[this.selectedIndex].text;
+        loadPlaylist(playlistId, playlistTitle);
     });
 
-    // Load default video on startup
-    loadVideo('jfKfPfyJRdk', 'Lo-Fi Hip Hop Radio - Study Mix');
+    // Load default playlist on startup
+    loadPlaylist('37i9dQZF1DX8Uebvqiyv77', 'Lofi Hip Hop Study');
 
-    // Play/Pause handler
+    // Play button handler
     playPauseBtn.addEventListener('click', function() {
-        playerStatus.textContent = 'Use YouTube player controls to play/pause';
+        playerStatus.textContent = 'Open in Spotify to play';
         playerStatus.style.color = 'var(--text-color)';
     });
 
-    // Volume slider (informational only with iframe)
+    // Volume slider
     volumeSlider.addEventListener('input', function() {
         console.log('Volume level:', this.value);
         playerStatus.textContent = `Volume: ${this.value}%`;
         playerStatus.style.color = 'var(--text-color)';
     });
 
-    // Test button - cycles through different categories
+    // Test button - cycles through playlists
     const testChangeBtn = document.getElementById('test-change');
     let testIndex = 0;
-    const testVideos = ['jfKfPfyJRdk', 'lFerVErVITU', 'DWcJFNfaw9c', 'ommNR4gJNvU', 'n-VLc2P_Yf8'];
+    const testPlaylists = ['37i9dQZF1DX8Uebvqiyv77', '37i9dQZF1DXbvjV8Z5q7ZX', '37i9dQZF1DX3PFzdbtx1us'];
     if (testChangeBtn) {
         testChangeBtn.addEventListener('click', function() {
-            soundSelect.value = testVideos[testIndex];
+            soundSelect.value = testPlaylists[testIndex];
             soundSelect.dispatchEvent(new Event('change'));
-            testIndex = (testIndex + 1) % testVideos.length;
+            testIndex = (testIndex + 1) % testPlaylists.length;
         });
     }
 

@@ -72,48 +72,16 @@
             <h2>🎵 Study Music</h2>
             <div id="sound-player">
                 <select id="sound-select">
-                    <!-- Lo-Fi Hip Hop -->
-                    <optgroup label="🎧 Lo-Fi Hip Hop">
-                        <option value="jfKfPfyJRdk">Lofi Hip Hop Radio - Study Mix</option>
-                        <option value="vHXGPGf6jF8">Lofi Hip Hop Chill Beats</option>
-                        <option value="uakfvMSh8hQ">Lofi Hip Hop Study</option>
-                        <option value="Xo3z1ICVf7M">Lofi Hip Hop 1 Hour Playlist</option>
-                    </optgroup>
-                    <!-- Classical & Piano -->
-                    <optgroup label="🎹 Classical & Piano">
-                        <option value="lFerVErVITU">Classical Piano Music</option>
-                        <option value="1-H_9SqLVlA">Piano Study Music</option>
-                        <option value="cLvp1Vxr8rw">Chopin Classical Music</option>
-                        <option value="j1VwLEFQ9GQ">Classical Music 1 Hour</option>
-                    </optgroup>
-                    <!-- Ambient & Nature -->
-                    <optgroup label="🌿 Ambient & Nature">
-                        <option value="DWcJFNfaw9c">Ambient Study Music</option>
-                        <option value="c5DPj-X0OT0">Rain Sounds Study</option>
-                        <option value="hjlOCkVGEYQ">Ambient Forest Sounds</option>
-                        <option value="aJ0d3V_EENo">Nature Sounds 1 Hour</option>
-                    </optgroup>
-                    <!-- Jazz & Smooth -->
-                    <optgroup label="🎷 Jazz & Smooth">
-                        <option value="ommNR4gJNvU">Jazz Background Music</option>
-                        <option value="x6KM-0RIx8I">Smooth Jazz Study</option>
-                        <option value="I-_W5lfRfOE">Chill Jazz Music</option>
-                        <option value="1j12zfpMoDo">Jazz Lounge 1 Hour</option>
-                    </optgroup>
-                    <!-- Electronic & Deep Focus -->
-                    <optgroup label="⚡ Electronic & Deep Focus">
-                        <option value="n-VLc2P_Yf8">Deep Focus Electronic</option>
-                        <option value="4xDzsFioNGs">Electronic Study Beats</option>
-                        <option value="ZUgTuKzaekQ">Synthwave Focus Music</option>
-                        <option value="CdS5IZb1yAE">Electronic Focus 1 Hour</option>
-                    </optgroup>
+                    <option value="37i9dQZF1DX8Uebvqiyv77">Lofi Hip Hop Study</option>
+                    <option value="37i9dQZF1DXbvjV8Z5q7ZX">Piano Classics Study</option>
+                    <option value="37i9dQZF1DX3PFzdbtx1us">Ambient Study Music</option>
                 </select>
                 <div style="margin: 0.75rem 0;">
-                    <iframe id="youtube-player" width="100%" height="180" src="https://www.youtube.com/embed/jfKfPfyJRdk?enablejsapi=1&controls=1&autoplay=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+                    <iframe id="spotify-player" style="border-radius: 12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebvqiyv77?utm_source=generator" width="100%" height="200" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
-                <div id="player-status" style="font-size: 0.8em; color: var(--text-color); opacity: 0.7; margin-bottom: 0.5rem;">Ready to play</div>
+                <div id="player-status" style="font-size: 0.8em; color: var(--text-color); opacity: 0.7; margin-bottom: 0.5rem;">Spotify Player Ready</div>
                 <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-                    <button id="play-pause">Open Player</button>
+                    <button id="play-pause">Play on Spotify</button>
                     <input type="range" id="volume" min="0" max="100" value="50" style="flex: 1; min-width: 150px;">
                     <button id="test-change" style="font-size: 0.9rem;">Test</button>
                 </div>
