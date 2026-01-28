@@ -213,17 +213,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Sound player elements loaded');
 
-    // Simple iframe-based player
+    // Simple iframe-based player with error handling
     function loadVideo(videoId, videoTitle) {
         try {
-            youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=1&autoplay=0`;
-            playerStatus.textContent = `${videoTitle} ready`;
-            playerStatus.style.color = 'var(--success-color)';
+            // Add parameters to ensure embeddable videos work properly
+            youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=1&autoplay=0&fs=1`;
+            playerStatus.textContent = `Loading: ${videoTitle}...`;
+            playerStatus.style.color = 'var(--accent-color)';
             playPauseBtn.disabled = false;
-            console.log('Video loaded:', videoId, videoTitle);
+            console.log('Video load initiated:', videoId, videoTitle);
+            
+            // Update status after a brief delay
+            setTimeout(() => {
+                playerStatus.textContent = `${videoTitle} loaded`;
+                playerStatus.style.color = 'var(--success-color)';
+            }, 1500);
         } catch (error) {
             console.error('Failed to load video:', error);
-            playerStatus.textContent = 'Load failed';
+            playerStatus.textContent = 'Load failed - try another video';
             playerStatus.style.color = 'var(--danger-color)';
         }
     }
@@ -236,11 +243,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Load default video on startup
-    loadVideo('jfKfPfyJRdk', 'Lo-Fi Hip Hop');
+    loadVideo('jfKfPfyJRdk', 'Lo-Fi Hip Hop Radio - Study Mix');
 
     // Play/Pause handler
     playPauseBtn.addEventListener('click', function() {
-        playerStatus.textContent = 'Use YouTube controls';
+        playerStatus.textContent = 'Use YouTube player controls to play/pause';
         playerStatus.style.color = 'var(--text-color)';
     });
 
@@ -251,12 +258,15 @@ document.addEventListener('DOMContentLoaded', function() {
         playerStatus.style.color = 'var(--text-color)';
     });
 
-    // Test button
+    // Test button - cycles through different categories
     const testChangeBtn = document.getElementById('test-change');
+    let testIndex = 0;
+    const testVideos = ['jfKfPfyJRdk', 'lFerVErVITU', 'DWcJFNfaw9c', 'ommNR4gJNvU', 'n-VLc2P_Yf8'];
     if (testChangeBtn) {
         testChangeBtn.addEventListener('click', function() {
-            soundSelect.value = 'lTRiuFIWV54';
+            soundSelect.value = testVideos[testIndex];
             soundSelect.dispatchEvent(new Event('change'));
+            testIndex = (testIndex + 1) % testVideos.length;
         });
     }
 
