@@ -1,94 +1,32 @@
 // Learner Materials JavaScript
 console.log('Learner Materials loaded');
 
-// Materials data structure
-const materialsData = {
-    subjects: {
-        'Basic Calculus': {
-            icon: '📐',
-            files: [
-                { name: 'Calculus Fundamentals', type: 'pdf', url: '#', size: '2.4 MB' },
-                { name: 'Derivatives and Integrals', type: 'pdf', url: '#', size: '3.1 MB' },
-                { name: 'Limits and Continuity', type: 'pdf', url: '#', size: '1.8 MB' }
-            ]
-        },
-        'Disaster Readiness and Risk Reduction': {
-            icon: '🚨',
-            files: [
-                { name: 'Disaster Management Framework', type: 'pdf', url: '#', size: '2.7 MB' },
-                { name: 'Risk Assessment Guide', type: 'pdf', url: '#', size: '2.2 MB' },
-                { name: 'Emergency Response Procedures', type: 'pdf', url: '#', size: '1.9 MB' }
-            ]
-        },
-        'Empowerment Technologies': {
-            icon: '💻',
-            files: [
-                { name: 'Digital Literacy Handbook', type: 'pdf', url: '#', size: '3.5 MB' },
-                { name: 'Technology and Society', type: 'pdf', url: '#', size: '2.8 MB' },
-                { name: 'Digital Safety Guide', type: 'pdf', url: '#', size: '2.0 MB' }
-            ]
-        },
-        'Gen Physics 2': {
-            icon: '⚛️',
-            files: [
-                { name: 'Electricity and Magnetism', type: 'pdf', url: '#', size: '4.2 MB' },
-                { name: 'Optics and Waves', type: 'pdf', url: '#', size: '3.8 MB' },
-                { name: 'Modern Physics Introduction', type: 'pdf', url: '#', size: '3.0 MB' }
-            ]
-        },
-        'General Biology 2': {
-            icon: '🧬',
-            files: [
-                { name: 'Cell Biology and Genetics', type: 'pdf', url: '#', size: '3.6 MB' },
-                { name: 'Evolution and Ecology', type: 'pdf', url: '#', size: '3.2 MB' },
-                { name: 'Molecular Biology', type: 'pdf', url: '#', size: '2.9 MB' }
-            ]
-        },
-        'Pagbasa at Pagsusuri ng Ibat-Ibang Teksto Tungo sa Pananaliksik': {
-            icon: '📖',
-            files: [
-                { name: 'Text Analysis Methods', type: 'pdf', url: '#', size: '2.3 MB' },
-                { name: 'Research Writing Guide', type: 'pdf', url: '#', size: '2.5 MB' },
-                { name: 'Critical Reading Skills', type: 'pdf', url: '#', size: '2.1 MB' }
-            ]
-        },
-        'Physical Education and Health': {
-            icon: '🏃',
-            files: [
-                { name: 'Fitness and Wellness', type: 'pdf', url: '#', size: '2.6 MB' },
-                { name: 'Health and Nutrition', type: 'pdf', url: '#', size: '2.4 MB' },
-                { name: 'Sports and Exercise Science', type: 'pdf', url: '#', size: '2.8 MB' }
-            ]
-        },
-        'Reading and Writing': {
-            icon: '✍️',
-            files: [
-                { name: 'Writing Essentials', type: 'pdf', url: '#', size: '2.2 MB' },
-                { name: 'Comprehension Strategies', type: 'pdf', url: '#', size: '2.0 MB' },
-                { name: 'Grammar and Composition', type: 'pdf', url: '#', size: '2.7 MB' }
-            ]
-        },
-        'Statics and Probability': {
-            icon: '📊',
-            files: [
-                { name: 'Statistical Methods', type: 'pdf', url: '#', size: '3.1 MB' },
-                { name: 'Probability Theory', type: 'pdf', url: '#', size: '3.4 MB' },
-                { name: 'Data Analysis Guide', type: 'pdf', url: '#', size: '2.8 MB' }
-            ]
-        },
-        'Understanding Culture, Society and Politics': {
-            icon: '🌍',
-            files: [
-                { name: 'Sociology Fundamentals', type: 'pdf', url: '#', size: '2.9 MB' },
-                { name: 'Political Systems Guide', type: 'pdf', url: '#', size: '3.0 MB' },
-                { name: 'Cultural Diversity', type: 'pdf', url: '#', size: '2.5 MB' }
-            ]
-        }
-    }
+// Materials data structure - will be loaded dynamically
+let materialsData = {
+    subjects: {}
 };
 
 let currentView = 'grid'; // 'grid' or 'list'
 let currentPath = []; // Breadcrumb path
+
+// Load materials dynamically from server
+async function loadMaterials() {
+    try {
+        const response = await fetch('/api/materials');
+        if (response.ok) {
+            materialsData = await response.json();
+            console.log('Materials loaded dynamically:', Object.keys(materialsData.subjects).length, 'subjects found');
+            renderMaterials();
+        } else {
+            console.error('Failed to load materials');
+            renderMaterials();
+        }
+    } catch (error) {
+        console.error('Error loading materials:', error);
+        console.log('Using fallback - no materials loaded');
+        renderMaterials();
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('materials-container');
@@ -97,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const previewModal = document.getElementById('preview-modal');
     const closeBtn = document.querySelector('.close');
     const closePreviewBtn = document.getElementById('close-preview');
+
+    // Load materials dynamically
+    loadMaterials();
 
     // View toggle buttons
     gridBtn.addEventListener('click', () => {
@@ -127,9 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
             previewModal.style.display = 'none';
         }
     });
-
-    // Initial render
-    renderMaterials();
 });
 
 function renderMaterials() {
@@ -263,20 +201,20 @@ function showPreview(file) {
 }
 
 function downloadFile(file) {
-    // Create a dummy download (in real implementation, this would download the actual file)
+    // Download the PDF file
     console.log('Downloading:', file.name);
     
-    // Simulate file download
-    const link = document.createElement('a');
-    link.href = '#';
-    link.download = `${file.name}.pdf`;
-    
-    // Create a simple text file as placeholder
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(`${file.name}\n\nThis is a placeholder for: ${file.name}`));
-    element.setAttribute('download', `${file.name}.txt`);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+    // If file has a valid URL, download it
+    if (file.url && file.url !== '#') {
+        const link = document.createElement('a');
+        link.href = file.url;
+        link.download = `${file.name}.pdf`;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        // Placeholder message
+        alert(`PDF: ${file.name} is ready to download.`);
+    }
 }
