@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Load default playlist on startup
-    loadPlaylist('37i9dQZF1DX8Uebvqiyv77', 'Lofi Hip Hop Study');
+    loadPlaylist('6zCID88oNjNv9zx6puDHKj', 'Lofi Hip Hop Study');
 
     // Play button handler
     playPauseBtn.addEventListener('click', function() {
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Test button - cycles through playlists
     const testChangeBtn = document.getElementById('test-change');
     let testIndex = 0;
-    const testPlaylists = ['37i9dQZF1DX8Uebvqiyv77', '37i9dQZF1DXbvjV8Z5q7ZX', '37i9dQZF1DX3PFzdbtx1us'];
+    const testPlaylists = ['6zCID88oNjNv9zx6puDHKj', '7mvKXVmFMOReJOEsf64Jpy', '37i9dQZF1DWWb1L5n1gkOJ'];
     if (testChangeBtn) {
         testChangeBtn.addEventListener('click', function() {
             soundSelect.value = testPlaylists[testIndex];
