@@ -29,15 +29,16 @@
 
 /* Common Styles */
 :root {
-    --bg-color: #0f1419; /* Dark navy background */
-    --text-color: #ffffff;
-    --header-bg: #1a1f2e;
-    --card-bg: #1a1f2e;
-    --border-color: #2d3748;
-    --accent-color: #00d9ff; /* Cyan/Turquoise */
-    --secondary-color: #1e90ff; /* Bright blue */
-    --success-color: #00ff88; /* Bright green */
-    --danger-color: #ff3366; /* Pink/Red */
+    /* Light theme (default variable set - overridden by [data-theme="dark"]) */
+    --bg-color: #ffffff;
+    --text-color: #0f1419;
+    --header-bg: #f4f7fb;
+    --card-bg: #ffffff;
+    --border-color: #e6edf5;
+    --accent-color: #0077cc; /* blue */
+    --secondary-color: #005bb5; /* deeper blue */
+    --success-color: #2e8b57; /* green */
+    --danger-color: #d32f2f; /* red */
 }
 
 [data-theme="dark"] {
@@ -161,15 +162,15 @@
 }
 
 [data-theme="dark"] {
-    --bg-color: #1b5e20; /* Dark green */
+    --bg-color: #0f1419; /* Dark navy background */
     --text-color: #ffffff;
-    --header-bg: #2e2e2e;
-    --card-bg: #424242;
-    --border-color: #4caf50;
-    --accent-color: #ffb74d; /* Light orange */
-    --secondary-color: #64b5f6; /* Light blue */
-    --success-color: #81c784; /* Light green */
-    --danger-color: #ef5350; /* Light red */
+    --header-bg: #1a1f2e;
+    --card-bg: #1a1f2e;
+    --border-color: #2d3748;
+    --accent-color: #00d9ff; /* Cyan/Turquoise */
+    --secondary-color: #1e90ff; /* Bright blue */
+    --success-color: #00ff88; /* Bright green */
+    --danger-color: #ff3366; /* Pink/Red */
 }
 
 * {
@@ -331,13 +332,13 @@ button:active {
 
 .hero {
     text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, #1a1f2e, #0f1419);
-    border: 2px solid rgba(0, 217, 255, 0.3);
-    color: white;
-    border-radius: 20px;
-    margin-bottom: 3rem;
-    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.15);
+    padding: 2.25rem 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 16px;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 .hero h1 {
