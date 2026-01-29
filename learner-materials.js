@@ -106,45 +106,59 @@ let currentView = 'grid'; // 'grid' or 'list'
 let currentPath = []; // Breadcrumb path
 
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('materials-container');
-    const gridBtn = document.getElementById('view-grid');
-    const listBtn = document.getElementById('view-list');
-    const previewModal = document.getElementById('preview-modal');
-    const closeBtn = document.querySelector('.close');
-    const closePreviewBtn = document.getElementById('close-preview');
+    try {
+        const container = document.getElementById('materials-container');
+        const gridBtn = document.getElementById('view-grid');
+        const listBtn = document.getElementById('view-list');
+        const previewModal = document.getElementById('preview-modal');
+        const closeBtn = document.querySelector('.close');
+        const closePreviewBtn = document.getElementById('close-preview');
 
-    // View toggle buttons
-    gridBtn.addEventListener('click', () => {
-        currentView = 'grid';
-        gridBtn.classList.add('active');
-        listBtn.classList.remove('active');
-        renderMaterials();
-    });
+        // View toggle buttons (guarded)
+        if (gridBtn) {
+            gridBtn.addEventListener('click', () => {
+                currentView = 'grid';
+                gridBtn.classList.add('active');
+                if (listBtn) listBtn.classList.remove('active');
+                renderMaterials();
+            });
+        } else console.warn('view-grid button not found');
 
-    listBtn.addEventListener('click', () => {
-        currentView = 'list';
-        listBtn.classList.add('active');
-        gridBtn.classList.remove('active');
-        renderMaterials();
-    });
+        if (listBtn) {
+            listBtn.addEventListener('click', () => {
+                currentView = 'list';
+                listBtn.classList.add('active');
+                if (gridBtn) gridBtn.classList.remove('active');
+                renderMaterials();
+            });
+        } else console.warn('view-list button not found');
 
-    // Modal close handlers
-    closeBtn.addEventListener('click', () => {
-        previewModal.style.display = 'none';
-    });
-
-    closePreviewBtn.addEventListener('click', () => {
-        previewModal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === previewModal) {
-            previewModal.style.display = 'none';
+        // Modal close handlers (guarded)
+        if (closeBtn && previewModal) {
+            closeBtn.addEventListener('click', () => {
+                previewModal.style.display = 'none';
+            });
         }
-    });
 
-    // Initial render
-    renderMaterials();
+        if (closePreviewBtn && previewModal) {
+            closePreviewBtn.addEventListener('click', () => {
+                previewModal.style.display = 'none';
+            });
+        }
+
+        if (previewModal) {
+            window.addEventListener('click', (event) => {
+                if (event.target === previewModal) {
+                    previewModal.style.display = 'none';
+                }
+            });
+        }
+
+        // Initial render
+        renderMaterials();
+    } catch (err) {
+        console.error('Error during DOMContentLoaded handler:', err);
+    }
 });
 
 function renderMaterials() {
@@ -160,11 +174,17 @@ function renderMaterials() {
 
     // If viewing subjects (root level)
     if (currentPath.length === 0) {
-        Object.keys(materialsData.subjects).forEach(subjectName => {
-            const subject = materialsData.subjects[subjectName];
-            const item = createSubjectItem(subjectName, subject);
-            container.appendChild(item);
-        });
+        const subjectNames = Object.keys(materialsData.subjects || {});
+        console.log('Rendering subjects count:', subjectNames.length);
+        if (subjectNames.length === 0) {
+            container.innerHTML = '<div class="no-materials">No materials found.</div>';
+        } else {
+            subjectNames.forEach(subjectName => {
+                const subject = materialsData.subjects[subjectName];
+                const item = createSubjectItem(subjectName, subject);
+                container.appendChild(item);
+            });
+        }
     }
     // If viewing files in a subject
     else if (currentPath.length === 1) {
