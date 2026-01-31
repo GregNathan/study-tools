@@ -192,3 +192,37 @@
   .tool-card { flex-direction: row; height: 120px; }
   .tool-card h3 { font-size: 1.05rem; }
 }
+/* Account card fine-tuning */
+.account-card {
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+/* Activity list style */
+.activity-list {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.activity-list li {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+/* Logout button matching site style */
+.logout-btn {
+  margin-top: 1rem;
+  padding: 10px 14px;
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #b71c1c;
+}
+
