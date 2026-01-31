@@ -1,55 +1,54 @@
-// Get stored users
+// --- DATABASE (localStorage) ---
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || {};
 }
 
-// Save users
 function saveUsers(users) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
-// SIGN UP
+// --- SIGN UP ---
 function signup() {
-  const user = document.getElementById("signupUser").value;
-  const pass = document.getElementById("signupPass").value;
+  const user = document.getElementById("signupUser").value.trim();
+  const pass = document.getElementById("signupPass").value.trim();
   const msg = document.getElementById("msg");
 
   if (!user || !pass) {
-    msg.innerText = "Fill all fields";
+    msg.textContent = "Please fill in all fields.";
     return;
   }
 
-  let users = getUsers();
+  const users = getUsers();
 
   if (users[user]) {
-    msg.innerText = "Account already exists";
+    msg.textContent = "Account already exists.";
     return;
   }
 
   users[user] = pass;
   saveUsers(users);
 
-  msg.innerText = "Account created! Redirecting...";
+  msg.textContent = "Account created! Redirecting to login...";
   setTimeout(() => {
     window.location.href = "login.html";
   }, 1000);
 }
 
-// LOGIN
+// --- LOGIN ---
 function login() {
-  const user = document.getElementById("loginUser").value;
-  const pass = document.getElementById("loginPass").value;
+  const user = document.getElementById("loginUser").value.trim();
+  const pass = document.getElementById("loginPass").value.trim();
   const msg = document.getElementById("msg");
 
-  let users = getUsers();
+  const users = getUsers();
 
   if (!users[user]) {
-    msg.innerText = "Wrong account";
+    msg.textContent = "Wrong account.";
     return;
   }
 
   if (users[user] !== pass) {
-    msg.innerText = "Wrong password";
+    msg.textContent = "Wrong password.";
     return;
   }
 
@@ -57,19 +56,15 @@ function login() {
   window.location.href = "index.html";
 }
 
-// CHECK LOGIN
-function checkLogin() {
+// --- PROTECT PAGES ---
+function requireLogin() {
   const user = localStorage.getItem("loggedInUser");
-
   if (!user) {
-    window.location.href = "login.html";
-  } else {
-    document.getElementById("user").innerText =
-      "Logged in as: " + user;
+    window.location.href = "esignup.html";
   }
 }
 
-// LOGOUT
+// --- LOGOUT ---
 function logout() {
   localStorage.removeItem("loggedInUser");
   window.location.href = "login.html";
