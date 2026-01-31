@@ -40,7 +40,7 @@ function login() {
   const pass = document.getElementById("loginPass").value.trim();
   const msg = document.getElementById("msg");
 
-  const users = getUsers();
+  const users = JSON.parse(localStorage.getItem("users")) || {};
 
   if (!users[user]) {
     msg.textContent = "Wrong account.";
@@ -51,6 +51,13 @@ function login() {
     msg.textContent = "Wrong password.";
     return;
   }
+
+  sessionStorage.setItem("authUser", user);
+
+  // prevent going back to login
+  window.location.replace("index.html");
+}
+
 
   localStorage.setItem("loggedInUser", user);
   window.location.href = "index.html";
