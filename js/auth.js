@@ -65,11 +65,12 @@ function login() {
 
 // --- PROTECT PAGES ---
 function requireLogin() {
-  const user = localStorage.getItem("loggedInUser");
+  const user = sessionStorage.getItem("authUser");
   if (!user) {
-    window.location.href = "esignup.html";
+    window.location.replace("login.html");
   }
 }
+
 
 // --- LOGOUT ---
 function logout() {
