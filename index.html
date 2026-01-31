@@ -26,15 +26,17 @@
         <button id="theme-toggle">🌙</button>
     </header>
     <main>
-        <section class="account-panel fade-in">
-  <h2>👤 Account</h2>
-  <p><strong>User:</strong> <span id="accountName"></span></p>
+      <section class="tool-card fade-in account-card">
+  <h2>👤 Account Information</h2>
+
+  <p><strong>Username:</strong> <span id="accountName"></span></p>
 
   <h3>📜 Activity Records</h3>
-  <ul id="activityList"></ul>
+  <ul id="activityList" class="activity-list"></ul>
 
-  <button onclick="logout()" class="danger-btn">Log out</button>
+  <button onclick="logout()" class="logout-btn">Log out</button>
 </section>
+
 
         <section class="hero fade-in">
             <div class="hero-inner">
@@ -121,5 +123,6 @@
 </body>
 
 </html>
+
 
 
