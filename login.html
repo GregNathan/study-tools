@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <title>Login | Student Tools Hub</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<h2>Login</h2>
+<header>
+  <h1>Student Tools Hub</h1>
+</header>
 
-<input type="text" id="loginUser" placeholder="Username"><br><br>
-<input type="password" id="loginPass" placeholder="Password"><br><br>
+<main class="auth-container">
+  <h2>Sign In</h2>
 
-<button onclick="login()">Login</button>
+  <input type="text" id="loginUser" placeholder="Username">
+  <input type="password" id="loginPass" placeholder="Password">
 
-<p id="msg"></p>
+  <button onclick="login()">Login</button>
 
-<script src="auth.js"></script>
+  <p id="msg"></p>
+
+  <p>
+    Don’t have an account?
+    <a href="esignup.html">Sign up</a>
+  </p>
+</main>
+
+<script src="js/auth.js"></script>
 </body>
 </html>
