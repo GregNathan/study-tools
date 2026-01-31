@@ -106,10 +106,3 @@ function logActivity(action) {
   records.push(`${new Date().toLocaleString()} — ${action}`);
   localStorage.setItem(key, JSON.stringify(records));
 }
-
-window.addEventListener("pageshow", () => {
-  if (!sessionStorage.getItem("authUser")) {
-    window.location.replace("login.html");
-  }
-});
-
