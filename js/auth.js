@@ -74,8 +74,10 @@ function requireLogin() {
 
 // --- LOGOUT ---
 function logout() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "login.html";
+  sessionStorage.removeItem("authUser");
+
+  // Clear history and force redirect
+  window.location.replace("login.html");
 }
 // --- LOAD ACCOUNT INFO ---
 function loadAccountInfo() {
@@ -104,4 +106,10 @@ function logActivity(action) {
   records.push(`${new Date().toLocaleString()} — ${action}`);
   localStorage.setItem(key, JSON.stringify(records));
 }
+
+window.addEventListener("pageshow", () => {
+  if (!sessionStorage.getItem("authUser")) {
+    window.location.replace("login.html");
+  }
+});
 
