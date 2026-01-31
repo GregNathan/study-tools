@@ -69,3 +69,31 @@ function logout() {
   localStorage.removeItem("loggedInUser");
   window.location.href = "login.html";
 }
+// --- LOAD ACCOUNT INFO ---
+function loadAccountInfo() {
+  const user = localStorage.getItem("loggedInUser");
+  document.getElementById("accountName").textContent = user;
+
+  const records = JSON.parse(localStorage.getItem("activity_" + user)) || [];
+  const list = document.getElementById("activityList");
+
+  list.innerHTML = "";
+  records.slice(-5).reverse().forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+  });
+}
+
+// --- LOG ACTIVITY ---
+function logActivity(action) {
+  const user = localStorage.getItem("loggedInUser");
+  if (!user) return;
+
+  const key = "activity_" + user;
+  const records = JSON.parse(localStorage.getItem(key)) || [];
+
+  records.push(`${new Date().toLocaleString()} — ${action}`);
+  localStorage.setItem(key, JSON.stringify(records));
+}
+
