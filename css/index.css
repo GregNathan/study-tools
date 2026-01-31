@@ -262,4 +262,35 @@
   background: #b71c1c;
 }
 
+.account-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.account-card h2,
+.account-card h3,
+.account-card p {
+  margin-bottom: 0.6rem;
+}
+
+.activity-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.activity-list li {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.logout-btn {
+  margin-top: 1rem;
+  background: #c62828;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
