@@ -6,28 +6,24 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body class="auth-bg">
+  <div class="auth-card fade-in">
+    <img src="img/logo.png" class="auth-logo">
 
-<header>
-  <h1>Student Tools Hub</h1>
-</header>
+    <h2>Create Account</h2>
 
-<main class="auth-container">
-  <h2>Create Account</h2>
+    <input id="signupUser" placeholder="Account Name">
+    <input id="signupPass" type="password" placeholder="Password">
 
-  <input type="text" id="signupUser" placeholder="Username">
-  <input type="password" id="signupPass" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <p id="msg"></p>
 
-  <button onclick="signup()">Sign Up</button>
+    <p class="switch">
+      Already have an account?
+      <a href="login.html">Sign in</a>
+    </p>
+  </div>
 
-  <p id="msg"></p>
-
-  <p>
-    Already have an account?
-    <a href="login.html">Sign in</a>
-  </p>
-</main>
-
-<script src="js/auth.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
