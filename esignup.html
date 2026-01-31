@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sign Up</title>
+  <meta charset="UTF-8">
+  <title>Sign Up | Student Tools Hub</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<h2>Sign Up</h2>
+<header>
+  <h1>Student Tools Hub</h1>
+</header>
 
-<input type="text" id="signupUser" placeholder="Username"><br><br>
-<input type="password" id="signupPass" placeholder="Password"><br><br>
+<main class="auth-container">
+  <h2>Create Account</h2>
 
-<button onclick="signup()">Create Account</button>
+  <input type="text" id="signupUser" placeholder="Username">
+  <input type="password" id="signupPass" placeholder="Password">
 
-<p id="msg"></p>
+  <button onclick="signup()">Sign Up</button>
 
-<script src="auth.js"></script>
+  <p id="msg"></p>
+
+  <p>
+    Already have an account?
+    <a href="login.html">Sign in</a>
+  </p>
+</main>
+
+<script src="js/auth.js"></script>
 </body>
 </html>
