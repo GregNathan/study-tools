@@ -1,0 +1,2796 @@
+{
+  "Calculus": [
+    {
+      "name": "Power Rule",
+      "formula": "d/dx (x^n) = n x^(n-1)",
+      "explanation": "Derivative of x raised to a power.",
+      "variables": "n: Exponent, x: Variable",
+      "units": "Numbers"
+    },
+    {
+      "name": "Product Rule",
+      "formula": "d/dx [f(x) g(x)] = f'(x) g(x) + f(x) g'(x)",
+      "explanation": "Derivative of a product of two functions.",
+      "variables": "f(x), g(x): Functions",
+      "units": "Functions"
+    },
+    {
+      "name": "Quotient Rule",
+      "formula": "d/dx [f(x)/g(x)] = [f'(x) g(x) - f(x) g'(x)] / [g(x)]²",
+      "explanation": "Derivative of a quotient of two functions.",
+      "variables": "f(x), g(x): Functions",
+      "units": "Functions"
+    },
+    {
+      "name": "Chain Rule",
+      "formula": "d/dx [f(g(x))] = f'(g(x)) * g'(x)",
+      "explanation": "Derivative of a composite function.",
+      "variables": "f, g: Functions",
+      "units": "Functions"
+    },
+    {
+      "name": "Basic Integral",
+      "formula": "∫ x^n dx = (x^(n+1))/(n+1) + C",
+      "explanation": "Indefinite integral of x to the power n.",
+      "variables": "n: Exponent, C: Constant",
+      "units": "Numbers"
+    },
+    {
+      "name": "Fundamental Theorem",
+      "formula": "∫_a^b f(x) dx = F(b) - F(a)",
+      "explanation": "Definite integral as the difference of antiderivatives.",
+      "variables": "F: Antiderivative, a, b: Limits",
+      "units": "Numbers"
+    },
+    {
+      "name": "Limit Definition",
+      "formula": "lim_{x→a} f(x) = L",
+      "explanation": "The limit of f(x) as x approaches a is L.",
+      "variables": "a: Point, L: Limit value",
+      "units": "Numbers"
+    },
+    {
+      "name": "Derivative of Sine",
+      "formula": "\\frac{d}{dx} \\sin(x) = \\cos(x)",
+      "explanation": "The derivative of the sine function with respect to x is the cosine function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Cosine",
+      "formula": "\\frac{d}{dx} \\cos(x) = -\\sin(x)",
+      "explanation": "The derivative of the cosine function with respect to x is the negative sine function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Tangent",
+      "formula": "\\frac{d}{dx} \\tan(x) = \\sec^2(x)",
+      "explanation": "The derivative of the tangent function with respect to x is the square of the secant function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Exponential Function",
+      "formula": "\\frac{d}{dx} e^x = e^x",
+      "explanation": "The derivative of the exponential function e^x with respect to x is itself.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Natural Logarithm",
+      "formula": "\\frac{d}{dx} \\ln(x) = \\frac{1}{x}",
+      "explanation": "The derivative of the natural logarithm function with respect to x is 1 over x.",
+      "variables": "x: the variable being differentiated (x > 0)",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Logarithm",
+      "formula": "\\frac{d}{dx} \\log_a(x) = \\frac{1}{x \\ln(a)}",
+      "explanation": "The derivative of the logarithm function with base a with respect to x.",
+      "variables": "x: the variable being differentiated (x > 0), a: the base of the logarithm (a > 0, a ≠ 1)",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Inverse Sine",
+      "formula": "\\frac{d}{dx} \\arcsin(x) = \\frac{1}{\\sqrt{1 - x^2}}",
+      "explanation": "The derivative of the inverse sine function with respect to x.",
+      "variables": "x: the variable being differentiated (-1 < x < 1)",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Inverse Cosine",
+      "formula": "\\frac{d}{dx} \\arccos(x) = -\\frac{1}{\\sqrt{1 - x^2}}",
+      "explanation": "The derivative of the inverse cosine function with respect to x.",
+      "variables": "x: the variable being differentiated (-1 < x < 1)",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Inverse Tangent",
+      "formula": "\\frac{d}{dx} \\arctan(x) = \\frac{1}{1 + x^2}",
+      "explanation": "The derivative of the inverse tangent function with respect to x.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Hyperbolic Sine",
+      "formula": "\\frac{d}{dx} \\sinh(x) = \\cosh(x)",
+      "explanation": "The derivative of the hyperbolic sine function with respect to x is the hyperbolic cosine function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Hyperbolic Cosine",
+      "formula": "\\frac{d}{dx} \\cosh(x) = \\sinh(x)",
+      "explanation": "The derivative of the hyperbolic cosine function with respect to x is the hyperbolic sine function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Derivative of Hyperbolic Tangent",
+      "formula": "\\frac{d}{dx} \\tanh(x) = \\sech^2(x)",
+      "explanation": "The derivative of the hyperbolic tangent function with respect to x is the square of the hyperbolic secant function.",
+      "variables": "x: the variable being differentiated",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "Integration by Parts",
+      "formula": "\\int u \\, dv = uv - \\int v \\, du",
+      "explanation": "A method to integrate the product of two functions by choosing one as u and the other as dv.",
+      "variables": "u, v: functions chosen such that du and dv are integrable",
+      "units": "depends on the functions being integrated"
+    },
+    {
+      "name": "Integral of Sine",
+      "formula": "\\int \\sin(x) \\, dx = -\\cos(x) + C",
+      "explanation": "The antiderivative of the sine function.",
+      "variables": "x: the variable of integration, C: constant of integration",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Integral of Cosine",
+      "formula": "\\int \\cos(x) \\, dx = \\sin(x) + C",
+      "explanation": "The antiderivative of the cosine function.",
+      "variables": "x: the variable of integration, C: constant of integration",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Integral of Exponential",
+      "formula": "\\int e^x \\, dx = e^x + C",
+      "explanation": "The antiderivative of the exponential function.",
+      "variables": "x: the variable of integration, C: constant of integration",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Integral of 1/x",
+      "formula": "\\int \\frac{1}{x} \\, dx = \\ln|x| + C",
+      "explanation": "The antiderivative of 1 over x.",
+      "variables": "x: the variable of integration (x ≠ 0), C: constant of integration",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Integral of Power Function",
+      "formula": "\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\quad (n \\neq -1)",
+      "explanation": "The antiderivative of x raised to the power n.",
+      "variables": "x: the variable of integration, n: a real number not equal to -1, C: constant of integration",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Trigonometric Substitution",
+      "formula": "For \\int \\sqrt{a^2 - x^2} \\, dx, let x = a \\sin \\theta",
+      "explanation": "A substitution method for integrals involving square roots of quadratic expressions.",
+      "variables": "x: the variable of integration, a: a constant, θ: the substitution variable",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Partial Fractions Decomposition",
+      "formula": "\\frac{x+1}{(x-1)(x-2)} = \\frac{A}{x-1} + \\frac{B}{x-2}",
+      "explanation": "Decomposing a rational function into simpler fractions for integration.",
+      "variables": "A, B: constants to be determined, x: the variable",
+      "units": "dimensionless (pure number)"
+    },
+    {
+      "name": "L'Hôpital's Rule",
+      "formula": "\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)}",
+      "explanation": "A rule for evaluating limits of indeterminate forms by taking derivatives.",
+      "variables": "f, g: functions, c: the limit point",
+      "units": "depends on the functions"
+    },
+    {
+      "name": "Squeeze Theorem",
+      "formula": "If f(x) \\leq g(x) \\leq h(x) and \\lim_{x \\to c} f(x) = \\lim_{x \\to c} h(x) = L, then \\lim_{x \\to c} g(x) = L",
+      "explanation": "A theorem for finding limits by bounding a function between two others that approach the same limit.",
+      "variables": "f, g, h: functions, c: the limit point, L: the limit value",
+      "units": "depends on the functions"
+    },
+    {
+      "name": "Geometric Series Sum",
+      "formula": "\\sum_{n=0}^\\infty ar^n = \\frac{a}{1-r} \\quad (|r| < 1)",
+      "explanation": "The sum of an infinite geometric series.",
+      "variables": "a: the first term, r: the common ratio (|r| < 1)",
+      "units": "depends on the terms"
+    },
+    {
+      "name": "Taylor Series",
+      "formula": "f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n",
+      "explanation": "An expansion of a function as an infinite sum of terms calculated from its derivatives at a point.",
+      "variables": "f: the function, a: the point of expansion, x: the variable",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Maclaurin Series",
+      "formula": "f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(0)}{n!} x^n",
+      "explanation": "A special case of Taylor series where the expansion is around x=0.",
+      "variables": "f: the function, x: the variable",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Ratio Test for Series",
+      "formula": "\\lim_{n \\to \\infty} \\left| \\frac{a_{n+1}}{a_n} \\right| = L, then converges if L < 1, diverges if L > 1",
+      "explanation": "A test to determine the convergence of an infinite series.",
+      "variables": "a_n: the nth term of the series, L: the limit value",
+      "units": "dimensionless (convergence/divergence)"
+    },
+    {
+      "name": "Root Test for Series",
+      "formula": "\\lim_{n \\to \\infty} \\sqrt[n]{|a_n|} = L, then converges if L < 1, diverges if L > 1",
+      "explanation": "Another test to determine the convergence of an infinite series.",
+      "variables": "a_n: the nth term of the series, L: the limit value",
+      "units": "dimensionless (convergence/divergence)"
+    },
+    {
+      "name": "Partial Derivative",
+      "formula": "\\frac{\\partial f}{\\partial x}",
+      "explanation": "The derivative of a multivariable function with respect to one variable, treating others as constants.",
+      "variables": "f: the multivariable function, x: the variable being differentiated",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Gradient Vector",
+      "formula": "\\nabla f = \\left( \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y}, \\frac{\\partial f}{\\partial z} \\right)",
+      "explanation": "A vector of all first-order partial derivatives of a scalar function.",
+      "variables": "f: the scalar function, x, y, z: variables",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Directional Derivative",
+      "formula": "D_\\mathbf{u} f = \\nabla f \\cdot \\mathbf{u}",
+      "explanation": "The rate of change of a function in the direction of a unit vector.",
+      "variables": "f: the function, u: unit vector",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Divergence",
+      "formula": "\\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}",
+      "explanation": "A measure of how much a vector field spreads out from a point.",
+      "variables": "F: vector field with components Fx, Fy, Fz",
+      "units": "depends on the vector field"
+    },
+    {
+      "name": "Curl",
+      "formula": "\\nabla \\times \\mathbf{F} = \\left( \\frac{\\partial F_z}{\\partial y} - \\frac{\\partial F_y}{\\partial z}, \\frac{\\partial F_x}{\\partial z} - \\frac{\\partial F_z}{\\partial x}, \\frac{\\partial F_y}{\\partial x} - \\frac{\\partial F_x}{\\partial y} \\right)",
+      "explanation": "A measure of the rotation of a vector field.",
+      "variables": "F: vector field with components Fx, Fy, Fz",
+      "units": "depends on the vector field"
+    },
+    {
+      "name": "Double Integral",
+      "formula": "\\iint_D f(x,y) \\, dA",
+      "explanation": "The integral of a function over a two-dimensional region.",
+      "variables": "f: the function, D: the region of integration, dA: area element",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Triple Integral",
+      "formula": "\\iiint_E f(x,y,z) \\, dV",
+      "explanation": "The integral of a function over a three-dimensional region.",
+      "variables": "f: the function, E: the region of integration, dV: volume element",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Change of Variables in Double Integrals",
+      "formula": "\\iint_D f(x,y) \\, dA = \\iint_{D'} f(x(u,v), y(u,v)) \\left| \\frac{\\partial(x,y)}{\\partial(u,v)} \\right| \\, du \\, dv",
+      "explanation": "Changing variables in a double integral using the Jacobian determinant.",
+      "variables": "f: the function, D, D': regions, Jacobian: determinant of partial derivatives",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Green's Theorem",
+      "formula": "\\oint_C P \\, dx + Q \\, dy = \\iint_D \\left( \\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} \\right) \\, dA",
+      "explanation": "Relates a line integral around a closed curve to a double integral over the region it encloses.",
+      "variables": "P, Q: functions, C: closed curve, D: region enclosed by C",
+      "units": "depends on the functions"
+    },
+    {
+      "name": "Stokes' Theorem",
+      "formula": "\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot d\\mathbf{S}",
+      "explanation": "Relates a line integral around a closed curve to a surface integral over a surface bounded by the curve.",
+      "variables": "F: vector field, C: closed curve, S: surface bounded by C",
+      "units": "depends on the vector field"
+    },
+    {
+      "name": "Divergence Theorem",
+      "formula": "\\iiint_E (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S \\mathbf{F} \\cdot d\\mathbf{S}",
+      "explanation": "Relates a triple integral over a volume to a surface integral over its boundary.",
+      "variables": "F: vector field, E: volume, S: boundary surface",
+      "units": "depends on the vector field"
+    },
+    {
+      "name": "Arc Length Formula",
+      "formula": "L = \\int_a^b \\sqrt{1 + \\left( \\frac{dy}{dx} \\right)^2} \\, dx",
+      "explanation": "The length of a curve given parametrically or as y=f(x).",
+      "variables": "a, b: limits of integration, y: function of x",
+      "units": "length"
+    },
+    {
+      "name": "Surface Area Formula",
+      "formula": "A = \\iint_D \\sqrt{1 + \\left( \\frac{\\partial f}{\\partial x} \\right)^2 + \\left( \\frac{\\partial f}{\\partial y} \\right)^2} \\, dA",
+      "explanation": "The surface area of a surface given as z=f(x,y).",
+      "variables": "f: function defining the surface, D: domain",
+      "units": "area"
+    },
+    {
+      "name": "Mean Value Theorem for Integrals",
+      "formula": "\\int_a^b f(x) \\, dx = f(c) (b - a) for some c in [a,b]",
+      "explanation": "States that for a continuous function, there exists a point where the function value equals the average value over the interval.",
+      "variables": "f: continuous function, a, b: interval endpoints, c: point in interval",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Riemann Sum",
+      "formula": "\\sum_{i=1}^n f(x_i^*) \\Delta x",
+      "explanation": "An approximation of a definite integral using rectangles.",
+      "variables": "f: function, x_i^*: sample points, Δx: width of subintervals",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Trapezoidal Rule",
+      "formula": "\\int_a^b f(x) \\, dx \\approx \\frac{\\Delta x}{2} \\left[ f(a) + 2\\sum_{i=1}^{n-1} f(x_i) + f(b) \\right]",
+      "explanation": "A numerical integration method using trapezoids.",
+      "variables": "f: function, a, b: limits, Δx: step size, n: number of intervals",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Simpson's Rule",
+      "formula": "\\int_a^b f(x) \\, dx \\approx \\frac{\\Delta x}{3} \\left[ f(a) + 4\\sum_{i=1}^{n/2} f(x_{2i-1}) + 2\\sum_{i=1}^{n/2-1} f(x_{2i}) + f(b) \\right]",
+      "explanation": "A numerical integration method using parabolic arcs.",
+      "variables": "f: function, a, b: limits, Δx: step size, n: even number of intervals",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Euler's Method",
+      "formula": "y_{n+1} = y_n + h f(x_n, y_n)",
+      "explanation": "A numerical method for solving ordinary differential equations.",
+      "variables": "y_n: current approximation, h: step size, f: derivative function, x_n: current x",
+      "units": "depends on the differential equation"
+    },
+    {
+      "name": "Implicit Differentiation",
+      "formula": "\\frac{d}{dx} [F(x,y)] = F_x + F_y \\frac{dy}{dx} = 0",
+      "explanation": "Differentiating equations where y is defined implicitly in terms of x.",
+      "variables": "F: implicit function, x, y: variables",
+      "units": "dimensionless"
+    },
+    {
+      "name": "Related Rates",
+      "formula": "\\frac{d}{dt} [relationship] = 0",
+      "explanation": "Differentiating equations involving rates of change.",
+      "variables": "t: time variable, relationship: equation relating variables",
+      "units": "depends on the context"
+    },
+    {
+      "name": "Optimization with Constraints (Lagrange Multipliers)",
+      "formula": "\\nabla f = \\lambda \\nabla g",
+      "explanation": "Finding extrema of a function subject to constraints.",
+      "variables": "f: objective function, g: constraint function, λ: Lagrange multiplier",
+      "units": "depends on the functions"
+    },
+    {
+      "name": "Second Derivative Test",
+      "formula": "If f''(c) > 0, local minimum; if f''(c) < 0, local maximum",
+      "explanation": "Using the second derivative to classify critical points.",
+      "variables": "f: function, c: critical point",
+      "units": "dimensionless (classification)"
+    },
+    {
+      "name": "Rolle's Theorem",
+      "formula": "If f(a) = f(b) and f is continuous on [a,b] and differentiable on (a,b), then f'(c) = 0 for some c in (a,b)",
+      "explanation": "A theorem about the existence of a point where the derivative is zero.",
+      "variables": "f: function, a, b: endpoints, c: point in interval",
+      "units": "dimensionless"
+    },
+    {
+      "name": "Mean Value Theorem",
+      "formula": "f(b) - f(a) = f'(c)(b - a) for some c in (a,b)",
+      "explanation": "Relates the average rate of change to the instantaneous rate at some point.",
+      "variables": "f: function, a, b: endpoints, c: point in interval",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Intermediate Value Theorem",
+      "formula": "If f is continuous on [a,b] and f(a) < k < f(b), then there exists c in (a,b) such that f(c) = k",
+      "explanation": "Guarantees the existence of a point where the function takes a value between two others.",
+      "variables": "f: continuous function, a, b: interval, k: value between f(a) and f(b), c: point in interval",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Extreme Value Theorem",
+      "formula": "If f is continuous on [a,b], then f has a maximum and minimum on [a,b]",
+      "explanation": "States that continuous functions on closed intervals achieve their extrema.",
+      "variables": "f: continuous function, a, b: closed interval",
+      "units": "depends on the function"
+    },
+    {
+      "name": "Comparison Test for Series",
+      "formula": "If 0 ≤ a_n ≤ b_n and ∑b_n converges, then ∑a_n converges",
+      "explanation": "A test for convergence by comparing to a known series.",
+      "variables": "a_n, b_n: sequences of positive terms",
+      "units": "dimensionless (convergence)"
+    },
+    {
+      "name": "Alternating Series Test",
+      "formula": "If a_n > 0 and decreasing to 0, then ∑(-1)^{n+1} a_n converges",
+      "explanation": "A test for convergence of alternating series.",
+      "variables": "a_n: positive decreasing sequence approaching 0",
+      "units": "dimensionless (convergence)"
+    },
+    {
+      "name": "Integral Test for Series",
+      "formula": "If f(x) = a_n and f is positive, continuous, decreasing, then ∑a_n converges iff ∫f(x) dx converges",
+      "explanation": "Relates series convergence to improper integral convergence.",
+      "variables": "a_n: terms of the series, f: corresponding function",
+      "units": "dimensionless (convergence)"
+    },
+    {
+      "name": "p-Series Test",
+      "formula": "∑ 1/n^p converges if p > 1, diverges if p ≤ 1",
+      "explanation": "A test for convergence of p-series.",
+      "variables": "p: exponent",
+      "units": "dimensionless (convergence)"
+    },
+    {
+      "name": "Polar Coordinates Area",
+      "formula": "A = \\frac{1}{2} \\int_\\alpha^\\beta r^2 \\, d\\theta",
+      "explanation": "The area in polar coordinates.",
+      "variables": "r: radius function, α, β: angle limits",
+      "units": "area"
+    },
+    {
+      "name": "Polar Coordinates Arc Length",
+      "formula": "L = \\int_\\alpha^\\beta \\sqrt{r^2 + \\left( \\frac{dr}{d\\theta} \\right)^2} \\, d\\theta",
+      "explanation": "The arc length in polar coordinates.",
+      "variables": "r: radius function, α, β: angle limits",
+      "units": "length"
+    }
+  ],
+  "Statistics": [
+    {
+      "name": "Mean (Arithmetic)",
+      "formula": "\\bar{x} = \\frac{\\sum x_i}{n}",
+      "explanation": "Average value of a dataset.",
+      "variables": "x_i: data points, n: number of data points",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Median",
+      "formula": "Median = middle value when sorted",
+      "explanation": "Middle value in a sorted dataset.",
+      "variables": "Sorted data points",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Mode",
+      "formula": "Mode = most frequent value",
+      "explanation": "Most commonly occurring value in a dataset.",
+      "variables": "Data points",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Variance (Population)",
+      "formula": "\\sigma^2 = \\frac{\\sum (x_i - \\mu)^2}{N}",
+      "explanation": "Measure of spread in population data.",
+      "variables": "x_i: data points, μ: population mean, N: population size",
+      "units": "Square of data units"
+    },
+    {
+      "name": "Variance (Sample)",
+      "formula": "s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1}",
+      "explanation": "Measure of spread in sample data.",
+      "variables": "x_i: data points, x̄: sample mean, n: sample size",
+      "units": "Square of data units"
+    },
+    {
+      "name": "Standard Deviation (Population)",
+      "formula": "\\sigma = \\sqrt{\\frac{\\sum (x_i - \\mu)^2}{N}}",
+      "explanation": "Square root of population variance.",
+      "variables": "x_i: data points, μ: population mean, N: population size",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Standard Deviation (Sample)",
+      "formula": "s = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n-1}}",
+      "explanation": "Square root of sample variance.",
+      "variables": "x_i: data points, x̄: sample mean, n: sample size",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Range",
+      "formula": "Range = max - min",
+      "explanation": "Difference between maximum and minimum values.",
+      "variables": "max: maximum value, min: minimum value",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Interquartile Range",
+      "formula": "IQR = Q3 - Q1",
+      "explanation": "Difference between third and first quartiles.",
+      "variables": "Q3: third quartile, Q1: first quartile",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Z-Score",
+      "formula": "z = \\frac{x - \\mu}{\\sigma}",
+      "explanation": "Number of standard deviations from the mean.",
+      "variables": "x: data point, μ: mean, σ: standard deviation",
+      "units": "Standard deviations"
+    },
+    {
+      "name": "Confidence Interval",
+      "formula": "\\bar{x} \\pm z \\cdot \\frac{\\sigma}{\\sqrt{n}}",
+      "explanation": "Range likely to contain the population parameter.",
+      "variables": "x̄: sample mean, z: z-score, σ: standard deviation, n: sample size",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Margin of Error",
+      "formula": "ME = z \\cdot \\frac{\\sigma}{\\sqrt{n}}",
+      "explanation": "Maximum expected difference between sample and population statistics.",
+      "variables": "z: z-score, σ: standard deviation, n: sample size",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Hypothesis Test Z-Statistic",
+      "formula": "z = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}",
+      "explanation": "Test statistic for hypothesis testing with known population standard deviation.",
+      "variables": "x̄: sample mean, μ₀: hypothesized mean, σ: population standard deviation, n: sample size",
+      "units": "Standard deviations"
+    },
+    {
+      "name": "Hypothesis Test T-Statistic",
+      "formula": "t = \\frac{\\bar{x} - \\mu_0}{s / \\sqrt{n}}",
+      "explanation": "Test statistic for hypothesis testing with unknown population standard deviation.",
+      "variables": "x̄: sample mean, μ₀: hypothesized mean, s: sample standard deviation, n: sample size",
+      "units": "t-distribution units"
+    },
+    {
+      "name": "Chi-Square Test Statistic",
+      "formula": "\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}",
+      "explanation": "Test statistic for goodness of fit and independence tests.",
+      "variables": "O_i: observed frequencies, E_i: expected frequencies",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "F-Test Statistic",
+      "formula": "F = \\frac{s_1^2}{s_2^2}",
+      "explanation": "Test statistic for comparing two population variances.",
+      "variables": "s₁², s₂²: sample variances",
+      "units": "F-distribution units"
+    },
+    {
+      "name": "Correlation Coefficient",
+      "formula": "r = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2 \\sum (y_i - \\bar{y})^2}}",
+      "explanation": "Measure of linear relationship between two variables.",
+      "variables": "x_i, y_i: paired data points, x̄, ȳ: means",
+      "units": "Dimensionless (-1 to 1)"
+    },
+    {
+      "name": "Regression Line",
+      "formula": "y = a + bx",
+      "explanation": "Linear relationship between dependent and independent variables.",
+      "variables": "y: dependent variable, x: independent variable, a: intercept, b: slope",
+      "units": "Same as variables"
+    },
+    {
+      "name": "Slope of Regression Line",
+      "formula": "b = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}",
+      "explanation": "Rate of change in linear regression.",
+      "variables": "x_i, y_i: paired data points, x̄, ȳ: means",
+      "units": "Units of y per unit of x"
+    },
+    {
+      "name": "Intercept of Regression Line",
+      "formula": "a = \\bar{y} - b\\bar{x}",
+      "explanation": "Value of y when x equals zero in linear regression.",
+      "variables": "ȳ: mean of y, b: slope, x̄: mean of x",
+      "units": "Same as y variable"
+    },
+    {
+      "name": "Coefficient of Determination",
+      "formula": "R^2 = r^2",
+      "explanation": "Proportion of variance in dependent variable explained by independent variable.",
+      "variables": "r: correlation coefficient",
+      "units": "Dimensionless (0 to 1)"
+    },
+    {
+      "name": "Binomial Probability",
+      "formula": "P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}",
+      "explanation": "Probability of exactly k successes in n trials.",
+      "variables": "n: number of trials, k: number of successes, p: success probability",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Binomial Mean",
+      "formula": "\\mu = np",
+      "explanation": "Expected value of binomial distribution.",
+      "variables": "n: number of trials, p: success probability",
+      "units": "Number of successes"
+    },
+    {
+      "name": "Binomial Variance",
+      "formula": "\\sigma^2 = np(1-p)",
+      "explanation": "Variance of binomial distribution.",
+      "variables": "n: number of trials, p: success probability",
+      "units": "Number of successes squared"
+    },
+    {
+      "name": "Poisson Probability",
+      "formula": "P(X = k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}",
+      "explanation": "Probability of k events in a fixed interval.",
+      "variables": "λ: average rate of events, k: number of events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Poisson Mean and Variance",
+      "formula": "\\mu = \\sigma^2 = \\lambda",
+      "explanation": "Mean and variance are equal in Poisson distribution.",
+      "variables": "λ: average rate of events",
+      "units": "Number of events"
+    },
+    {
+      "name": "Normal Distribution PDF",
+      "formula": "f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}",
+      "explanation": "Probability density function of normal distribution.",
+      "variables": "x: random variable, μ: mean, σ: standard deviation",
+      "units": "Probability density"
+    },
+    {
+      "name": "Standard Normal Distribution",
+      "formula": "Z \\sim N(0,1)",
+      "explanation": "Normal distribution with mean 0 and standard deviation 1.",
+      "variables": "Z: standard normal random variable",
+      "units": "Standard deviations"
+    },
+    {
+      "name": "Central Limit Theorem",
+      "formula": "\\bar{X} \\approx N(\\mu, \\frac{\\sigma^2}{n})",
+      "explanation": "Sample means are approximately normally distributed for large samples.",
+      "variables": "X̄: sample mean, μ: population mean, σ: population standard deviation, n: sample size",
+      "units": "Same as population units"
+    },
+    {
+      "name": "T-Distribution",
+      "formula": "t = \\frac{\\bar{x} - \\mu}{s / \\sqrt{n}}",
+      "explanation": "Distribution used for small sample inference.",
+      "variables": "x̄: sample mean, μ: population mean, s: sample standard deviation, n: sample size",
+      "units": "t-distribution units"
+    },
+    {
+      "name": "Chi-Square Distribution",
+      "formula": "\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}",
+      "explanation": "Distribution of sum of squared standard normal variables.",
+      "variables": "O_i: observed frequencies, E_i: expected frequencies, k: degrees of freedom",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "F-Distribution",
+      "formula": "F = \\frac{s_1^2 / \\sigma_1^2}{s_2^2 / \\sigma_2^2}",
+      "explanation": "Distribution of ratio of two chi-square variables divided by their degrees of freedom.",
+      "variables": "s₁², s₂²: sample variances, σ₁², σ₂²: population variances",
+      "units": "F-distribution units"
+    },
+    {
+      "name": "One-Way ANOVA F-Statistic",
+      "formula": "F = \\frac{MSB}{MSW}",
+      "explanation": "Test statistic for comparing means across multiple groups.",
+      "variables": "MSB: mean square between groups, MSW: mean square within groups",
+      "units": "F-distribution units"
+    },
+    {
+      "name": "Type I Error",
+      "formula": "\\alpha = P(Reject H_0 | H_0 true)",
+      "explanation": "Probability of incorrectly rejecting the null hypothesis.",
+      "variables": "α: significance level",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Type II Error",
+      "formula": "\\beta = P(Fail to reject H_0 | H_0 false)",
+      "explanation": "Probability of incorrectly failing to reject the null hypothesis.",
+      "variables": "β: probability of type II error",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Power of Test",
+      "formula": "Power = 1 - \\beta",
+      "explanation": "Probability of correctly rejecting a false null hypothesis.",
+      "variables": "β: probability of type II error",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "P-Value",
+      "formula": "p-value = P(data as extreme | H_0 true)",
+      "explanation": "Probability of observing data as or more extreme than what was observed, assuming null hypothesis is true.",
+      "variables": "Data: observed sample statistics",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Confidence Level",
+      "formula": "Confidence Level = 1 - \\alpha",
+      "explanation": "Probability that the confidence interval contains the true parameter value.",
+      "variables": "α: significance level",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Sample Size Formula",
+      "formula": "n = \\left( \\frac{z \\cdot \\sigma}{E} \\right)^2",
+      "explanation": "Required sample size for desired margin of error.",
+      "variables": "z: z-score, σ: standard deviation, E: margin of error",
+      "units": "Number of observations"
+    },
+    {
+      "name": "Geometric Mean",
+      "formula": "GM = \\left( \\prod x_i \\right)^{1/n}",
+      "explanation": "Average of values using multiplication instead of addition.",
+      "variables": "x_i: positive data points, n: number of data points",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Harmonic Mean",
+      "formula": "HM = \\frac{n}{\\sum \\frac{1}{x_i}}",
+      "explanation": "Reciprocal of the arithmetic mean of reciprocals.",
+      "variables": "x_i: positive data points, n: number of data points",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Weighted Mean",
+      "formula": "\\bar{x}_w = \\frac{\\sum w_i x_i}{\\sum w_i}",
+      "explanation": "Mean where different data points have different importance.",
+      "variables": "x_i: data points, w_i: weights",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Covariance",
+      "formula": "Cov(X,Y) = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{n-1}",
+      "explanation": "Measure of how two variables change together.",
+      "variables": "x_i, y_i: paired data points, x̄, ȳ: means, n: sample size",
+      "units": "Product of variable units"
+    },
+    {
+      "name": "Spearman's Rank Correlation",
+      "formula": "r_s = 1 - \\frac{6 \\sum d_i^2}{n(n^2 - 1)}",
+      "explanation": "Non-parametric measure of rank correlation.",
+      "variables": "d_i: differences in ranks, n: number of pairs",
+      "units": "Dimensionless (-1 to 1)"
+    },
+    {
+      "name": "Point Estimate",
+      "formula": "\\hat{\\theta} = statistic",
+      "explanation": "Single value estimate of a population parameter.",
+      "variables": "θ̂: point estimate, statistic: sample statistic",
+      "units": "Same as parameter units"
+    },
+    {
+      "name": "Maximum Likelihood Estimation",
+      "formula": "\\hat{\\theta} = \\arg\\max L(\\theta)",
+      "explanation": "Parameter value that maximizes the likelihood function.",
+      "variables": "θ̂: MLE estimate, L(θ): likelihood function",
+      "units": "Same as parameter units"
+    },
+    {
+      "name": "Cramér's V",
+      "formula": "V = \\sqrt{\\frac{\\chi^2}{n \\cdot \\min(r-1, c-1)}}",
+      "explanation": "Measure of association between two categorical variables.",
+      "variables": "χ²: chi-square statistic, n: sample size, r: rows, c: columns",
+      "units": "Dimensionless (0 to 1)"
+    },
+    {
+      "name": "Goodman and Kruskal's Gamma",
+      "formula": "\\gamma = \\frac{P - Q}{P + Q}",
+      "explanation": "Measure of ordinal association between two variables.",
+      "variables": "P: concordant pairs, Q: discordant pairs",
+      "units": "Dimensionless (-1 to 1)"
+    },
+    {
+      "name": "McNemar's Test",
+      "formula": "\\chi^2 = \\frac{(|b - c| - 1)^2}{b + c}",
+      "explanation": "Test for paired nominal data in 2x2 contingency tables.",
+      "variables": "b, c: off-diagonal elements in contingency table",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "Wilcoxon Signed-Rank Test",
+      "formula": "W = \\sum_{i=1}^n R_i^+",
+      "explanation": "Non-parametric test for paired data or one-sample location.",
+      "variables": "R_i⁺: positive rank sums, n: number of pairs",
+      "units": "Rank sum units"
+    },
+    {
+      "name": "Mann-Whitney U Test",
+      "formula": "U = n_1 n_2 + \\frac{n_1(n_1 + 1)}{2} - R_1",
+      "explanation": "Non-parametric test for comparing two independent samples.",
+      "variables": "n₁, n₂: sample sizes, R₁: sum of ranks in first sample",
+      "units": "U statistic units"
+    },
+    {
+      "name": "Kruskal-Wallis Test",
+      "formula": "H = \\frac{12}{N(N+1)} \\sum \\frac{R_i^2}{n_i} - 3(N+1)",
+      "explanation": "Non-parametric test for comparing multiple independent samples.",
+      "variables": "N: total observations, R_i: rank sums, n_i: group sizes",
+      "units": "H statistic units"
+    },
+    {
+      "name": "Friedman Test",
+      "formula": "\\chi^2_r = \\frac{12}{bk(k+1)} \\sum_{j=1}^k R_j^2 - 3b(k+1)",
+      "explanation": "Non-parametric test for repeated measures on multiple groups.",
+      "variables": "b: number of blocks, k: number of treatments, R_j: rank sums",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "Kolmogorov-Smirnov Test",
+      "formula": "D = \\max |F_n(x) - F(x)|",
+      "explanation": "Non-parametric test for comparing distributions.",
+      "variables": "F_n(x): empirical distribution, F(x): theoretical distribution",
+      "units": "Maximum difference"
+    },
+    {
+      "name": "Shapiro-Wilk Test",
+      "formula": "W = \\frac{(\\sum a_i x_{(i)})^2}{\\sum (x_i - \\bar{x})^2}",
+      "explanation": "Test for normality of data distribution.",
+      "variables": "a_i: coefficients, x_(i): ordered sample values, x̄: sample mean",
+      "units": "W statistic (0 to 1)"
+    },
+    {
+      "name": "Anderson-Darling Test",
+      "formula": "A^2 = -n - \\sum_{i=1}^n \\frac{2i-1}{n} [\\ln F(x_{(i)}) + \\ln(1 - F(x_{(n+1-i)}))]",
+      "explanation": "Test for normality with more weight on tails.",
+      "variables": "n: sample size, F: cumulative distribution function, x_(i): ordered sample",
+      "units": "A² statistic"
+    },
+    {
+      "name": "Box-Cox Transformation",
+      "formula": "y(\\lambda) = \\begin{cases} \\frac{y^\\lambda - 1}{\\lambda} & \\lambda \\neq 0 \\\\ \\ln y & \\lambda = 0 \\end{cases}",
+      "explanation": "Power transformation to stabilize variance and make data more normal.",
+      "variables": "y: original data, λ: transformation parameter",
+      "units": "Transformed units"
+    },
+    {
+      "name": "Exponential Smoothing",
+      "formula": "S_t = \\alpha y_t + (1 - \\alpha) S_{t-1}",
+      "explanation": "Method for smoothing time series data.",
+      "variables": "S_t: smoothed value at time t, y_t: actual value, α: smoothing parameter (0 < α < 1)",
+      "units": "Same as time series units"
+    },
+    {
+      "name": "Moving Average",
+      "formula": "MA_t = \\frac{y_t + y_{t-1} + \\cdots + y_{t-n+1}}{n}",
+      "explanation": "Average of n consecutive data points.",
+      "variables": "y_t: data points, n: number of periods",
+      "units": "Same as data units"
+    },
+    {
+      "name": "Autocorrelation Function",
+      "formula": "r_k = \\frac{\\sum_{t=1}^{n-k} (y_t - \\bar{y})(y_{t+k} - \\bar{y})}{\\sum_{t=1}^n (y_t - \\bar{y})^2}",
+      "explanation": "Correlation between a time series and its own lagged values.",
+      "variables": "y_t: time series values, k: lag, ȳ: mean",
+      "units": "Dimensionless (-1 to 1)"
+    },
+    {
+      "name": "Durbin-Watson Statistic",
+      "formula": "d = \\frac{\\sum_{t=2}^n (e_t - e_{t-1})^2}{\\sum_{t=1}^n e_t^2}",
+      "explanation": "Test for autocorrelation in regression residuals.",
+      "variables": "e_t: residuals, n: number of observations",
+      "units": "Dimensionless (0 to 4)"
+    },
+    {
+      "name": "ARIMA Model",
+      "formula": "y_t = c + \\phi_1 y_{t-1} + \\cdots + \\phi_p y_{t-p} + \\theta_1 \\epsilon_{t-1} + \\cdots + \\theta_q \\epsilon_{t-q} + \\epsilon_t",
+      "explanation": "Autoregressive Integrated Moving Average model for time series.",
+      "variables": "y_t: time series, c: constant, ϕ: autoregressive parameters, θ: moving average parameters, ε_t: error terms",
+      "units": "Same as time series units"
+    },
+    {
+      "name": "Seasonal Decomposition",
+      "formula": "y_t = T_t + S_t + R_t",
+      "explanation": "Decomposing time series into trend, seasonal, and residual components.",
+      "variables": "y_t: observed value, T_t: trend, S_t: seasonal, R_t: residual",
+      "units": "Same as time series units"
+    },
+    {
+      "name": "Control Chart Limits",
+      "formula": "UCL = \\bar{x} + 3\\frac{\\bar{R}}{d_2 \\sqrt{n}}, LCL = \\bar{x} - 3\\frac{\\bar{R}}{d_2 \\sqrt{n}}",
+      "explanation": "Upper and lower control limits for quality control charts.",
+      "variables": "x̄: process mean, R̄: average range, d₂: control chart constant, n: subgroup size",
+      "units": "Same as process units"
+    },
+    {
+      "name": "Process Capability Index",
+      "formula": "C_p = \\frac{USL - LSL}{6\\sigma}",
+      "explanation": "Measure of process capability relative to specification limits.",
+      "variables": "USL: upper specification limit, LSL: lower specification limit, σ: process standard deviation",
+      "units": "Capability index"
+    },
+    {
+      "name": "Six Sigma Quality Level",
+      "formula": "DPMO = \\frac{D}{N} \\times 10^6",
+      "explanation": "Defects per million opportunities.",
+      "variables": "D: number of defects, N: number of opportunities",
+      "units": "Defects per million"
+    }
+  ],
+  "Probability": [
+    {
+      "name": "Probability Axioms",
+      "formula": "0 \\leq P(A) \\leq 1, P(S) = 1, P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+      "explanation": "Fundamental rules of probability theory.",
+      "variables": "A, B: events, S: sample space",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Conditional Probability",
+      "formula": "P(A|B) = \\frac{P(A \\cap B)}{P(B)}",
+      "explanation": "Probability of A given that B has occurred.",
+      "variables": "A, B: events, P(B) > 0",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Bayes' Theorem",
+      "formula": "P(A|B) = \\frac{P(B|A) P(A)}{P(B)}",
+      "explanation": "Relates conditional probabilities in reverse.",
+      "variables": "A, B: events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Independent Events",
+      "formula": "P(A \\cap B) = P(A) \\cdot P(B)",
+      "explanation": "Probability of both events occurring when they don't affect each other.",
+      "variables": "A, B: independent events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Mutually Exclusive Events",
+      "formula": "P(A \\cup B) = P(A) + P(B)",
+      "explanation": "Probability of either event occurring when they can't both happen.",
+      "variables": "A, B: mutually exclusive events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Complement Rule",
+      "formula": "P(A^c) = 1 - P(A)",
+      "explanation": "Probability that an event does not occur.",
+      "variables": "A: event, Aᶜ: complement of A",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Addition Rule (General)",
+      "formula": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+      "explanation": "Probability of either A or B occurring.",
+      "variables": "A, B: events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Multiplication Rule (General)",
+      "formula": "P(A \\cap B) = P(A|B) \\cdot P(B)",
+      "explanation": "Probability of both A and B occurring.",
+      "variables": "A, B: events",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Law of Total Probability",
+      "formula": "P(B) = \\sum P(B|A_i) P(A_i)",
+      "explanation": "Expresses probability of B in terms of conditional probabilities.",
+      "variables": "B: event, A_i: partition of sample space",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Binomial Coefficient",
+      "formula": "\\binom{n}{k} = \\frac{n!}{k!(n-k)!}",
+      "explanation": "Number of ways to choose k items from n without regard to order.",
+      "variables": "n: total items, k: items chosen",
+      "units": "Count"
+    },
+    {
+      "name": "Permutation",
+      "formula": "P(n,k) = \\frac{n!}{(n-k)!}",
+      "explanation": "Number of ways to arrange k items from n distinct items.",
+      "variables": "n: total items, k: items arranged",
+      "units": "Count"
+    },
+    {
+      "name": "Combination",
+      "formula": "C(n,k) = \\binom{n}{k} = \\frac{n!}{k!(n-k)!}",
+      "explanation": "Number of ways to choose k items from n without regard to order.",
+      "variables": "n: total items, k: items chosen",
+      "units": "Count"
+    },
+    {
+      "name": "Expected Value",
+      "formula": "E[X] = \\sum x_i P(X = x_i)",
+      "explanation": "Long-run average value of a random variable.",
+      "variables": "X: random variable, x_i: possible values, P: probabilities",
+      "units": "Same as X"
+    },
+    {
+      "name": "Variance",
+      "formula": "Var(X) = E[(X - \\mu)^2] = E[X^2] - (E[X])^2",
+      "explanation": "Measure of spread of a random variable.",
+      "variables": "X: random variable, μ: expected value",
+      "units": "Square of X units"
+    },
+    {
+      "name": "Standard Deviation",
+      "formula": "\\sigma = \\sqrt{Var(X)}",
+      "explanation": "Square root of variance, measures spread in same units as X.",
+      "variables": "X: random variable",
+      "units": "Same as X"
+    },
+    {
+      "name": "Covariance",
+      "formula": "Cov(X,Y) = E[(X - \\mu_X)(Y - \\mu_Y)]",
+      "explanation": "Measure of how two random variables vary together.",
+      "variables": "X, Y: random variables, μ_X, μ_Y: expected values",
+      "units": "Product of X and Y units"
+    },
+    {
+      "name": "Correlation",
+      "formula": "\\rho_{XY} = \\frac{Cov(X,Y)}{\\sigma_X \\sigma_Y}",
+      "explanation": "Normalized measure of linear relationship between variables.",
+      "variables": "X, Y: random variables, σ_X, σ_Y: standard deviations",
+      "units": "Dimensionless (-1 to 1)"
+    },
+    {
+      "name": "Bernoulli Distribution",
+      "formula": "P(X = 1) = p, P(X = 0) = 1-p",
+      "explanation": "Distribution of a single trial with success probability p.",
+      "variables": "X: 0 or 1, p: success probability",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Geometric Distribution",
+      "formula": "P(X = k) = (1-p)^{k-1} p",
+      "explanation": "Number of trials until first success.",
+      "variables": "X: number of trials, p: success probability",
+      "units": "Count"
+    },
+    {
+      "name": "Negative Binomial Distribution",
+      "formula": "P(X = k) = \\binom{k-1}{r-1} p^r (1-p)^{k-r}",
+      "explanation": "Number of trials until r successes.",
+      "variables": "X: number of trials, r: number of successes, p: success probability",
+      "units": "Count"
+    },
+    {
+      "name": "Hypergeometric Distribution",
+      "formula": "P(X = k) = \\frac{\\binom{K}{k} \\binom{N-K}{n-k}}{\\binom{N}{n}}",
+      "explanation": "Number of successes in sample without replacement.",
+      "variables": "X: number of successes, K: successes in population, N: population size, n: sample size",
+      "units": "Count"
+    },
+    {
+      "name": "Uniform Distribution (Discrete)",
+      "formula": "P(X = x_i) = \\frac{1}{n}",
+      "explanation": "Each outcome equally likely.",
+      "variables": "X: random variable, n: number of possible outcomes",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Uniform Distribution (Continuous)",
+      "formula": "f(x) = \\frac{1}{b-a} for a \\leq x \\leq b",
+      "explanation": "Constant probability density over an interval.",
+      "variables": "x: random variable, a, b: interval endpoints",
+      "units": "Probability density"
+    },
+    {
+      "name": "Exponential Distribution",
+      "formula": "f(x) = \\lambda e^{-\\lambda x} for x \\geq 0",
+      "explanation": "Time between events in Poisson process.",
+      "variables": "x: time, λ: rate parameter",
+      "units": "Probability density"
+    },
+    {
+      "name": "Gamma Distribution",
+      "formula": "f(x) = \\frac{\\lambda^\\alpha}{\\Gamma(\\alpha)} x^{\\alpha-1} e^{-\\lambda x}",
+      "explanation": "Generalization of exponential distribution.",
+      "variables": "x: positive random variable, α: shape parameter, λ: rate parameter",
+      "units": "Probability density"
+    },
+    {
+      "name": "Beta Distribution",
+      "formula": "f(x) = \\frac{\\Gamma(\\alpha + \\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)} x^{\\alpha-1} (1-x)^{\\beta-1}",
+      "explanation": "Distribution of random variables between 0 and 1.",
+      "variables": "x: (0,1), α, β: shape parameters",
+      "units": "Probability density"
+    },
+    {
+      "name": "Normal Distribution PDF",
+      "formula": "\\phi(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-x^2/2}",
+      "explanation": "Standard normal probability density function.",
+      "variables": "x: standardized random variable",
+      "units": "Probability density"
+    },
+    {
+      "name": "Normal Distribution CDF",
+      "formula": "\\Phi(x) = \\int_{-\\infty}^x \\frac{1}{\\sqrt{2\\pi}} e^{-t^2/2} dt",
+      "explanation": "Cumulative distribution function of standard normal.",
+      "variables": "x: standardized random variable",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Chi-Square Distribution",
+      "formula": "f(x) = \\frac{1}{2^{k/2} \\Gamma(k/2)} x^{k/2 - 1} e^{-x/2}",
+      "explanation": "Distribution of sum of squared normal variables.",
+      "variables": "x: positive random variable, k: degrees of freedom",
+      "units": "Probability density"
+    },
+    {
+      "name": "t-Distribution",
+      "formula": "f(t) = \\frac{\\Gamma((k+1)/2)}{\\sqrt{k\\pi} \\Gamma(k/2)} (1 + t^2/k)^{-(k+1)/2}",
+      "explanation": "Distribution for small samples from normal population.",
+      "variables": "t: random variable, k: degrees of freedom",
+      "units": "Probability density"
+    },
+    {
+      "name": "F-Distribution",
+      "formula": "f(x) = \\frac{\\Gamma((d1+d2)/2)}{\\Gamma(d1/2) \\Gamma(d2/2)} (d1/d2)^{d1/2} x^{d1/2 - 1} (1 + (d1/d2)x)^{-(d1+d2)/2}",
+      "explanation": "Distribution of ratio of two chi-square variables.",
+      "variables": "x: positive random variable, d1, d2: degrees of freedom",
+      "units": "Probability density"
+    },
+    {
+      "name": "Central Limit Theorem",
+      "formula": "\\sqrt{n} (\\bar{X} - \\mu) \\to N(0, \\sigma^2)",
+      "explanation": "Sample mean converges to normal distribution for large n.",
+      "variables": "X̄: sample mean, μ: population mean, σ: population standard deviation, n: sample size",
+      "units": "Standardized units"
+    },
+    {
+      "name": "Chebyshev's Inequality",
+      "formula": "P(|X - \\mu| \\geq k\\sigma) \\leq \\frac{1}{k^2}",
+      "explanation": "Probability that random variable deviates from mean by more than k standard deviations.",
+      "variables": "X: random variable, μ: mean, σ: standard deviation, k > 0",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Markov's Inequality",
+      "formula": "P(X \\geq a) \\leq \\frac{E[X]}{a}",
+      "explanation": "Upper bound on probability of exceeding a threshold.",
+      "variables": "X: non-negative random variable, a > 0",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Jensen's Inequality",
+      "formula": "E[g(X)] \\geq g(E[X])",
+      "explanation": "Expected value of convex function is at least the function of expected value.",
+      "variables": "X: random variable, g: convex function",
+      "units": "Depends on function"
+    },
+    {
+      "name": "Moment Generating Function",
+      "formula": "M_X(t) = E[e^{tX}]",
+      "explanation": "Function that generates moments of a distribution.",
+      "variables": "X: random variable, t: parameter",
+      "units": "Depends on distribution"
+    },
+    {
+      "name": "Probability Generating Function",
+      "formula": "P_X(s) = E[s^X]",
+      "explanation": "Function that generates probabilities for discrete distributions.",
+      "variables": "X: non-negative integer random variable, s: parameter",
+      "units": "Generating function"
+    },
+    {
+      "name": "Characteristic Function",
+      "formula": "\\phi_X(t) = E[e^{itX}]",
+      "explanation": "Fourier transform of the distribution function.",
+      "variables": "X: random variable, t: real number, i: imaginary unit",
+      "units": "Complex number"
+    },
+    {
+      "name": "Joint Probability Density",
+      "formula": "f_{X,Y}(x,y)",
+      "explanation": "Probability density for two continuous random variables.",
+      "variables": "X, Y: random variables",
+      "units": "Probability density"
+    },
+    {
+      "name": "Marginal Distribution",
+      "formula": "f_X(x) = \\int f_{X,Y}(x,y) dy",
+      "explanation": "Distribution of one variable ignoring the other.",
+      "variables": "X, Y: random variables",
+      "units": "Probability density"
+    },
+    {
+      "name": "Conditional Distribution",
+      "formula": "f_{X|Y}(x|y) = \\frac{f_{X,Y}(x,y)}{f_Y(y)}",
+      "explanation": "Distribution of X given Y.",
+      "variables": "X, Y: random variables",
+      "units": "Probability density"
+    },
+    {
+      "name": "Joint Cumulative Distribution",
+      "formula": "F_{X,Y}(x,y) = P(X \\leq x, Y \\leq y)",
+      "explanation": "Cumulative probability for two random variables.",
+      "variables": "X, Y: random variables",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Independence of Random Variables",
+      "formula": "F_{X,Y}(x,y) = F_X(x) F_Y(y)",
+      "explanation": "Joint distribution factors into marginal distributions.",
+      "variables": "X, Y: independent random variables",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Order Statistics",
+      "formula": "X_{(1)} \\leq X_{(2)} \\leq \\cdots \\leq X_{(n)}",
+      "explanation": "Sorted values of a sample.",
+      "variables": "X_i: sample values, n: sample size",
+      "units": "Same as sample units"
+    },
+    {
+      "name": "Sampling Distribution of Sample Mean",
+      "formula": "\\bar{X} \\sim N(\\mu, \\frac{\\sigma^2}{n})",
+      "explanation": "Distribution of sample means from normal population.",
+      "variables": "X̄: sample mean, μ: population mean, σ: population standard deviation, n: sample size",
+      "units": "Same as population units"
+    },
+    {
+      "name": "Sampling Distribution of Sample Proportion",
+      "formula": "\\hat{p} \\sim N(p, \\frac{p(1-p)}{n})",
+      "explanation": "Distribution of sample proportions.",
+      "variables": "p̂: sample proportion, p: population proportion, n: sample size",
+      "units": "Proportion (0 to 1)"
+    },
+    {
+      "name": "Sampling Distribution of Sample Variance",
+      "formula": "\\frac{(n-1)S^2}{\\sigma^2} \\sim \\chi^2_{n-1}",
+      "explanation": "Chi-square distribution of sample variance.",
+      "variables": "S²: sample variance, σ²: population variance, n: sample size",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "Confidence Interval for Mean (Known σ)",
+      "formula": "\\bar{x} \\pm z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}}",
+      "explanation": "Interval estimate for population mean with known standard deviation.",
+      "variables": "x̄: sample mean, σ: population standard deviation, n: sample size, z: critical value",
+      "units": "Same as mean units"
+    },
+    {
+      "name": "Confidence Interval for Mean (Unknown σ)",
+      "formula": "\\bar{x} \\pm t_{\\alpha/2, n-1} \\frac{s}{\\sqrt{n}}",
+      "explanation": "Interval estimate for population mean with unknown standard deviation.",
+      "variables": "x̄: sample mean, s: sample standard deviation, n: sample size, t: critical value",
+      "units": "Same as mean units"
+    },
+    {
+      "name": "Confidence Interval for Proportion",
+      "formula": "\\hat{p} \\pm z_{\\alpha/2} \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}",
+      "explanation": "Interval estimate for population proportion.",
+      "variables": "p̂: sample proportion, n: sample size, z: critical value",
+      "units": "Proportion (0 to 1)"
+    },
+    {
+      "name": "Hypothesis Test for Mean",
+      "formula": "z = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}} or t = \\frac{\\bar{x} - \\mu_0}{s / \\sqrt{n}}",
+      "explanation": "Test statistic for testing population mean.",
+      "variables": "x̄: sample mean, μ₀: hypothesized mean, σ or s: standard deviation, n: sample size",
+      "units": "Test statistic units"
+    },
+    {
+      "name": "Hypothesis Test for Proportion",
+      "formula": "z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1-p_0)}{n}}}",
+      "explanation": "Test statistic for testing population proportion.",
+      "variables": "p̂: sample proportion, p₀: hypothesized proportion, n: sample size",
+      "units": "Test statistic units"
+    },
+    {
+      "name": "Type I and Type II Errors",
+      "formula": "\\alpha = P(Reject H_0 | H_0 true), \\beta = P(Fail to reject H_0 | H_0 false)",
+      "explanation": "Probabilities of incorrect decisions in hypothesis testing.",
+      "variables": "α: significance level, β: probability of type II error",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Power of Test",
+      "formula": "1 - \\beta",
+      "explanation": "Probability of correctly rejecting false null hypothesis.",
+      "variables": "β: probability of type II error",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "P-Value",
+      "formula": "p = P(Test statistic \\geq observed | H_0)",
+      "explanation": "Probability of observing test statistic as extreme as or more extreme than what was observed.",
+      "variables": "Test statistic: calculated value",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Likelihood Ratio Test",
+      "formula": "\\Lambda = \\frac{L(\\theta_0)}{L(\\hat{\\theta})}",
+      "explanation": "Test based on ratio of likelihoods under null and alternative hypotheses.",
+      "variables": "L: likelihood function, θ₀: null parameter, θ̂: maximum likelihood estimate",
+      "units": "Likelihood ratio"
+    },
+    {
+      "name": "Wald Test",
+      "formula": "W = \\frac{(\\hat{\\theta} - \\theta_0)^2}{I(\\hat{\\theta})^{-1}}",
+      "explanation": "Test based on asymptotic normality of maximum likelihood estimator.",
+      "variables": "θ̂: MLE, θ₀: null parameter, I: Fisher information",
+      "units": "Wald statistic"
+    },
+    {
+      "name": "Score Test",
+      "formula": "S = \\frac{[\\partial \\ln L / \\partial \\theta]^2}{I(\\theta)}",
+      "explanation": "Test based on score function and information matrix.",
+      "variables": "L: likelihood function, θ: parameter, I: Fisher information",
+      "units": "Score statistic"
+    },
+    {
+      "name": "Maximum Likelihood Estimation",
+      "formula": "\\hat{\\theta} = \\arg\\max L(\\theta | data)",
+      "explanation": "Parameter estimate that maximizes the likelihood of observing the data.",
+      "variables": "θ̂: MLE, L: likelihood function, data: observed values",
+      "units": "Same as parameter"
+    },
+    {
+      "name": "Method of Moments",
+      "formula": "Set sample moments = population moments",
+      "explanation": "Parameter estimation by equating sample and theoretical moments.",
+      "variables": "Sample moments: functions of data, Population moments: functions of parameters",
+      "units": "Same as parameters"
+    },
+    {
+      "name": "Fisher Information",
+      "formula": "I(\\theta) = E[-\\partial^2 \\ln L / \\partial \\theta^2]",
+      "explanation": "Measure of information about parameter in the data.",
+      "variables": "L: likelihood function, θ: parameter",
+      "units": "Information units"
+    },
+    {
+      "name": "Cramér-Rao Lower Bound",
+      "formula": "Var(\\hat{\\theta}) \\geq \\frac{1}{I(\\theta)}",
+      "explanation": "Lower bound on variance of unbiased estimators.",
+      "variables": "θ̂: estimator, I: Fisher information",
+      "units": "Variance units"
+    },
+    {
+      "name": "Delta Method",
+      "formula": "\\sqrt{n} (g(\\hat{\\theta}) - g(\\theta)) \\to N(0, (g'(\\theta))^2 / I(\\theta))",
+      "explanation": "Asymptotic distribution of functions of estimators.",
+      "variables": "g: function, θ̂: estimator, θ: true parameter, I: information",
+      "units": "Asymptotic distribution"
+    },
+    {
+      "name": "Bootstrap Standard Error",
+      "formula": "se = \\sqrt{\\frac{1}{B-1} \\sum (\\hat{\\theta}^* - \\bar{\\hat{\\theta}}^*)^2}",
+      "explanation": "Standard error estimated from bootstrap samples.",
+      "variables": "B: number of bootstrap samples, θ̂*: bootstrap estimates",
+      "units": "Same as parameter units"
+    },
+    {
+      "name": "Jackknife Estimate",
+      "formula": "\\hat{\\theta}_{(.i)} = \\frac{1}{n-1} \\sum_{j \\neq i} \\hat{\\theta}_{(j)}",
+      "explanation": "Estimate computed by leaving out one observation at a time.",
+      "variables": "θ̂_(i): jackknife estimate leaving out i-th observation, n: sample size",
+      "units": "Same as parameter units"
+    },
+    {
+      "name": "Empirical Distribution Function",
+      "formula": "F_n(x) = \\frac{1}{n} \\sum_{i=1}^n I(X_i \\leq x)",
+      "explanation": "Cumulative distribution function estimated from sample.",
+      "variables": "X_i: sample observations, n: sample size, I: indicator function",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Kolmogorov-Smirnov Statistic",
+      "formula": "D_n = \\sup_x |F_n(x) - F(x)|",
+      "explanation": "Maximum difference between empirical and theoretical CDFs.",
+      "variables": "F_n: empirical CDF, F: theoretical CDF",
+      "units": "Maximum difference"
+    },
+    {
+      "name": "Anderson-Darling Statistic",
+      "formula": "A^2 = -n - \\frac{1}{n} \\sum_{i=1}^n (2i-1) [\\ln F(X_{(i)}) + \\ln(1 - F(X_{(n+1-i)}))]",
+      "explanation": "Weighted Kolmogorov-Smirnov statistic.",
+      "variables": "n: sample size, F: CDF, X_(i): ordered sample",
+      "units": "Anderson-Darling statistic"
+    },
+    {
+      "name": "Chi-Square Goodness of Fit",
+      "formula": "\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}",
+      "explanation": "Test statistic for comparing observed and expected frequencies.",
+      "variables": "O_i: observed frequencies, E_i: expected frequencies",
+      "units": "Chi-square units"
+    },
+    {
+      "name": "Likelihood Ratio Test Statistic",
+      "formula": "-2 \\ln \\Lambda = -2 [\\ln L(\\theta_0) - \\ln L(\\hat{\\theta})]",
+      "explanation": "Test statistic based on ratio of likelihoods.",
+      "variables": "Λ: likelihood ratio, L: likelihood function, θ₀: null parameter, θ̂: alternative parameter",
+      "units": "Test statistic units"
+    },
+    {
+      "name": "Akaike Information Criterion",
+      "formula": "AIC = -2 \\ln L + 2k",
+      "explanation": "Measure of model quality that penalizes complexity.",
+      "variables": "L: maximum likelihood, k: number of parameters",
+      "units": "Information criterion units"
+    },
+    {
+      "name": "Bayesian Information Criterion",
+      "formula": "BIC = -2 \\ln L + k \\ln n",
+      "explanation": "Measure of model quality that strongly penalizes complexity.",
+      "variables": "L: maximum likelihood, k: number of parameters, n: sample size",
+      "units": "Information criterion units"
+    },
+    {
+      "name": "Posterior Distribution",
+      "formula": "p(\\theta | data) \\propto p(data | \\theta) p(\\theta)",
+      "explanation": "Distribution of parameter given the data.",
+      "variables": "θ: parameter, data: observations, p: probability density",
+      "units": "Probability density"
+    },
+    {
+      "name": "Bayes' Theorem for Distributions",
+      "formula": "p(\\theta | data) = \\frac{p(data | \\theta) p(\\theta)}{p(data)}",
+      "explanation": "Updating prior beliefs with data.",
+      "variables": "θ: parameter, data: observations",
+      "units": "Probability density"
+    },
+    {
+      "name": "Conjugate Prior",
+      "formula": "Posterior \\in same family as prior",
+      "explanation": "Prior distribution that leads to posterior in the same family.",
+      "variables": "Prior, likelihood, posterior: distributions",
+      "units": "Distribution family"
+    },
+    {
+      "name": "Credible Interval",
+      "formula": "P(\\theta \\in [a,b] | data) = 1 - \\alpha",
+      "explanation": "Bayesian analog of confidence interval.",
+      "variables": "θ: parameter, a,b: interval bounds, α: probability",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Highest Posterior Density Interval",
+      "formula": "Smallest interval with posterior probability 1-α",
+      "explanation": "Shortest credible interval for given probability.",
+      "variables": "α: probability level",
+      "units": "Parameter interval"
+    },
+    {
+      "name": "Predictive Distribution",
+      "formula": "p(y | data) = \\int p(y | \\theta) p(\\theta | data) d\\theta",
+      "explanation": "Distribution of future observations given current data.",
+      "variables": "y: future observation, θ: parameter, data: current observations",
+      "units": "Probability density"
+    },
+    {
+      "name": "Markov Chain",
+      "formula": "P(X_{n+1} = j | X_n = i, X_{n-1} = i_{n-1}, \\dots) = P(X_{n+1} = j | X_n = i)",
+      "explanation": "Stochastic process where future depends only on current state.",
+      "variables": "X_n: state at time n, i,j: states",
+      "units": "Transition probability"
+    },
+    {
+      "name": "Stationary Distribution",
+      "formula": "\\pi P = \\pi",
+      "explanation": "Long-run distribution of states in Markov chain.",
+      "variables": "π: stationary distribution, P: transition matrix",
+      "units": "Probability distribution"
+    },
+    {
+      "name": "Absorbing States",
+      "formula": "P_{ii} = 1 for absorbing state i",
+      "explanation": "States that, once entered, cannot be left.",
+      "variables": "P_ii: probability of staying in state i",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Gambler's Ruin",
+      "formula": "p = \\frac{1 - (q/p)^a}{1 - (q/p)^{a+b}}",
+      "explanation": "Probability that gambler with a dollars beats opponent with b dollars.",
+      "variables": "p: probability of winning one game, q = 1-p, a,b: initial amounts",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Poisson Process",
+      "formula": "P(N(t) = k) = \\frac{e^{-\\lambda t} (\\lambda t)^k}{k!}",
+      "explanation": "Counting process where events occur at constant rate independently.",
+      "variables": "N(t): number of events by time t, λ: rate, k: number of events",
+      "units": "Count"
+    },
+    {
+      "name": "Queueing Theory M/M/1",
+      "formula": "L = \\frac{\\lambda}{\\mu - \\lambda}, W = \\frac{1}{\\mu - \\lambda}",
+      "explanation": "Average queue length and waiting time in single-server queue.",
+      "variables": "λ: arrival rate, μ: service rate, L: average queue length, W: average waiting time",
+      "units": "Length/time units"
+    },
+    {
+      "name": "Reliability: Series System",
+      "formula": "R_s = \\prod R_i",
+      "explanation": "Reliability of system where all components must work.",
+      "variables": "R_s: system reliability, R_i: component reliabilities",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Reliability: Parallel System",
+      "formula": "R_p = 1 - \\prod (1 - R_i)",
+      "explanation": "Reliability of system where at least one component must work.",
+      "variables": "R_p: system reliability, R_i: component reliabilities",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Survival Function",
+      "formula": "S(t) = P(T > t) = 1 - F(t)",
+      "explanation": "Probability of surviving beyond time t.",
+      "variables": "T: lifetime random variable, t: time, F: CDF",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Hazard Function",
+      "formula": "h(t) = \\frac{f(t)}{S(t)}",
+      "explanation": "Instantaneous failure rate at time t.",
+      "variables": "f: PDF, S: survival function, t: time",
+      "units": "Rate (1/time)"
+    },
+    {
+      "name": "Cumulative Hazard Function",
+      "formula": "H(t) = -\\ln S(t) = \\int_0^t h(u) du",
+      "explanation": "Accumulated risk of failure up to time t.",
+      "variables": "S: survival function, h: hazard function, t: time",
+      "units": "Cumulative risk"
+    },
+    {
+      "name": "Kaplan-Meier Estimator",
+      "formula": "\\hat{S}(t) = \\prod_{t_i \\leq t} \\left(1 - \\frac{d_i}{n_i}\\right)",
+      "explanation": "Non-parametric estimate of survival function.",
+      "variables": "t_i: distinct event times, d_i: deaths at t_i, n_i: at risk at t_i",
+      "units": "Probability (0 to 1)"
+    },
+    {
+      "name": "Cox Proportional Hazards Model",
+      "formula": "h(t|X) = h_0(t) e^{\\beta^T X}",
+      "explanation": "Model relating covariates to hazard rate.",
+      "variables": "h: hazard function, h₀: baseline hazard, X: covariates, β: coefficients",
+      "units": "Hazard rate"
+    }
+  ],
+  "Computer Science": [
+    {
+      "name": "Big O Notation",
+      "formula": "f(n) = O(g(n))",
+      "explanation": "Upper bound on function growth rate.",
+      "variables": "f(n): function, g(n): bounding function, n: input size",
+      "units": "Complexity"
+    },
+    {
+      "name": "Big Omega Notation",
+      "formula": "f(n) = \\Omega(g(n))",
+      "explanation": "Lower bound on function growth rate.",
+      "variables": "f(n): function, g(n): bounding function, n: input size",
+      "units": "Complexity"
+    },
+    {
+      "name": "Big Theta Notation",
+      "formula": "f(n) = \\Theta(g(n))",
+      "explanation": "Tight bound on function growth rate.",
+      "variables": "f(n): function, g(n): bounding function, n: input size",
+      "units": "Complexity"
+    },
+    {
+      "name": "Little o Notation",
+      "formula": "f(n) = o(g(n))",
+      "explanation": "Strict upper bound on function growth rate.",
+      "variables": "f(n): function, g(n): bounding function, n: input size",
+      "units": "Complexity"
+    },
+    {
+      "name": "Little omega Notation",
+      "formula": "f(n) = \\omega(g(n))",
+      "explanation": "Strict lower bound on function growth rate.",
+      "variables": "f(n): function, g(n): bounding function, n: input size",
+      "units": "Complexity"
+    },
+    {
+      "name": "Binary Search Time Complexity",
+      "formula": "O(\\log n)",
+      "explanation": "Time complexity of binary search algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Linear Search Time Complexity",
+      "formula": "O(n)",
+      "explanation": "Time complexity of linear search algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Bubble Sort Time Complexity",
+      "formula": "O(n^2)",
+      "explanation": "Time complexity of bubble sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Merge Sort Time Complexity",
+      "formula": "O(n \\log n)",
+      "explanation": "Time complexity of merge sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Quick Sort Average Time Complexity",
+      "formula": "O(n \\log n)",
+      "explanation": "Average time complexity of quick sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Quick Sort Worst Case Time Complexity",
+      "formula": "O(n^2)",
+      "explanation": "Worst case time complexity of quick sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Heap Sort Time Complexity",
+      "formula": "O(n \\log n)",
+      "explanation": "Time complexity of heap sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Insertion Sort Time Complexity",
+      "formula": "O(n^2)",
+      "explanation": "Time complexity of insertion sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Selection Sort Time Complexity",
+      "formula": "O(n^2)",
+      "explanation": "Time complexity of selection sort algorithm.",
+      "variables": "n: number of elements",
+      "units": "Time"
+    },
+    {
+      "name": "Counting Sort Time Complexity",
+      "formula": "O(n + k)",
+      "explanation": "Time complexity of counting sort algorithm.",
+      "variables": "n: number of elements, k: range of input",
+      "units": "Time"
+    },
+    {
+      "name": "Radix Sort Time Complexity",
+      "formula": "O(n \\cdot d)",
+      "explanation": "Time complexity of radix sort algorithm.",
+      "variables": "n: number of elements, d: number of digits",
+      "units": "Time"
+    },
+    {
+      "name": "Bucket Sort Average Time Complexity",
+      "formula": "O(n + k)",
+      "explanation": "Average time complexity of bucket sort algorithm.",
+      "variables": "n: number of elements, k: number of buckets",
+      "units": "Time"
+    },
+    {
+      "name": "Breadth-First Search Time Complexity",
+      "formula": "O(V + E)",
+      "explanation": "Time complexity of BFS in a graph.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Depth-First Search Time Complexity",
+      "formula": "O(V + E)",
+      "explanation": "Time complexity of DFS in a graph.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Dijkstra's Algorithm Time Complexity",
+      "formula": "O((V + E) \\log V)",
+      "explanation": "Time complexity of Dijkstra's shortest path algorithm.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Bellman-Ford Algorithm Time Complexity",
+      "formula": "O(V \\cdot E)",
+      "explanation": "Time complexity of Bellman-Ford shortest path algorithm.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Floyd-Warshall Algorithm Time Complexity",
+      "formula": "O(V^3)",
+      "explanation": "Time complexity of Floyd-Warshall all-pairs shortest paths algorithm.",
+      "variables": "V: vertices",
+      "units": "Time"
+    },
+    {
+      "name": "Kruskal's Algorithm Time Complexity",
+      "formula": "O(E \\log E)",
+      "explanation": "Time complexity of Kruskal's minimum spanning tree algorithm.",
+      "variables": "E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Prim's Algorithm Time Complexity",
+      "formula": "O((V + E) \\log V)",
+      "explanation": "Time complexity of Prim's minimum spanning tree algorithm.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Topological Sort Time Complexity",
+      "formula": "O(V + E)",
+      "explanation": "Time complexity of topological sort algorithm.",
+      "variables": "V: vertices, E: edges",
+      "units": "Time"
+    },
+    {
+      "name": "Knapsack Problem Dynamic Programming",
+      "formula": "DP[i][w] = \\max(DP[i-1][w], DP[i-1][w-w_i] + v_i)",
+      "explanation": "Dynamic programming solution for 0/1 knapsack problem.",
+      "variables": "i: item index, w: weight, w_i: item weight, v_i: item value",
+      "units": "Value"
+    },
+    {
+      "name": "Longest Common Subsequence",
+      "formula": "LCS[i][j] = \\begin{cases} LCS[i-1][j-1] + 1 & \\text{if } X_i = Y_j \\\\ \\max(LCS[i-1][j], LCS[i][j-1]) & \\text{otherwise} \\end{cases}",
+      "explanation": "Dynamic programming solution for longest common subsequence.",
+      "variables": "i,j: string indices, X,Y: strings",
+      "units": "Length"
+    },
+    {
+      "name": "Edit Distance (Levenshtein)",
+      "formula": "D[i][j] = \\min \\begin{cases} D[i-1][j] + 1 \\\\ D[i][j-1] + 1 \\\\ D[i-1][j-1] + (0 \\text{ if } X_i = Y_j \\text{ else } 1) \\end{cases}",
+      "explanation": "Minimum edit operations to transform one string to another.",
+      "variables": "i,j: string indices, X,Y: strings, D: distance matrix",
+      "units": "Operations"
+    },
+    {
+      "name": "Fibonacci Dynamic Programming",
+      "formula": "F(n) = F(n-1) + F(n-2)",
+      "explanation": "Dynamic programming solution for Fibonacci numbers.",
+      "variables": "n: Fibonacci number index",
+      "units": "Number"
+    },
+    {
+      "name": "Matrix Chain Multiplication",
+      "formula": "m[i][j] = \\min_{k=i}^{j-1} (m[i][k] + m[k+1][j] + p_{i-1} p_k p_j)",
+      "explanation": "Optimal parenthesization for matrix chain multiplication.",
+      "variables": "i,j: matrix indices, k: split point, p: dimensions",
+      "units": "Operations"
+    },
+    {
+      "name": "Shannon Entropy",
+      "formula": "H(X) = -\\sum p(x) \\log_2 p(x)",
+      "explanation": "Measure of uncertainty or information in a random variable.",
+      "variables": "X: random variable, p(x): probability of x",
+      "units": "Bits"
+    },
+    {
+      "name": "Huffman Coding Average Length",
+      "formula": "L = \\sum p_i l_i",
+      "explanation": "Average codeword length in Huffman coding.",
+      "variables": "p_i: probability of symbol i, l_i: length of codeword for symbol i",
+      "units": "Bits"
+    },
+    {
+      "name": "Mutual Information",
+      "formula": "I(X;Y) = H(X) + H(Y) - H(X,Y)",
+      "explanation": "Amount of information shared between two random variables.",
+      "variables": "X,Y: random variables, H: entropy",
+      "units": "Bits"
+    },
+    {
+      "name": "Cross Entropy",
+      "formula": "H(p,q) = -\\sum p(x) \\log q(x)",
+      "explanation": "Measure of difference between two probability distributions.",
+      "variables": "p,q: probability distributions",
+      "units": "Bits"
+    },
+    {
+      "name": "Kullback-Leibler Divergence",
+      "formula": "D_{KL}(p||q) = \\sum p(x) \\log \\frac{p(x)}{q(x)}",
+      "explanation": "Measure of how one probability distribution diverges from another.",
+      "variables": "p,q: probability distributions",
+      "units": "Bits"
+    },
+    {
+      "name": "Bayes' Theorem in Machine Learning",
+      "formula": "P(h|D) = \\frac{P(D|h) P(h)}{P(D)}",
+      "explanation": "Updating hypothesis probability given data.",
+      "variables": "h: hypothesis, D: data, P: probability",
+      "units": "Probability"
+    },
+    {
+      "name": "Maximum A Posteriori Estimation",
+      "formula": "\\hat{h} = \\arg\\max_h P(h|D)",
+      "explanation": "Finding the most probable hypothesis given data.",
+      "variables": "h: hypothesis, D: data",
+      "units": "Hypothesis"
+    },
+    {
+      "name": "Maximum Likelihood Estimation",
+      "formula": "\\hat{\\theta} = \\arg\\max_\\theta P(D|\\theta)",
+      "explanation": "Finding parameters that maximize data likelihood.",
+      "variables": "θ: parameters, D: data",
+      "units": "Parameters"
+    },
+    {
+      "name": "Naive Bayes Classifier",
+      "formula": "P(c|x) = \\frac{P(c) \\prod P(x_i|c)}{P(x)}",
+      "explanation": "Probabilistic classifier assuming feature independence.",
+      "variables": "c: class, x: features, x_i: individual features",
+      "units": "Probability"
+    },
+    {
+      "name": "Logistic Regression",
+      "formula": "P(y=1|x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta^T x)}}",
+      "explanation": "Probability of positive class in logistic regression.",
+      "variables": "y: binary outcome, x: features, β: coefficients",
+      "units": "Probability"
+    },
+    {
+      "name": "Support Vector Machine",
+      "formula": "\\max \\frac{2}{\\|w\\|} \\text{ subject to } y_i (w^T x_i + b) \\geq 1",
+      "explanation": "Optimization problem for finding maximum margin hyperplane.",
+      "variables": "w: weight vector, b: bias, x_i: training points, y_i: labels",
+      "units": "Margin"
+    },
+    {
+      "name": "Decision Tree Gini Impurity",
+      "formula": "Gini = 1 - \\sum p_i^2",
+      "explanation": "Measure of node impurity in decision trees.",
+      "variables": "p_i: proportion of class i in node",
+      "units": "Impurity"
+    },
+    {
+      "name": "Decision Tree Information Gain",
+      "formula": "IG = H(parent) - \\sum \\frac{|S_v|}{|S|} H(S_v)",
+      "explanation": "Reduction in entropy from splitting on an attribute.",
+      "variables": "H: entropy, S: parent set, S_v: child sets",
+      "units": "Bits"
+    },
+    {
+      "name": "K-Means Objective",
+      "formula": "J = \\sum_{i=1}^k \\sum_{x \\in C_i} ||x - \\mu_i||^2",
+      "explanation": "Sum of squared distances in k-means clustering.",
+      "variables": "k: number of clusters, C_i: cluster i, μ_i: centroid of cluster i",
+      "units": "Distance squared"
+    },
+    {
+      "name": "K-Nearest Neighbors",
+      "formula": "Classify x as majority class among k nearest neighbors",
+      "explanation": "Classification based on nearest training examples.",
+      "variables": "x: test point, k: number of neighbors",
+      "units": "Class"
+    },
+    {
+      "name": "Neural Network Forward Propagation",
+      "formula": "a^{(l)} = \\sigma(W^{(l)} a^{(l-1)} + b^{(l)})",
+      "explanation": "Computing activations in a neural network layer.",
+      "variables": "a: activations, σ: activation function, W: weights, b: biases, l: layer",
+      "units": "Activation"
+    },
+    {
+      "name": "Backpropagation",
+      "formula": "\\frac{\\partial J}{\\partial W^{(l)}} = a^{(l)T} \\delta^{(l+1)}",
+      "explanation": "Computing weight gradients in neural networks.",
+      "variables": "J: cost function, W: weights, a: activations, δ: errors, l: layer",
+      "units": "Gradient"
+    },
+    {
+      "name": "Convolution Operation",
+      "formula": "(f * g)[n] = \\sum_m f[m] g[n-m]",
+      "explanation": "Discrete convolution operation.",
+      "variables": "f,g: functions, n,m: indices",
+      "units": "Value"
+    },
+    {
+      "name": "Fast Fourier Transform",
+      "formula": "X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j 2\\pi k n / N}",
+      "explanation": "Efficient computation of discrete Fourier transform.",
+      "variables": "X: frequency domain, x: time domain, N: length, k: frequency index",
+      "units": "Complex number"
+    },
+    {
+      "name": "Discrete Cosine Transform",
+      "formula": "X[k] = \\sum_{n=0}^{N-1} x[n] \\cos\\left(\\frac{\\pi k (2n+1)}{2N}\\right)",
+      "explanation": "Transform used in image and signal compression.",
+      "variables": "X: DCT coefficients, x: input signal, N: length, k: coefficient index",
+      "units": "Real number"
+    },
+    {
+      "name": "RSA Encryption",
+      "formula": "c = m^e \\mod n, m = c^d \\mod n",
+      "explanation": "RSA public key encryption and decryption.",
+      "variables": "c: ciphertext, m: message, e: public exponent, d: private exponent, n: modulus",
+      "units": "Integer"
+    },
+    {
+      "name": "Diffie-Hellman Key Exchange",
+      "formula": "g^{ab} \\mod p",
+      "explanation": "Shared secret computation in Diffie-Hellman protocol.",
+      "variables": "g: generator, a,b: private keys, p: prime modulus",
+      "units": "Integer"
+    },
+    {
+      "name": "Hash Function Properties",
+      "formula": "Preimage resistance, second preimage resistance, collision resistance",
+      "explanation": "Security properties required of cryptographic hash functions.",
+      "variables": "None",
+      "units": "Security properties"
+    },
+    {
+      "name": "SHA-256 Hash Length",
+      "formula": "256 bits",
+      "explanation": "Output length of SHA-256 hash function.",
+      "variables": "None",
+      "units": "Bits"
+    },
+    {
+      "name": "MD5 Hash Length",
+      "formula": "128 bits",
+      "explanation": "Output length of MD5 hash function.",
+      "variables": "None",
+      "units": "Bits"
+    },
+    {
+      "name": "AES Block Size",
+      "formula": "128 bits",
+      "explanation": "Block size for AES encryption.",
+      "variables": "None",
+      "units": "Bits"
+    },
+    {
+      "name": "AES Key Sizes",
+      "formula": "128, 192, or 256 bits",
+      "explanation": "Possible key sizes for AES encryption.",
+      "variables": "None",
+      "units": "Bits"
+    },
+    {
+      "name": "TCP Three-Way Handshake",
+      "formula": "SYN \\to SYN-ACK \\to ACK",
+      "explanation": "Connection establishment process in TCP.",
+      "variables": "SYN: synchronize, ACK: acknowledge",
+      "units": "Protocol steps"
+    },
+    {
+      "name": "IPv4 Address Format",
+      "formula": "32 bits: a.b.c.d",
+      "explanation": "Format of IPv4 addresses.",
+      "variables": "a,b,c,d: octets (0-255)",
+      "units": "Bits"
+    },
+    {
+      "name": "IPv6 Address Format",
+      "formula": "128 bits: 8 groups of 4 hexadecimal digits",
+      "explanation": "Format of IPv6 addresses.",
+      "variables": "None",
+      "units": "Bits"
+    },
+    {
+      "name": "HTTP Status Codes",
+      "formula": "1xx: Informational, 2xx: Success, 3xx: Redirection, 4xx: Client Error, 5xx: Server Error",
+      "explanation": "Categories of HTTP response status codes.",
+      "variables": "None",
+      "units": "Status codes"
+    },
+    {
+      "name": "Database Normalization (1NF)",
+      "formula": "No repeating groups, atomic values",
+      "explanation": "First normal form: eliminates repeating groups.",
+      "variables": "None",
+      "units": "Normal form"
+    },
+    {
+      "name": "Database Normalization (2NF)",
+      "formula": "1NF + no partial dependencies",
+      "explanation": "Second normal form: eliminates partial dependencies.",
+      "variables": "None",
+      "units": "Normal form"
+    },
+    {
+      "name": "Database Normalization (3NF)",
+      "formula": "2NF + no transitive dependencies",
+      "explanation": "Third normal form: eliminates transitive dependencies.",
+      "variables": "None",
+      "units": "Normal form"
+    },
+    {
+      "name": "SQL Join Types",
+      "formula": "INNER, LEFT, RIGHT, FULL OUTER, CROSS",
+      "explanation": "Types of joins in SQL.",
+      "variables": "None",
+      "units": "Join types"
+    },
+    {
+      "name": "ACID Properties",
+      "formula": "Atomicity, Consistency, Isolation, Durability",
+      "explanation": "Properties of database transactions.",
+      "variables": "None",
+      "units": "Properties"
+    },
+    {
+      "name": "CAP Theorem",
+      "formula": "Consistency, Availability, Partition tolerance",
+      "explanation": "Trade-off between consistency, availability, and partition tolerance.",
+      "variables": "None",
+      "units": "Theorem"
+    },
+    {
+      "name": "MapReduce",
+      "formula": "Map: (k1,v1) \\to list(k2,v2), Reduce: (k2,list(v2)) \\to list(v3)",
+      "explanation": "Programming model for processing large datasets.",
+      "variables": "k: keys, v: values",
+      "units": "Data processing"
+    },
+    {
+      "name": "PageRank Algorithm",
+      "formula": "PR(p) = (1-d) + d \\sum_{q \\in B_p} \\frac{PR(q)}{L(q)}",
+      "explanation": "Algorithm for ranking web pages.",
+      "variables": "PR: page rank, d: damping factor, B_p: pages linking to p, L: out-links",
+      "units": "Rank"
+    },
+    {
+      "name": "Regular Expression Quantifiers",
+      "formula": "*: 0 or more, +: 1 or more, ?: 0 or 1, {n}: exactly n, {n,}: n or more, {n,m}: n to m",
+      "explanation": "Quantifiers in regular expressions.",
+      "variables": "n,m: numbers",
+      "units": "Quantifiers"
+    },
+    {
+      "name": "Context-Free Grammar",
+      "formula": "G = (V, \\Sigma, R, S)",
+      "explanation": "Formal grammar for context-free languages.",
+      "variables": "V: variables, Σ: terminals, R: rules, S: start symbol",
+      "units": "Grammar"
+    },
+    {
+      "name": "Turing Machine",
+      "formula": "M = (Q, \\Sigma, \\Gamma, \\delta, q_0, q_{accept}, q_{reject})",
+      "explanation": "Model of computation that can simulate any computer algorithm.",
+      "variables": "Q: states, Σ: input alphabet, Γ: tape alphabet, δ: transition function, q: states",
+      "units": "Machine"
+    },
+    {
+      "name": "P vs NP Problem",
+      "formula": "P \\subseteq NP",
+      "explanation": "Whether every problem whose solution can be verified in polynomial time can also be solved in polynomial time.",
+      "variables": "P: polynomial time, NP: nondeterministic polynomial time",
+      "units": "Complexity classes"
+    },
+    {
+      "name": "Master Theorem",
+      "formula": "T(n) = a T(n/b) + f(n) \\implies \\begin{cases} O(n^{\\log_b a}) & f(n) = O(n^{\\log_b a - \\epsilon}) \\\\ O(n^{\\log_b a} \\log n) & f(n) = \\Theta(n^{\\log_b a}) \\\\ O(f(n)) & f(n) = \\Omega(n^{\\log_b a + \\epsilon}) \\end{cases}",
+      "explanation": "Solving recurrence relations for divide-and-conquer algorithms.",
+      "variables": "T: time complexity, a: subproblem count, b: subproblem size, f: combine cost",
+      "units": "Complexity"
+    },
+    {
+      "name": "Amortized Analysis",
+      "formula": "Average cost per operation over a sequence",
+      "explanation": "Analyzing algorithm cost when some operations are expensive but infrequent.",
+      "variables": "None",
+      "units": "Cost"
+    },
+    {
+      "name": "Union-Find Data Structure",
+      "formula": "Find: path compression, Union: union by rank/size",
+      "explanation": "Data structure for maintaining disjoint sets.",
+      "variables": "None",
+      "units": "Data structure"
+    },
+    {
+      "name": "Red-Black Tree Properties",
+      "formula": "1. Every node is red or black, 2. Root is black, 3. Red nodes have black children, 4. All paths have same black height",
+      "explanation": "Properties maintaining balance in red-black trees.",
+      "variables": "None",
+      "units": "Properties"
+    },
+    {
+      "name": "B-Tree Properties",
+      "formula": "t: minimum degree, each node has at most 2t-1 keys, at least t-1 keys (except root)",
+      "explanation": "Properties of B-trees for disk-based storage.",
+      "variables": "t: minimum degree",
+      "units": "Properties"
+    },
+    {
+      "name": "Hash Table Load Factor",
+      "formula": "\\alpha = \\frac{n}{m}",
+      "explanation": "Ratio of stored elements to table size.",
+      "variables": "n: elements stored, m: table size",
+      "units": "Load factor"
+    },
+    {
+      "name": "Bloom Filter False Positive Rate",
+      "formula": "(1 - e^{-kn/m})^k",
+      "explanation": "Probability of false positive in Bloom filter.",
+      "variables": "k: hash functions, n: elements, m: bits",
+      "units": "Probability"
+    },
+    {
+      "name": "Skip List Height",
+      "formula": "Expected height O(\\log n)",
+      "explanation": "Expected height of skip list with n elements.",
+      "variables": "n: number of elements",
+      "units": "Height"
+    },
+    {
+      "name": "Trie (Prefix Tree)",
+      "formula": "Rooted tree where each path represents a string",
+      "explanation": "Tree data structure for storing strings.",
+      "variables": "None",
+      "units": "Data structure"
+    },
+    {
+      "name": "Suffix Tree",
+      "formula": "Compressed trie of all suffixes of a string",
+      "explanation": "Data structure for string pattern matching.",
+      "variables": "None",
+      "units": "Data structure"
+    },
+    {
+      "name": "Finite Automaton",
+      "formula": "M = (Q, \\Sigma, \\delta, q_0, F)",
+      "explanation": "Mathematical model of computation with finite memory.",
+      "variables": "Q: states, Σ: alphabet, δ: transition function, q_0: start state, F: accepting states",
+      "units": "Automaton"
+    },
+    {
+      "name": "Pushdown Automaton",
+      "formula": "M = (Q, \\Sigma, \\Gamma, \\delta, q_0, Z_0, F)",
+      "explanation": "Finite automaton with a stack for memory.",
+      "variables": "Q: states, Σ: input alphabet, Γ: stack alphabet, δ: transition function, Z_0: start stack symbol, F: accepting states",
+      "units": "Automaton"
+    },
+    {
+      "name": "Chomsky Hierarchy",
+      "formula": "Type 0: Unrestricted, Type 1: Context-sensitive, Type 2: Context-free, Type 3: Regular",
+      "explanation": "Hierarchy of formal grammars and languages.",
+      "variables": "None",
+      "units": "Hierarchy"
+    },
+    {
+      "name": "Lambda Calculus",
+      "formula": "\\lambda x.M",
+      "explanation": "Formal system for expressing computation through function abstraction and application.",
+      "variables": "x: variable, M: expression",
+      "units": "Expression"
+    },
+    {
+      "name": "Church-Turing Thesis",
+      "formula": "Every effectively calculable function is computable by a Turing machine",
+      "explanation": "Equivalence of different models of computation.",
+      "variables": "None",
+      "units": "Thesis"
+    },
+    {
+      "name": "Halting Problem",
+      "formula": "Undecidable: no program can determine if another program halts",
+      "explanation": "Fundamental limit on what can be computed.",
+      "variables": "None",
+      "units": "Problem"
+    },
+    {
+      "name": "Rice's Theorem",
+      "formula": "Any non-trivial property of partial recursive functions is undecidable",
+      "explanation": "General result about undecidable properties of programs.",
+      "variables": "None",
+      "units": "Theorem"
+    },
+    {
+      "name": "Gödel's Incompleteness Theorems",
+      "formula": "Any consistent formal system powerful enough to describe arithmetic is incomplete",
+      "explanation": "Limitations of formal mathematical systems.",
+      "variables": "None",
+      "units": "Theorems"
+    },
+    {
+      "name": "Computational Complexity Classes",
+      "formula": "P, NP, NP-complete, NP-hard, EXPTIME, etc.",
+      "explanation": "Classification of computational problems by resource requirements.",
+      "variables": "None",
+      "units": "Classes"
+    },
+    {
+      "name": "Boolean Algebra",
+      "formula": "AND: \\land, OR: \\lor, NOT: \\neg, XOR: \\oplus",
+      "explanation": "Algebraic system for logical operations.",
+      "variables": "None",
+      "units": "Operations"
+    },
+    {
+      "name": "De Morgan's Laws",
+      "formula": "\\neg(A \\land B) = \\neg A \\lor \\neg B, \\neg(A \\lor B) = \\neg A \\land \\neg B",
+      "explanation": "Laws relating conjunction and disjunction with negation.",
+      "variables": "A,B: propositions",
+      "units": "Laws"
+    },
+    {
+      "name": "Karnaugh Maps",
+      "formula": "Graphical method for simplifying Boolean expressions",
+      "explanation": "Technique for minimizing logic circuits.",
+      "variables": "None",
+      "units": "Method"
+    },
+    {
+      "name": "Quine-McCluskey Algorithm",
+      "formula": "Tabular method for minimizing Boolean functions",
+      "explanation": "Algorithm for finding minimal sum-of-products expressions.",
+      "variables": "None",
+      "units": "Algorithm"
+    },
+    {
+      "name": "Floating Point Representation",
+      "formula": "(-1)^s \\times 1.m \\times 2^{e-bias}",
+      "explanation": "IEEE 754 floating point number representation.",
+      "variables": "s: sign bit, m: mantissa, e: exponent, bias: exponent bias",
+      "units": "Number"
+    },
+    {
+      "name": "Two's Complement",
+      "formula": "-x = \\neg x + 1",
+      "explanation": "Method for representing negative integers in binary.",
+      "variables": "x: positive integer, ¬: bitwise NOT",
+      "units": "Representation"
+    },
+    {
+      "name": "Cache Hit Rate",
+      "formula": "\\frac{\\text{Hits}}{\\text{Total accesses}}",
+      "explanation": "Fraction of memory accesses that are cache hits.",
+      "variables": "Hits: cache hits, Total accesses: all memory accesses",
+      "units": "Rate"
+    },
+    {
+      "name": "Memory Hierarchy",
+      "formula": "Registers \\to Cache \\to Main Memory \\to Disk \\to Network",
+      "explanation": "Levels of memory storage by speed and cost.",
+      "variables": "None",
+      "units": "Hierarchy"
+    },
+    {
+      "name": "Virtual Memory",
+      "formula": "Physical address = page table[virtual page] + offset",
+      "explanation": "Technique for providing more memory than physically available.",
+      "variables": "None",
+      "units": "Memory management"
+    },
+    {
+      "name": "Page Fault Rate",
+      "formula": "\\frac{\\text{Page faults}}{\\text{Total memory references}}",
+      "explanation": "Rate at which page faults occur.",
+      "variables": "Page faults: number of page faults, Total memory references: all references",
+      "units": "Rate"
+    },
+    {
+      "name": "Process Scheduling Algorithms",
+      "formula": "FCFS, SJF, Round Robin, Priority, Multilevel Queue",
+      "explanation": "Algorithms for scheduling processes in operating systems.",
+      "variables": "None",
+      "units": "Algorithms"
+    },
+    {
+      "name": "Critical Section Problem",
+      "formula": "Mutual exclusion, progress, bounded waiting",
+      "explanation": "Requirements for solutions to the critical section problem.",
+      "variables": "None",
+      "units": "Requirements"
+    },
+    {
+      "name": "Semaphore Operations",
+      "formula": "wait(S): S = S-1, signal(S): S = S+1",
+      "explanation": "Operations on semaphores for synchronization.",
+      "variables": "S: semaphore",
+      "units": "Operations"
+    },
+    {
+      "name": "Deadlock Conditions",
+      "formula": "Mutual exclusion, hold and wait, no preemption, circular wait",
+      "explanation": "Necessary conditions for deadlock to occur.",
+      "variables": "None",
+      "units": "Conditions"
+    },
+    {
+      "name": "Banker's Algorithm",
+      "formula": "Safe state: exists sequence where all processes can finish",
+      "explanation": "Algorithm for deadlock avoidance.",
+      "variables": "None",
+      "units": "Algorithm"
+    },
+    {
+      "name": "File Allocation Methods",
+      "formula": "Contiguous, Linked, Indexed, FAT",
+      "explanation": "Methods for allocating disk space to files.",
+      "variables": "None",
+      "units": "Methods"
+    },
+    {
+      "name": "Disk Scheduling Algorithms",
+      "formula": "FCFS, SSTF, SCAN, C-SCAN, LOOK",
+      "explanation": "Algorithms for scheduling disk I/O requests.",
+      "variables": "None",
+      "units": "Algorithms"
+    },
+    {
+      "name": "RAID Levels",
+      "formula": "RAID 0: Striping, RAID 1: Mirroring, RAID 5: Distributed parity",
+      "explanation": "Redundant array of independent disks configurations.",
+      "variables": "None",
+      "units": "Levels"
+    },
+    {
+      "name": "Compiler Phases",
+      "formula": "Lexical analysis \\to Syntax analysis \\to Semantic analysis \\to Code generation \\to Optimization",
+      "explanation": "Phases of compilation process.",
+      "variables": "None",
+      "units": "Phases"
+    },
+    {
+      "name": "Parsing Methods",
+      "formula": "Top-down: LL, Bottom-up: LR, SLR, LALR",
+      "explanation": "Methods for parsing programming languages.",
+      "variables": "None",
+      "units": "Methods"
+    },
+    {
+      "name": "Software Development Life Cycle",
+      "formula": "Requirements \\to Design \\to Implementation \\to Testing \\to Maintenance",
+      "explanation": "Phases of software development.",
+      "variables": "None",
+      "units": "Cycle"
+    },
+    {
+      "name": "Agile Manifesto Principles",
+      "formula": "Individuals and interactions over processes and tools, Working software over comprehensive documentation, Customer collaboration over contract negotiation, Responding to change over following a plan",
+      "explanation": "Core principles of agile software development.",
+      "variables": "None",
+      "units": "Principles"
+    },
+    {
+      "name": "Design Patterns",
+      "formula": "Creational: Singleton, Factory, Abstract Factory, Builder, Prototype; Structural: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy; Behavioral: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor",
+      "explanation": "Reusable solutions to common software design problems.",
+      "variables": "None",
+      "units": "Patterns"
+    },
+    {
+      "name": "Object-Oriented Principles",
+      "formula": "Encapsulation, Inheritance, Polymorphism, Abstraction",
+      "explanation": "Fundamental principles of object-oriented programming.",
+      "variables": "None",
+      "units": "Principles"
+    },
+    {
+      "name": "SOLID Principles",
+      "formula": "Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+      "explanation": "Principles for object-oriented design.",
+      "variables": "None",
+      "units": "Principles"
+    },
+    {
+      "name": "Version Control Systems",
+      "formula": "Git, SVN, Mercurial",
+      "explanation": "Systems for tracking changes in source code.",
+      "variables": "None",
+      "units": "Systems"
+    },
+    {
+      "name": "Continuous Integration",
+      "formula": "Automated building and testing of code changes",
+      "explanation": "Practice of frequently integrating code changes.",
+      "variables": "None",
+      "units": "Practice"
+    },
+    {
+      "name": "Microservices Architecture",
+      "formula": "Small, independent services communicating via APIs",
+      "explanation": "Architectural style for building applications as suites of services.",
+      "variables": "None",
+      "units": "Architecture"
+    },
+    {
+      "name": "REST API Principles",
+      "formula": "Stateless, Cacheable, Uniform interface, Client-server, Layered system",
+      "explanation": "Principles of RESTful API design.",
+      "variables": "None",
+      "units": "Principles"
+    },
+    {
+      "name": "HTTP Methods",
+      "formula": "GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS",
+      "explanation": "HTTP request methods for REST APIs.",
+      "variables": "None",
+      "units": "Methods"
+    },
+    {
+      "name": "JSON Web Token",
+      "formula": "Header.Payload.Signature",
+      "explanation": "Compact token format for securely transmitting information.",
+      "variables": "None",
+      "units": "Token"
+    },
+    {
+      "name": "OAuth 2.0 Flow",
+      "formula": "Authorization Code, Implicit, Resource Owner Password Credentials, Client Credentials",
+      "explanation": "Authorization framework for delegated access.",
+      "variables": "None",
+      "units": "Flow"
+    },
+    {
+      "name": "Blockchain Consensus",
+      "formula": "Proof-of-Work, Proof-of-Stake, Delegated Proof-of-Stake",
+      "explanation": "Mechanisms for achieving agreement in distributed systems.",
+      "variables": "None",
+      "units": "Mechanisms"
+    },
+    {
+      "name": "Cryptocurrency Mining",
+      "formula": "Solve computational puzzle to validate transactions",
+      "explanation": "Process of creating new cryptocurrency units.",
+      "variables": "None",
+      "units": "Process"
+    },
+    {
+      "name": "Machine Learning Bias-Variance Tradeoff",
+      "formula": "Total Error = Bias^2 + Variance + Irreducible Error",
+      "explanation": "Decomposition of prediction error in machine learning.",
+      "variables": "Bias: error from wrong assumptions, Variance: error from sensitivity to training data",
+      "units": "Error"
+    },
+    {
+      "name": "Cross-Validation",
+      "formula": "k-fold CV: split data into k folds, train on k-1, test on 1",
+      "explanation": "Technique for assessing model performance.",
+      "variables": "k: number of folds",
+      "units": "Technique"
+    },
+    {
+      "name": "Gradient Descent",
+      "formula": "\\theta_{t+1} = \\theta_t - \\alpha \\nabla J(\\theta_t)",
+      "explanation": "Optimization algorithm for minimizing cost functions.",
+      "variables": "θ: parameters, α: learning rate, J: cost function, ∇: gradient",
+      "units": "Parameters"
+    },
+    {
+      "name": "Stochastic Gradient Descent",
+      "formula": "\\theta_{t+1} = \\theta_t - \\alpha \\nabla J_i(\\theta_t)",
+      "explanation": "Variant of gradient descent using single training examples.",
+      "variables": "θ: parameters, α: learning rate, J_i: cost for example i",
+      "units": "Parameters"
+    },
+    {
+      "name": "Mini-Batch Gradient Descent",
+      "formula": "\\theta_{t+1} = \\theta_t - \\alpha \\nabla J_{batch}(\\theta_t)",
+      "explanation": "Variant of gradient descent using small batches of training examples.",
+      "variables": "θ: parameters, α: learning rate, J_batch: cost for batch",
+      "units": "Parameters"
+    },
+    {
+      "name": "Adam Optimizer",
+      "formula": "Adaptive moment estimation combining momentum and RMSProp",
+      "explanation": "Popular optimization algorithm for deep learning.",
+      "variables": "None",
+      "units": "Optimizer"
+    },
+    {
+      "name": "Convolutional Neural Network",
+      "formula": "Conv layers + Pooling + Fully connected layers",
+      "explanation": "Neural network architecture for image processing.",
+      "variables": "None",
+      "units": "Architecture"
+    },
+    {
+      "name": "Recurrent Neural Network",
+      "formula": "h_t = f(W h_{t-1} + U x_t + b)",
+      "explanation": "Neural network for sequential data.",
+      "variables": "h: hidden state, x: input, W,U: weight matrices, f: activation",
+      "units": "Network"
+    },
+    {
+      "name": "Long Short-Term Memory",
+      "formula": "LSTM: forget gate, input gate, output gate",
+      "explanation": "Type of recurrent neural network for long sequences.",
+      "variables": "None",
+      "units": "Network"
+    },
+    {
+      "name": "Transformer Architecture",
+      "formula": "Self-attention + Multi-head attention + Feed-forward networks",
+      "explanation": "Neural network architecture for sequence-to-sequence tasks.",
+      "variables": "None",
+      "units": "Architecture"
+    },
+    {
+      "name": "Reinforcement Learning",
+      "formula": "Agent + Environment + Reward + Policy + Value function",
+      "explanation": "Learning paradigm where agents learn through interaction.",
+      "variables": "None",
+      "units": "Learning"
+    },
+    {
+      "name": "Q-Learning",
+      "formula": "Q(s,a) \\leftarrow Q(s,a) + \\alpha [r + \\gamma \\max Q(s',a') - Q(s,a)]",
+      "explanation": "Model-free reinforcement learning algorithm.",
+      "variables": "Q: action-value function, s: state, a: action, r: reward, α: learning rate, γ: discount factor",
+      "units": "Value"
+    },
+    {
+      "name": "Markov Decision Process",
+      "formula": "MDP = (S, A, P, R, \\gamma)",
+      "explanation": "Mathematical framework for decision making in stochastic environments.",
+      "variables": "S: states, A: actions, P: transition probabilities, R: rewards, γ: discount factor",
+      "units": "Process"
+    },
+    {
+      "name": "Natural Language Processing",
+      "formula": "Tokenization \\to POS tagging \\to Parsing \\to Semantic analysis",
+      "explanation": "Field of AI dealing with human language.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Computer Vision",
+      "formula": "Image acquisition \\to Preprocessing \\to Feature extraction \\to Classification/Recognition",
+      "explanation": "Field of AI for interpreting visual information.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Big Data Characteristics",
+      "formula": "Volume, Velocity, Variety, Veracity, Value",
+      "explanation": "Characteristics defining big data.",
+      "variables": "None",
+      "units": "Characteristics"
+    },
+    {
+      "name": "Hadoop Ecosystem",
+      "formula": "HDFS, MapReduce, YARN, Hive, Pig, HBase, Spark",
+      "explanation": "Components of the Apache Hadoop framework.",
+      "variables": "None",
+      "units": "Ecosystem"
+    },
+    {
+      "name": "Apache Spark",
+      "formula": "RDDs, DataFrames, Spark SQL, MLlib, GraphX, Streaming",
+      "explanation": "Unified analytics engine for big data processing.",
+      "variables": "None",
+      "units": "Engine"
+    },
+    {
+      "name": "NoSQL Databases",
+      "formula": "Document: MongoDB, Key-value: Redis, Column-family: Cassandra, Graph: Neo4j",
+      "explanation": "Non-relational database types.",
+      "variables": "None",
+      "units": "Databases"
+    },
+    {
+      "name": "Cloud Computing Models",
+      "formula": "IaaS, PaaS, SaaS, FaaS",
+      "explanation": "Service models in cloud computing.",
+      "variables": "None",
+      "units": "Models"
+    },
+    {
+      "name": "Docker Containerization",
+      "formula": "Image \\to Container \\to Orchestration",
+      "explanation": "Technology for packaging and running applications.",
+      "variables": "None",
+      "units": "Technology"
+    },
+    {
+      "name": "Kubernetes Orchestration",
+      "formula": "Pods, Services, Deployments, ConfigMaps, Secrets",
+      "explanation": "Platform for automating deployment and scaling of containerized applications.",
+      "variables": "None",
+      "units": "Platform"
+    },
+    {
+      "name": "DevOps Practices",
+      "formula": "CI/CD, Infrastructure as Code, Monitoring, Logging, Security",
+      "explanation": "Practices for improving software delivery and operations.",
+      "variables": "None",
+      "units": "Practices"
+    },
+    {
+      "name": "Cybersecurity Principles",
+      "formula": "CIA Triad: Confidentiality, Integrity, Availability",
+      "explanation": "Fundamental principles of information security.",
+      "variables": "None",
+      "units": "Principles"
+    },
+    {
+      "name": "Cryptanalysis",
+      "formula": "Brute force, Frequency analysis, Known plaintext, Chosen plaintext",
+      "explanation": "Methods for breaking cryptographic systems.",
+      "variables": "None",
+      "units": "Methods"
+    },
+    {
+      "name": "Quantum Computing",
+      "formula": "Qubits, Superposition, Entanglement, Quantum gates",
+      "explanation": "Computing using quantum mechanical phenomena.",
+      "variables": "None",
+      "units": "Computing"
+    },
+    {
+      "name": "Internet of Things",
+      "formula": "Sensors + Connectivity + Data processing + Actions",
+      "explanation": "Network of physical devices with embedded computing.",
+      "variables": "None",
+      "units": "Network"
+    },
+    {
+      "name": "Augmented Reality",
+      "formula": "Real world + Virtual overlays",
+      "explanation": "Technology that superimposes digital information on the real world.",
+      "variables": "None",
+      "units": "Technology"
+    },
+    {
+      "name": "Virtual Reality",
+      "formula": "Immersive simulated environment",
+      "explanation": "Computer-generated simulation of a three-dimensional environment.",
+      "variables": "None",
+      "units": "Technology"
+    },
+    {
+      "name": "Blockchain Technology",
+      "formula": "Distributed ledger + Cryptography + Consensus",
+      "explanation": "Decentralized and distributed digital ledger technology.",
+      "variables": "None",
+      "units": "Technology"
+    },
+    {
+      "name": "Artificial Intelligence",
+      "formula": "Machine Learning + Natural Language Processing + Computer Vision + Robotics",
+      "explanation": "Field of computer science focused on creating intelligent machines.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Data Science Process",
+      "formula": "Data collection \\to Data cleaning \\to Exploratory analysis \\to Modeling \\to Deployment",
+      "explanation": "Process for extracting insights from data.",
+      "variables": "None",
+      "units": "Process"
+    },
+    {
+      "name": "A/B Testing",
+      "formula": "Control group vs Treatment group",
+      "explanation": "Statistical method for comparing two versions of something.",
+      "variables": "None",
+      "units": "Method"
+    },
+    {
+      "name": "Feature Engineering",
+      "formula": "Raw data \\to Features \\to Model input",
+      "explanation": "Process of creating features for machine learning models.",
+      "variables": "None",
+      "units": "Process"
+    },
+    {
+      "name": "Ensemble Learning",
+      "formula": "Bagging, Boosting, Stacking",
+      "explanation": "Methods combining multiple learning algorithms.",
+      "variables": "None",
+      "units": "Learning"
+    },
+    {
+      "name": "Dimensionality Reduction",
+      "formula": "PCA, t-SNE, Autoencoders",
+      "explanation": "Techniques for reducing the number of features in data.",
+      "variables": "None",
+      "units": "Techniques"
+    },
+    {
+      "name": "Time Series Analysis",
+      "formula": "Trend + Seasonality + Residual",
+      "explanation": "Analysis of data points collected over time intervals.",
+      "variables": "None",
+      "units": "Analysis"
+    },
+    {
+      "name": "Recommendation Systems",
+      "formula": "Collaborative filtering, Content-based filtering, Hybrid approaches",
+      "explanation": "Systems that suggest items to users based on preferences.",
+      "variables": "None",
+      "units": "Systems"
+    },
+    {
+      "name": "Computer Graphics",
+      "formula": "Modeling + Rendering + Animation",
+      "explanation": "Field dealing with digital visual content creation.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Game Theory",
+      "formula": "Players + Strategies + Payoffs + Nash equilibrium",
+      "explanation": "Study of mathematical models of strategic interaction.",
+      "variables": "None",
+      "units": "Theory"
+    },
+    {
+      "name": "Computational Biology",
+      "formula": "Sequence alignment, Phylogenetics, Protein folding",
+      "explanation": "Application of computational methods to biological problems.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Human-Computer Interaction",
+      "formula": "Usability, User experience, Interface design",
+      "explanation": "Study of how people interact with computers.",
+      "variables": "None",
+      "units": "Field"
+    },
+    {
+      "name": "Software Engineering",
+      "formula": "Requirements \\to Design \\to Implementation \\to Testing \\to Maintenance",
+      "explanation": "Systematic approach to software development.",
+      "variables": "None",
+      "units": "Engineering"
+    },
+    {
+      "name": "Computer Networks",
+      "formula": "Physical layer \\to Data link \\to Network \\to Transport \\to Application",
+      "explanation": "Systems for connecting computers and devices.",
+      "variables": "None",
+      "units": "Networks"
+    },
+    {
+      "name": "Operating Systems",
+      "formula": "Process management, Memory management, File systems, I/O",
+      "explanation": "Software that manages computer hardware and software resources.",
+      "variables": "None",
+      "units": "Systems"
+    },
+    {
+      "name": "Database Systems",
+      "formula": "Data modeling, Query processing, Transaction management, Concurrency control",
+      "explanation": "Systems for storing and retrieving data.",
+      "variables": "None",
+      "units": "Systems"
+    },
+    {
+      "name": "Programming Languages",
+      "formula": "Syntax, Semantics, Paradigms, Compilation/Interpretation",
+      "explanation": "Formal languages for writing computer programs.",
+      "variables": "None",
+      "units": "Languages"
+    },
+    {
+      "name": "Computer Architecture",
+      "formula": "ISA, Microarchitecture, Logic circuits, Memory hierarchy",
+      "explanation": "Design and organization of computer systems.",
+      "variables": "None",
+      "units": "Architecture"
+    },
+    {
+      "name": "Theoretical Computer Science",
+      "formula": "Automata theory, Computability, Complexity theory, Algorithms",
+      "explanation": "Mathematical foundation of computer science.",
+      "variables": "None",
+      "units": "Science"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+  if (!sessionStorage.getItem("authUser")) {
+    window.location.replace("login.html");
+  }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Student Tools Hub</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+    <script src="js/auth.js"></script>
+<script>
+  requireLogin();
+</script>
+
+<body>
+    <header>
+        <img src="img/logo.png" alt="Student Tools Hub Logo" class="logo">
+        <h1>Student Tools Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Focus Dashboard</a>
+            <a href="formulas.html">Formula Sheet</a>
+            <a href="learner-materials.html">Modules</a>
+        </nav>
+        <button id="theme-toggle">🌙</button>
+    </header>
+    <main>
+    <section class="fade-in">
+  <div class="hero-inner">
+    <div class="tool-card account-card">
+      <h2>👤 Account Information</h2>
+
+      <p><strong>Username:</strong> <span id="accountName"></span></p>
+
+      <h3>📜 Recent Activity</h3>
+      <ul id="activityList" class="activity-list"></ul>
+
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
+  </div>
+</section>
+
+
+
+        <section class="hero fade-in">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <div class="eyebrow">Study Materials Library</div>
+                    <h1>REALIZING YOUR LEARNING ASPIRATIONS</h1>
+                    <p class="hero-lead">Access high-quality modules and resources designed to support your studies and help you build better habits.</p>
+
+                    <div class="hero-cards">
+                        <div class="card stat-card">
+                            <div class="stat-number">136+</div>
+                            <div class="stat-label">projects of original idea</div>
+                        </div>
+                        <div class="card stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">years of technological solutions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-image" role="img" aria-label="Study image"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>🛠️ Your Study Toolkit</h2>
+            <p>Enhance your productivity and academic success with our tools.</p>
+            <div class="tool-links">
+                <a href="dashboard.html" class="tool-card pulse">
+                    <h3>Focus Dashboard</h3>
+                    <p>Pomodoro timer, to-do list, study music, and motivational quotes to boost your study sessions.</p>
+                </a>
+                <a href="formulas.html" class="tool-card pulse">
+                    <h3>Formula Sheet</h3>
+                    <p>Searchable and interactive reference for key formulas in Calculus, Statistics, Probability, and Computer Science.</p>
+                </a>
+                <a href="learner-materials.html" class="tool-card pulse">
+                    <h3>Learner Materials</h3>
+                    <p>Access comprehensive study materials, textbooks, and resources for all your subjects in one organized library.</p>
+                </a>
+            </div>
+        </section>
+        <section id="fun-section">
+            <h2>😄 Study Breaks & Inspiration</h2>
+            <div id="meme-reddit-card" class="tool-card">
+                <h3 id="item-title"></h3>
+                <p id="item-content"></p>
+                <small id="item-source"></small>
+            </div>
+            <button id="refresh-btn">🔄 Refresh</button>
+        </section>
+        <section class="features">
+            <h2>✨ Why Choose Our Platform?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>🎯 Focused Learning</h3>
+                    <p>Distraction-free environment with customizable timers and study music.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📊 Progress Tracking</h3>
+                    <p>Monitor your study streaks, completed sessions, and overall improvement.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🧮 Quick Reference</h3>
+                    <p>Instant access to essential formulas across multiple disciplines.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🏆 Gamification</h3>
+                    <p>Earn achievements and stay motivated with our reward system.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/auth.js"></script>
+<script>
+  const user = sessionStorage.getItem("authUser");
+  document.getElementById("accountName").textContent = user;
+
+  logActivity("Visited Home Page");
+  loadAccountInfo();
+</script>
+
+
+</body>
+    
+
+</html>
+
+
+
+
+
+
+

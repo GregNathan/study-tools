@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Learner Materials</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/learner-materials.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Student Tools Hub Logo" class="logo">
+        <h1>Learner Materials</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Focus Dashboard</a>
+            <a href="formulas.html">Formula Sheet</a>
+            <a href="learner-materials.html">Learner Materials</a>
+        </nav>
+        <button id="theme-toggle">🌙</button>
+    </header>
+    <main>
+        <div class="materials-header fade-in">
+            <h2>📚 Study Materials Library</h2>
+            <p>Access all your course materials and study resources</p>
+            <div class="view-controls">
+                <button id="view-grid" class="view-btn active" title="Grid View">⊞ Grid</button>
+                <button id="view-list" class="view-btn" title="List View">≡ List</button>
+            </div>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb" id="breadcrumb"></div>
+
+        <!-- Materials Container -->
+        <div id="materials-container" class="materials-grid">
+            <!-- Subject folders will be generated here -->
+        </div>
+
+        <!-- File Preview Modal -->
+        <div id="preview-modal" class="modal">
+            <div class="modal-content preview-content">
+                <span class="close">&times;</span>
+                <div class="preview-header">
+                    <h2 id="preview-title"></h2>
+                </div>
+                <div class="preview-body">
+                    <iframe id="pdf-viewer" src="" title="PDF Viewer"></iframe>
+                </div>
+                <div class="preview-footer">
+                    <button id="download-btn" class="btn-download">📥 Download</button>
+                    <button id="close-preview" class="btn-close">✕ Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/common.js"></script>
+    <script src="js/learner-materials.js"></script>
+</body>
+</html>
