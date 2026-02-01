@@ -194,7 +194,7 @@
 }
 /* Account card fine-tuning */
 .account-card {
-  max-width: 500px;
+  max-width: 1500px;
   margin-bottom: 2rem;
   min-height: 300px; /* Increased to accommodate info and button */
   padding: 1.5rem;
