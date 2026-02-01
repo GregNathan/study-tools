@@ -53,14 +53,10 @@ function login() {
   }
 
   sessionStorage.setItem("authUser", user);
+  localStorage.setItem("loggedInUser", user);
 
   // prevent going back to login
   window.location.replace("index.html");
-}
-
-
-  localStorage.setItem("loggedInUser", user);
-  window.location.href = "index.html";
 }
 
 // --- PROTECT PAGES ---
@@ -75,6 +71,7 @@ function requireLogin() {
 // --- LOGOUT ---
 function logout() {
   sessionStorage.removeItem("authUser");
+  localStorage.removeItem("loggedInUser");
 
   // Clear history and force redirect
   window.location.replace("login.html");
