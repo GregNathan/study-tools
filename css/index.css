@@ -196,42 +196,16 @@
 .account-card {
   max-width: 500px;
   margin-bottom: 2rem;
-}
-
-/* Activity list style */
-.activity-list {
-  padding-left: 1rem;
-  margin-top: 0.5rem;
-}
-
-.activity-list li {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  opacity: 0.85;
-}
-
-/* Logout button matching site style */
-.logout-btn {
-  margin-top: 1rem;
-  padding: 10px 14px;
-  background: #c62828;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  background: #b71c1c;
-}
-.account-card {
-  max-width: 100%;
+  min-height: 300px; /* Increased to accommodate info and button */
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
   text-align: left;
 }
 
-.account-card p,
-.account-card h3 {
+.account-card h2,
+.account-card h3,
+.account-card p {
   margin-bottom: 0.6rem;
 }
 
@@ -249,41 +223,6 @@
 
 /* Logout button (matches site style) */
 .logout-btn {
-  background: #c62828;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  background: #b71c1c;
-}
-
-.account-card {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.account-card h2,
-.account-card h3,
-.account-card p {
-  margin-bottom: 0.6rem;
-}
-
-.activity-list {
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.activity-list li {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.logout-btn {
   margin-top: 1rem;
   background: #c62828;
   color: white;
@@ -292,5 +231,9 @@
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #b71c1c;
 }
 
