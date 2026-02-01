@@ -196,7 +196,7 @@
 .account-card {
   max-width: 500px;
   margin-bottom: 2rem;
-  min-height: 200px; /* Increased to prevent overlapping */
+  min-height: 300px; /* Increased further to accommodate info and button */
   padding: 1.5rem; /* Added padding for better spacing */
 }
 
